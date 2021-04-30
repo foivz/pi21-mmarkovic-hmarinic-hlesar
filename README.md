@@ -23,7 +23,7 @@ F04 | Pretraga robe na skladištu | Korisnik aplikacije ima mogućnost pretrage 
 F05 | Kreiranje primki | Korisnik aplikacije tijekom zaprimanja robe u kreira skladišnu primku, primka se pohranjuje i ažurira se stanje na skladištu. Isto tako, zaposlenik ima i pregled svih već prije kreiranih primki. | Hrvoje Lesar
 F06 | Kreiranje izdatnica | Korisnik aplikacije tijekom izdavanja robe u kreira izdatnicu, izdatnica se pohranjuje i ažurira se stanje na skladištu. Isto tako, zaposlenik ima i pregled svih već prije kreiranih izdatnica. | Hrvoje Marinić
 F07 | Ažuriranje stanja na skladištu | Korisnik aplikacije može ažurirati određene podatke o robi na skladištu, a podaci o svakoj promjeni se pohranjuju u bazu podataka. | Marko Marković
-F08 | Adresiranje robe | Korisnik tijekom primitka robe na skladište u aplikaciju unosi lokaciju na koju je roba smještena(npr. skladište, prostorija, polica, kutija) i može pretraživati sav sadržaj koji se nalazi na toj lokaciji | Hrvoje Lesar
+F08 | Adresiranje robe | Korisnik tijekom primitka robe na skladište u aplikaciju unosi lokaciju na koju je roba smještena(npr. skladište, prostorija, polica, kutija) i može pretraživati sav sadržaj koji se nalazi na odabranoj lokaciji | Hrvoje Lesar
 
 ## Tehnologije i oprema
 .NET(VisualStudio), GitHub, VisualParadigm, SQL
