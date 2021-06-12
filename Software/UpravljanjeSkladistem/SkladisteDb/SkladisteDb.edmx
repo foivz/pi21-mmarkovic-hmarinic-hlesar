@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SkladisteDatabaseEntities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Dokument">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vrsta" Type="int" />
+          <Property Name="Naziv" Type="varchar" MaxLength="45" />
+          <Property Name="Datum" Type="date" />
+          <Property Name="Klijent" Type="int" />
+          <Property Name="Unio" Type="int" />
+        </EntityType>
+        <EntityType Name="Korisnik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUloga" Type="int" />
+          <Property Name="Ime" Type="varchar" MaxLength="255" />
+          <Property Name="Prezime" Type="varchar" MaxLength="255" />
+          <Property Name="OIB" Type="bigint" />
+          <Property Name="KontaktBroj" Type="varchar" MaxLength="45" />
+          <Property Name="Email" Type="varchar" MaxLength="45" />
+          <Property Name="KorisnickoIme" Type="varchar" MaxLength="45" />
+          <Property Name="Lozinka" Type="varchar" MaxLength="255" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Adresa" Type="varchar" MaxLength="255" />
+          <Property Name="Mjesto" Type="varchar" MaxLength="255" />
+          <Property Name="IBAN" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Lokacija">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="255" />
+          <Property Name="Nadlokacija" Type="int" />
+        </EntityType>
+        <EntityType Name="MjernaJedinica">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="255" />
+          <Property Name="Kratica" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Roba">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MjernaJedinica" Type="int" />
+          <Property Name="Naziv" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="RobaNaLokaciji">
+          <Key>
+            <PropertyRef Name="IdRoba" />
+            <PropertyRef Name="IdLokacija" />
+          </Key>
+          <Property Name="IdRoba" Type="int" Nullable="false" />
+          <Property Name="IdLokacija" Type="int" Nullable="false" />
+          <Property Name="Kolicina" Type="int" />
+        </EntityType>
+        <EntityType Name="StavkeDokumenta">
+          <Key>
+            <PropertyRef Name="IdDokument" />
+            <PropertyRef Name="IdRoba" />
+          </Key>
+          <Property Name="IdDokument" Type="int" Nullable="false" />
+          <Property Name="IdRoba" Type="int" Nullable="false" />
+          <Property Name="Kolicina" Type="int" />
+        </EntityType>
+        <EntityType Name="Uloga">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="VrstaDokumenta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__Dokument__Klijen__3493CFA7">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="0..1" />
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Dokument">
+              <PropertyRef Name="Klijent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Dokument__Unio__3587F3E0">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="0..1" />
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Dokument">
+              <PropertyRef Name="Unio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Dokument__Vrsta__339FAB6E">
+          <End Role="VrstaDokumenta" Type="Self.VrstaDokumenta" Multiplicity="0..1" />
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VrstaDokumenta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Dokument">
+              <PropertyRef Name="Vrsta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Korisnik__IdUlog__2EDAF651">
+          <End Role="Uloga" Type="Self.Uloga" Multiplicity="0..1" />
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uloga">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Korisnik">
+              <PropertyRef Name="IdUloga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Lokacija__Nadlok__40F9A68C">
+          <End Role="Lokacija" Type="Self.Lokacija" Multiplicity="0..1" />
+          <End Role="Lokacija1" Type="Self.Lokacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lokacija">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Lokacija1">
+              <PropertyRef Name="Nadlokacija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Roba__MjernaJedi__3A4CA8FD">
+          <End Role="MjernaJedinica" Type="Self.MjernaJedinica" Multiplicity="0..1" />
+          <End Role="Roba" Type="Self.Roba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MjernaJedinica">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Roba">
+              <PropertyRef Name="MjernaJedinica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RobaNaLok__IdLok__44CA3770">
+          <End Role="Lokacija" Type="Self.Lokacija" Multiplicity="1" />
+          <End Role="RobaNaLokaciji" Type="Self.RobaNaLokaciji" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lokacija">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RobaNaLokaciji">
+              <PropertyRef Name="IdLokacija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RobaNaLok__IdRob__43D61337">
+          <End Role="Roba" Type="Self.Roba" Multiplicity="1" />
+          <End Role="RobaNaLokaciji" Type="Self.RobaNaLokaciji" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roba">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RobaNaLokaciji">
+              <PropertyRef Name="IdRoba" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StavkeDok__IdDok__3D2915A8">
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="1" />
+          <End Role="StavkeDokumenta" Type="Self.StavkeDokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dokument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StavkeDokumenta">
+              <PropertyRef Name="IdDokument" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StavkeDok__IdRob__3E1D39E1">
+          <End Role="Roba" Type="Self.Roba" Multiplicity="1" />
+          <End Role="StavkeDokumenta" Type="Self.StavkeDokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roba">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StavkeDokumenta">
+              <PropertyRef Name="IdRoba" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SkladisteDatabaseEntitiesStoreContainer">
+          <EntitySet Name="Dokument" EntityType="Self.Dokument" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lokacija" EntityType="Self.Lokacija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MjernaJedinica" EntityType="Self.MjernaJedinica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roba" EntityType="Self.Roba" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RobaNaLokaciji" EntityType="Self.RobaNaLokaciji" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StavkeDokumenta" EntityType="Self.StavkeDokumenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uloga" EntityType="Self.Uloga" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VrstaDokumenta" EntityType="Self.VrstaDokumenta" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Dokument__Klijen__3493CFA7" Association="Self.FK__Dokument__Klijen__3493CFA7">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Dokument" EntitySet="Dokument" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Dokument__Unio__3587F3E0" Association="Self.FK__Dokument__Unio__3587F3E0">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Dokument" EntitySet="Dokument" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Dokument__Vrsta__339FAB6E" Association="Self.FK__Dokument__Vrsta__339FAB6E">
+            <End Role="VrstaDokumenta" EntitySet="VrstaDokumenta" />
+            <End Role="Dokument" EntitySet="Dokument" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Korisnik__IdUlog__2EDAF651" Association="Self.FK__Korisnik__IdUlog__2EDAF651">
+            <End Role="Uloga" EntitySet="Uloga" />
+            <End Role="Korisnik" EntitySet="Korisnik" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Lokacija__Nadlok__40F9A68C" Association="Self.FK__Lokacija__Nadlok__40F9A68C">
+            <End Role="Lokacija" EntitySet="Lokacija" />
+            <End Role="Lokacija1" EntitySet="Lokacija" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Roba__MjernaJedi__3A4CA8FD" Association="Self.FK__Roba__MjernaJedi__3A4CA8FD">
+            <End Role="MjernaJedinica" EntitySet="MjernaJedinica" />
+            <End Role="Roba" EntitySet="Roba" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RobaNaLok__IdLok__44CA3770" Association="Self.FK__RobaNaLok__IdLok__44CA3770">
+            <End Role="Lokacija" EntitySet="Lokacija" />
+            <End Role="RobaNaLokaciji" EntitySet="RobaNaLokaciji" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RobaNaLok__IdRob__43D61337" Association="Self.FK__RobaNaLok__IdRob__43D61337">
+            <End Role="Roba" EntitySet="Roba" />
+            <End Role="RobaNaLokaciji" EntitySet="RobaNaLokaciji" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StavkeDok__IdDok__3D2915A8" Association="Self.FK__StavkeDok__IdDok__3D2915A8">
+            <End Role="Dokument" EntitySet="Dokument" />
+            <End Role="StavkeDokumenta" EntitySet="StavkeDokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StavkeDok__IdRob__3E1D39E1" Association="Self.FK__StavkeDok__IdRob__3E1D39E1">
+            <End Role="Roba" EntitySet="Roba" />
+            <End Role="StavkeDokumenta" EntitySet="StavkeDokumenta" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SkladisteDatabaseEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Dokument">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vrsta" Type="Int32" />
+          <Property Name="Naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Datum" Type="DateTime" Precision="0" />
+          <Property Name="Klijent" Type="Int32" />
+          <Property Name="Unio" Type="Int32" />
+          <NavigationProperty Name="Korisnik" Relationship="Self.FK__Dokument__Klijen__3493CFA7" FromRole="Dokument" ToRole="Korisnik" />
+          <NavigationProperty Name="Korisnik1" Relationship="Self.FK__Dokument__Unio__3587F3E0" FromRole="Dokument" ToRole="Korisnik" />
+          <NavigationProperty Name="VrstaDokumenta" Relationship="Self.FK__Dokument__Vrsta__339FAB6E" FromRole="Dokument" ToRole="VrstaDokumenta" />
+          <NavigationProperty Name="StavkeDokumentas" Relationship="Self.FK__StavkeDok__IdDok__3D2915A8" FromRole="Dokument" ToRole="StavkeDokumenta" />
+        </EntityType>
+        <EntityType Name="Korisnik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUloga" Type="Int32" />
+          <Property Name="Ime" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Prezime" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OIB" Type="Int64" />
+          <Property Name="KontaktBroj" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="KorisnickoIme" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Lozinka" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Adresa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Mjesto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IBAN" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Dokuments" Relationship="Self.FK__Dokument__Klijen__3493CFA7" FromRole="Korisnik" ToRole="Dokument" />
+          <NavigationProperty Name="Dokuments1" Relationship="Self.FK__Dokument__Unio__3587F3E0" FromRole="Korisnik" ToRole="Dokument" />
+          <NavigationProperty Name="Uloga" Relationship="Self.FK__Korisnik__IdUlog__2EDAF651" FromRole="Korisnik" ToRole="Uloga" />
+        </EntityType>
+        <EntityType Name="Lokacija">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Nadlokacija" Type="Int32" />
+          <NavigationProperty Name="Lokacija1" Relationship="Self.FK__Lokacija__Nadlok__40F9A68C" FromRole="Lokacija" ToRole="Lokacija1" />
+          <NavigationProperty Name="Lokacija2" Relationship="Self.FK__Lokacija__Nadlok__40F9A68C" FromRole="Lokacija1" ToRole="Lokacija" />
+          <NavigationProperty Name="RobaNaLokacijis" Relationship="Self.FK__RobaNaLok__IdLok__44CA3770" FromRole="Lokacija" ToRole="RobaNaLokaciji" />
+        </EntityType>
+        <EntityType Name="MjernaJedinica">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Kratica" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Robas" Relationship="Self.FK__Roba__MjernaJedi__3A4CA8FD" FromRole="MjernaJedinica" ToRole="Roba" />
+        </EntityType>
+        <EntityType Name="Roba">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MjernaJedinica" Type="Int32" />
+          <Property Name="Naziv" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MjernaJedinica1" Relationship="Self.FK__Roba__MjernaJedi__3A4CA8FD" FromRole="Roba" ToRole="MjernaJedinica" />
+          <NavigationProperty Name="RobaNaLokacijis" Relationship="Self.FK__RobaNaLok__IdRob__43D61337" FromRole="Roba" ToRole="RobaNaLokaciji" />
+          <NavigationProperty Name="StavkeDokumentas" Relationship="Self.FK__StavkeDok__IdRob__3E1D39E1" FromRole="Roba" ToRole="StavkeDokumenta" />
+        </EntityType>
+        <EntityType Name="RobaNaLokaciji">
+          <Key>
+            <PropertyRef Name="IdRoba" />
+            <PropertyRef Name="IdLokacija" />
+          </Key>
+          <Property Name="IdRoba" Type="Int32" Nullable="false" />
+          <Property Name="IdLokacija" Type="Int32" Nullable="false" />
+          <Property Name="Kolicina" Type="Int32" />
+          <NavigationProperty Name="Lokacija" Relationship="Self.FK__RobaNaLok__IdLok__44CA3770" FromRole="RobaNaLokaciji" ToRole="Lokacija" />
+          <NavigationProperty Name="Roba" Relationship="Self.FK__RobaNaLok__IdRob__43D61337" FromRole="RobaNaLokaciji" ToRole="Roba" />
+        </EntityType>
+        <EntityType Name="StavkeDokumenta">
+          <Key>
+            <PropertyRef Name="IdDokument" />
+            <PropertyRef Name="IdRoba" />
+          </Key>
+          <Property Name="IdDokument" Type="Int32" Nullable="false" />
+          <Property Name="IdRoba" Type="Int32" Nullable="false" />
+          <Property Name="Kolicina" Type="Int32" />
+          <NavigationProperty Name="Dokument" Relationship="Self.FK__StavkeDok__IdDok__3D2915A8" FromRole="StavkeDokumenta" ToRole="Dokument" />
+          <NavigationProperty Name="Roba" Relationship="Self.FK__StavkeDok__IdRob__3E1D39E1" FromRole="StavkeDokumenta" ToRole="Roba" />
+        </EntityType>
+        <EntityType Name="Uloga">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Korisniks" Relationship="Self.FK__Korisnik__IdUlog__2EDAF651" FromRole="Uloga" ToRole="Korisnik" />
+        </EntityType>
+        <EntityType Name="VrstaDokumenta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Dokuments" Relationship="Self.FK__Dokument__Vrsta__339FAB6E" FromRole="VrstaDokumenta" ToRole="Dokument" />
+        </EntityType>
+        <Association Name="FK__Dokument__Klijen__3493CFA7">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="0..1" />
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Dokument">
+              <PropertyRef Name="Klijent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Dokument__Unio__3587F3E0">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="0..1" />
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Dokument">
+              <PropertyRef Name="Unio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Dokument__Vrsta__339FAB6E">
+          <End Role="VrstaDokumenta" Type="Self.VrstaDokumenta" Multiplicity="0..1" />
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VrstaDokumenta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Dokument">
+              <PropertyRef Name="Vrsta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StavkeDok__IdDok__3D2915A8">
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="1" />
+          <End Role="StavkeDokumenta" Type="Self.StavkeDokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dokument">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StavkeDokumenta">
+              <PropertyRef Name="IdDokument" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Korisnik__IdUlog__2EDAF651">
+          <End Role="Uloga" Type="Self.Uloga" Multiplicity="0..1" />
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uloga">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Korisnik">
+              <PropertyRef Name="IdUloga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Lokacija__Nadlok__40F9A68C">
+          <End Role="Lokacija" Type="Self.Lokacija" Multiplicity="0..1" />
+          <End Role="Lokacija1" Type="Self.Lokacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lokacija">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Lokacija1">
+              <PropertyRef Name="Nadlokacija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RobaNaLok__IdLok__44CA3770">
+          <End Role="Lokacija" Type="Self.Lokacija" Multiplicity="1" />
+          <End Role="RobaNaLokaciji" Type="Self.RobaNaLokaciji" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lokacija">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RobaNaLokaciji">
+              <PropertyRef Name="IdLokacija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Roba__MjernaJedi__3A4CA8FD">
+          <End Role="MjernaJedinica" Type="Self.MjernaJedinica" Multiplicity="0..1" />
+          <End Role="Roba" Type="Self.Roba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MjernaJedinica">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Roba">
+              <PropertyRef Name="MjernaJedinica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RobaNaLok__IdRob__43D61337">
+          <End Role="Roba" Type="Self.Roba" Multiplicity="1" />
+          <End Role="RobaNaLokaciji" Type="Self.RobaNaLokaciji" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roba">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RobaNaLokaciji">
+              <PropertyRef Name="IdRoba" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StavkeDok__IdRob__3E1D39E1">
+          <End Role="Roba" Type="Self.Roba" Multiplicity="1" />
+          <End Role="StavkeDokumenta" Type="Self.StavkeDokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roba">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StavkeDokumenta">
+              <PropertyRef Name="IdRoba" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SkladisteDatabase" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Dokuments" EntityType="Self.Dokument" />
+          <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
+          <EntitySet Name="Lokacijas" EntityType="Self.Lokacija" />
+          <EntitySet Name="MjernaJedinicas" EntityType="Self.MjernaJedinica" />
+          <EntitySet Name="Robas" EntityType="Self.Roba" />
+          <EntitySet Name="RobaNaLokacijis" EntityType="Self.RobaNaLokaciji" />
+          <EntitySet Name="StavkeDokumentas" EntityType="Self.StavkeDokumenta" />
+          <EntitySet Name="Ulogas" EntityType="Self.Uloga" />
+          <EntitySet Name="VrstaDokumentas" EntityType="Self.VrstaDokumenta" />
+          <AssociationSet Name="FK__Dokument__Klijen__3493CFA7" Association="Self.FK__Dokument__Klijen__3493CFA7">
+            <End Role="Korisnik" EntitySet="Korisniks" />
+            <End Role="Dokument" EntitySet="Dokuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Dokument__Unio__3587F3E0" Association="Self.FK__Dokument__Unio__3587F3E0">
+            <End Role="Korisnik" EntitySet="Korisniks" />
+            <End Role="Dokument" EntitySet="Dokuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Dokument__Vrsta__339FAB6E" Association="Self.FK__Dokument__Vrsta__339FAB6E">
+            <End Role="VrstaDokumenta" EntitySet="VrstaDokumentas" />
+            <End Role="Dokument" EntitySet="Dokuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StavkeDok__IdDok__3D2915A8" Association="Self.FK__StavkeDok__IdDok__3D2915A8">
+            <End Role="Dokument" EntitySet="Dokuments" />
+            <End Role="StavkeDokumenta" EntitySet="StavkeDokumentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Korisnik__IdUlog__2EDAF651" Association="Self.FK__Korisnik__IdUlog__2EDAF651">
+            <End Role="Uloga" EntitySet="Ulogas" />
+            <End Role="Korisnik" EntitySet="Korisniks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Lokacija__Nadlok__40F9A68C" Association="Self.FK__Lokacija__Nadlok__40F9A68C">
+            <End Role="Lokacija" EntitySet="Lokacijas" />
+            <End Role="Lokacija1" EntitySet="Lokacijas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RobaNaLok__IdLok__44CA3770" Association="Self.FK__RobaNaLok__IdLok__44CA3770">
+            <End Role="Lokacija" EntitySet="Lokacijas" />
+            <End Role="RobaNaLokaciji" EntitySet="RobaNaLokacijis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Roba__MjernaJedi__3A4CA8FD" Association="Self.FK__Roba__MjernaJedi__3A4CA8FD">
+            <End Role="MjernaJedinica" EntitySet="MjernaJedinicas" />
+            <End Role="Roba" EntitySet="Robas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RobaNaLok__IdRob__43D61337" Association="Self.FK__RobaNaLok__IdRob__43D61337">
+            <End Role="Roba" EntitySet="Robas" />
+            <End Role="RobaNaLokaciji" EntitySet="RobaNaLokacijis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StavkeDok__IdRob__3E1D39E1" Association="Self.FK__StavkeDok__IdRob__3E1D39E1">
+            <End Role="Roba" EntitySet="Robas" />
+            <End Role="StavkeDokumenta" EntitySet="StavkeDokumentas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SkladisteDatabaseEntitiesStoreContainer" CdmEntityContainer="SkladisteDatabase">
+          <EntitySetMapping Name="Dokuments">
+            <EntityTypeMapping TypeName="SkladisteDatabaseEntities.Dokument">
+              <MappingFragment StoreEntitySet="Dokument">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Vrsta" ColumnName="Vrsta" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Klijent" ColumnName="Klijent" />
+                <ScalarProperty Name="Unio" ColumnName="Unio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Korisniks">
+            <EntityTypeMapping TypeName="SkladisteDatabaseEntities.Korisnik">
+              <MappingFragment StoreEntitySet="Korisnik">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdUloga" ColumnName="IdUloga" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="OIB" ColumnName="OIB" />
+                <ScalarProperty Name="KontaktBroj" ColumnName="KontaktBroj" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+                <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+                <ScalarProperty Name="Mjesto" ColumnName="Mjesto" />
+                <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lokacijas">
+            <EntityTypeMapping TypeName="SkladisteDatabaseEntities.Lokacija">
+              <MappingFragment StoreEntitySet="Lokacija">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Nadlokacija" ColumnName="Nadlokacija" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MjernaJedinicas">
+            <EntityTypeMapping TypeName="SkladisteDatabaseEntities.MjernaJedinica">
+              <MappingFragment StoreEntitySet="MjernaJedinica">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Kratica" ColumnName="Kratica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Robas">
+            <EntityTypeMapping TypeName="SkladisteDatabaseEntities.Roba">
+              <MappingFragment StoreEntitySet="Roba">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MjernaJedinica" ColumnName="MjernaJedinica" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RobaNaLokacijis">
+            <EntityTypeMapping TypeName="SkladisteDatabaseEntities.RobaNaLokaciji">
+              <MappingFragment StoreEntitySet="RobaNaLokaciji">
+                <ScalarProperty Name="IdRoba" ColumnName="IdRoba" />
+                <ScalarProperty Name="IdLokacija" ColumnName="IdLokacija" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StavkeDokumentas">
+            <EntityTypeMapping TypeName="SkladisteDatabaseEntities.StavkeDokumenta">
+              <MappingFragment StoreEntitySet="StavkeDokumenta">
+                <ScalarProperty Name="IdDokument" ColumnName="IdDokument" />
+                <ScalarProperty Name="IdRoba" ColumnName="IdRoba" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ulogas">
+            <EntityTypeMapping TypeName="SkladisteDatabaseEntities.Uloga">
+              <MappingFragment StoreEntitySet="Uloga">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VrstaDokumentas">
+            <EntityTypeMapping TypeName="SkladisteDatabaseEntities.VrstaDokumenta">
+              <MappingFragment StoreEntitySet="VrstaDokumenta">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
