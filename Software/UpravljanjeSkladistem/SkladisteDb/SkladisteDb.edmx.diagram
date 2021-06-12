@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="SkladisteDatabaseEntities.Korisnik" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="SkladisteDatabaseEntities.Lokacija" Width="1.5" PointX="6.5" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SkladisteDatabaseEntities.MjernaJedinica" Width="1.5" PointX="4.75" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SkladisteDatabaseEntities.Roba" Width="1.5" PointX="11" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkladisteDatabaseEntities.Roba" Width="1.5" PointX="10.5" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="SkladisteDatabaseEntities.RobaNaLokaciji" Width="1.5" PointX="9" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SkladisteDatabaseEntities.StavkeDokumenta" Width="1.5" PointX="8.375" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SkladisteDatabaseEntities.Uloga" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />

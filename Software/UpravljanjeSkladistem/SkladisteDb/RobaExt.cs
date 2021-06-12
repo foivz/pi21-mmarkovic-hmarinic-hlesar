@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SkladisteDb
 {
-    partial class Roba
+    public partial class Roba
     {
-    
+      
     }
 }

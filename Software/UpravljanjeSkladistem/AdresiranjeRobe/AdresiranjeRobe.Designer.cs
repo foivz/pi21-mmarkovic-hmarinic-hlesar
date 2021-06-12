@@ -33,91 +33,64 @@ namespace AdresiranjeRobe
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.nemaNadlokacijeCheckBox = new System.Windows.Forms.CheckBox();
             this.dodajLokacijuButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.nazivNoveLokacijeTextBox = new System.Windows.Forms.TextBox();
-            this.nadlokacijaComboBox = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pregledLokacijaDgv = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.robaNaOdredenojLokacijiCheckBox = new System.Windows.Forms.CheckBox();
             this.robaDgv = new System.Windows.Forms.DataGridView();
-            this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pregledPodlokacijaDgv = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lokacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mjernaJedinicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mjernaJedinica1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.robaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nadlokacijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lokacija1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lokacija2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.podlokacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.stableniPrikazTreeView = new System.Windows.Forms.TreeView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.odabranaLokacijaLabel = new System.Windows.Forms.Label();
+            this.izlazButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.obrisiOdabranuLokacijuButton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pregledLokacijaDgv)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.robaDgv)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pregledPodlokacijaDgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lokacijaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.robaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.podlokacijaBindingSource)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.nemaNadlokacijeCheckBox);
             this.groupBox2.Controls.Add(this.dodajLokacijuButton);
-            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.nazivNoveLokacijeTextBox);
-            this.groupBox2.Controls.Add(this.nadlokacijaComboBox);
-            this.groupBox2.Location = new System.Drawing.Point(12, 327);
+            this.groupBox2.Location = new System.Drawing.Point(12, 346);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(366, 147);
+            this.groupBox2.Size = new System.Drawing.Size(193, 124);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Nova Lokacija";
+            this.groupBox2.Text = "Nova lokacija";
             // 
             // nemaNadlokacijeCheckBox
             // 
             this.nemaNadlokacijeCheckBox.AutoSize = true;
-            this.nemaNadlokacijeCheckBox.Location = new System.Drawing.Point(158, 85);
+            this.nemaNadlokacijeCheckBox.Location = new System.Drawing.Point(6, 69);
             this.nemaNadlokacijeCheckBox.Name = "nemaNadlokacijeCheckBox";
             this.nemaNadlokacijeCheckBox.Size = new System.Drawing.Size(111, 17);
             this.nemaNadlokacijeCheckBox.TabIndex = 7;
             this.nemaNadlokacijeCheckBox.Text = "Nema nadlokacije";
             this.nemaNadlokacijeCheckBox.UseVisualStyleBackColor = true;
-            this.nemaNadlokacijeCheckBox.CheckedChanged += new System.EventHandler(this.nemaNadlokacijeCheckBox_CheckedChanged);
             // 
             // dodajLokacijuButton
             // 
-            this.dodajLokacijuButton.Location = new System.Drawing.Point(6, 118);
+            this.dodajLokacijuButton.Location = new System.Drawing.Point(6, 92);
             this.dodajLokacijuButton.Name = "dodajLokacijuButton";
-            this.dodajLokacijuButton.Size = new System.Drawing.Size(146, 23);
+            this.dodajLokacijuButton.Size = new System.Drawing.Size(181, 23);
             this.dodajLokacijuButton.TabIndex = 6;
             this.dodajLokacijuButton.Text = "Dodaj lokaciju";
             this.dodajLokacijuButton.UseVisualStyleBackColor = true;
             this.dodajLokacijuButton.Click += new System.EventHandler(this.dodajLokacijuButton_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Nadlokacija (opcionalno)";
             // 
             // label1
             // 
@@ -132,51 +105,14 @@ namespace AdresiranjeRobe
             // 
             this.nazivNoveLokacijeTextBox.Location = new System.Drawing.Point(6, 43);
             this.nazivNoveLokacijeTextBox.Name = "nazivNoveLokacijeTextBox";
-            this.nazivNoveLokacijeTextBox.Size = new System.Drawing.Size(146, 20);
+            this.nazivNoveLokacijeTextBox.Size = new System.Drawing.Size(181, 20);
             this.nazivNoveLokacijeTextBox.TabIndex = 3;
-            // 
-            // nadlokacijaComboBox
-            // 
-            this.nadlokacijaComboBox.FormattingEnabled = true;
-            this.nadlokacijaComboBox.Location = new System.Drawing.Point(6, 83);
-            this.nadlokacijaComboBox.Name = "nadlokacijaComboBox";
-            this.nadlokacijaComboBox.Size = new System.Drawing.Size(146, 21);
-            this.nadlokacijaComboBox.TabIndex = 3;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.pregledLokacijaDgv);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(366, 309);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pregled lokacija";
-            // 
-            // pregledLokacijaDgv
-            // 
-            this.pregledLokacijaDgv.AllowUserToAddRows = false;
-            this.pregledLokacijaDgv.AllowUserToDeleteRows = false;
-            this.pregledLokacijaDgv.AutoGenerateColumns = false;
-            this.pregledLokacijaDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pregledLokacijaDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nazivDataGridViewTextBoxColumn,
-            this.nadlokacijaDataGridViewTextBoxColumn,
-            this.lokacija1DataGridViewTextBoxColumn,
-            this.lokacija2DataGridViewTextBoxColumn});
-            this.pregledLokacijaDgv.DataSource = this.lokacijaBindingSource;
-            this.pregledLokacijaDgv.Location = new System.Drawing.Point(6, 19);
-            this.pregledLokacijaDgv.Name = "pregledLokacijaDgv";
-            this.pregledLokacijaDgv.ReadOnly = true;
-            this.pregledLokacijaDgv.Size = new System.Drawing.Size(348, 261);
-            this.pregledLokacijaDgv.TabIndex = 0;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.robaNaOdredenojLokacijiCheckBox);
             this.groupBox4.Controls.Add(this.robaDgv);
-            this.groupBox4.Location = new System.Drawing.Point(384, 12);
+            this.groupBox4.Location = new System.Drawing.Point(384, 31);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(506, 309);
             this.groupBox4.TabIndex = 6;
@@ -188,9 +124,9 @@ namespace AdresiranjeRobe
             this.robaNaOdredenojLokacijiCheckBox.AutoSize = true;
             this.robaNaOdredenojLokacijiCheckBox.Location = new System.Drawing.Point(6, 286);
             this.robaNaOdredenojLokacijiCheckBox.Name = "robaNaOdredenojLokacijiCheckBox";
-            this.robaNaOdredenojLokacijiCheckBox.Size = new System.Drawing.Size(150, 17);
+            this.robaNaOdredenojLokacijiCheckBox.Size = new System.Drawing.Size(206, 17);
             this.robaNaOdredenojLokacijiCheckBox.TabIndex = 8;
-            this.robaNaOdredenojLokacijiCheckBox.Text = "Prikazi samo direktnu robu";
+            this.robaNaOdredenojLokacijiCheckBox.Text = "Uključi prikaz robe sa svih podlokacija";
             this.robaNaOdredenojLokacijiCheckBox.UseVisualStyleBackColor = true;
             this.robaNaOdredenojLokacijiCheckBox.CheckedChanged += new System.EventHandler(this.robaNaOdredenojLokacijiCheckBox_CheckedChanged);
             // 
@@ -213,84 +149,6 @@ namespace AdresiranjeRobe
             this.robaDgv.Size = new System.Drawing.Size(494, 261);
             this.robaDgv.TabIndex = 1;
             // 
-            // Kolicina
-            // 
-            this.Kolicina.DataPropertyName = "Kolicina";
-            this.Kolicina.HeaderText = "Količina";
-            this.Kolicina.Name = "Kolicina";
-            this.Kolicina.ReadOnly = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.pregledPodlokacijaDgv);
-            this.groupBox3.Location = new System.Drawing.Point(390, 327);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(494, 147);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Pregled podlokacija odabrane lokacije";
-            // 
-            // pregledPodlokacijaDgv
-            // 
-            this.pregledPodlokacijaDgv.AllowUserToAddRows = false;
-            this.pregledPodlokacijaDgv.AllowUserToDeleteRows = false;
-            this.pregledPodlokacijaDgv.AutoGenerateColumns = false;
-            this.pregledPodlokacijaDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pregledPodlokacijaDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.pregledPodlokacijaDgv.DataSource = this.podlokacijaBindingSource;
-            this.pregledPodlokacijaDgv.Location = new System.Drawing.Point(6, 19);
-            this.pregledPodlokacijaDgv.Name = "pregledPodlokacijaDgv";
-            this.pregledPodlokacijaDgv.ReadOnly = true;
-            this.pregledPodlokacijaDgv.Size = new System.Drawing.Size(482, 122);
-            this.pregledPodlokacijaDgv.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Nadlokacija";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Nadlokacija";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Lokacija1";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Lokacija1";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Lokacija2";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Lokacija2";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            // 
-            // lokacijaBindingSource
-            // 
-            this.lokacijaBindingSource.DataSource = typeof(SkladisteDb.Lokacija);
-            this.lokacijaBindingSource.CurrentChanged += new System.EventHandler(this.lokacijaBindingSource_CurrentChanged);
-            // 
             // idDataGridViewTextBoxColumn1
             // 
             this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
@@ -304,6 +162,13 @@ namespace AdresiranjeRobe
             this.nazivDataGridViewTextBoxColumn1.HeaderText = "Naziv";
             this.nazivDataGridViewTextBoxColumn1.Name = "nazivDataGridViewTextBoxColumn1";
             this.nazivDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // Kolicina
+            // 
+            this.Kolicina.DataPropertyName = "Kolicina";
+            this.Kolicina.HeaderText = "Količina";
+            this.Kolicina.Name = "Kolicina";
+            this.Kolicina.ReadOnly = true;
             // 
             // mjernaJedinicaDataGridViewTextBoxColumn
             // 
@@ -324,72 +189,99 @@ namespace AdresiranjeRobe
             // 
             this.robaBindingSource.DataSource = typeof(SkladisteDb.Roba);
             // 
-            // idDataGridViewTextBoxColumn
+            // groupBox5
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.groupBox5.Controls.Add(this.stableniPrikazTreeView);
+            this.groupBox5.Location = new System.Drawing.Point(18, 31);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(360, 309);
+            this.groupBox5.TabIndex = 7;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Pregled lokacija";
             // 
-            // nazivDataGridViewTextBoxColumn
+            // stableniPrikazTreeView
             // 
-            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
-            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
-            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
-            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stableniPrikazTreeView.Location = new System.Drawing.Point(6, 19);
+            this.stableniPrikazTreeView.Name = "stableniPrikazTreeView";
+            this.stableniPrikazTreeView.Size = new System.Drawing.Size(348, 284);
+            this.stableniPrikazTreeView.TabIndex = 7;
+            this.stableniPrikazTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.stableniPrikazTreeView_NodeMouseClick);
             // 
-            // nadlokacijaDataGridViewTextBoxColumn
+            // label2
             // 
-            this.nadlokacijaDataGridViewTextBoxColumn.DataPropertyName = "Nadlokacija";
-            this.nadlokacijaDataGridViewTextBoxColumn.HeaderText = "Nadlokacija";
-            this.nadlokacijaDataGridViewTextBoxColumn.Name = "nadlokacijaDataGridViewTextBoxColumn";
-            this.nadlokacijaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Odabrana lokacija:";
             // 
-            // lokacija1DataGridViewTextBoxColumn
+            // odabranaLokacijaLabel
             // 
-            this.lokacija1DataGridViewTextBoxColumn.DataPropertyName = "Lokacija1";
-            this.lokacija1DataGridViewTextBoxColumn.HeaderText = "Lokacija1";
-            this.lokacija1DataGridViewTextBoxColumn.Name = "lokacija1DataGridViewTextBoxColumn";
-            this.lokacija1DataGridViewTextBoxColumn.ReadOnly = true;
-            this.lokacija1DataGridViewTextBoxColumn.Visible = false;
+            this.odabranaLokacijaLabel.AutoSize = true;
+            this.odabranaLokacijaLabel.ForeColor = System.Drawing.Color.Red;
+            this.odabranaLokacijaLabel.Location = new System.Drawing.Point(123, 9);
+            this.odabranaLokacijaLabel.Name = "odabranaLokacijaLabel";
+            this.odabranaLokacijaLabel.Size = new System.Drawing.Size(63, 13);
+            this.odabranaLokacijaLabel.TabIndex = 9;
+            this.odabranaLokacijaLabel.Text = "Placeholder";
             // 
-            // lokacija2DataGridViewTextBoxColumn
+            // izlazButton
             // 
-            this.lokacija2DataGridViewTextBoxColumn.DataPropertyName = "Lokacija2";
-            this.lokacija2DataGridViewTextBoxColumn.HeaderText = "Lokacija2";
-            this.lokacija2DataGridViewTextBoxColumn.Name = "lokacija2DataGridViewTextBoxColumn";
-            this.lokacija2DataGridViewTextBoxColumn.ReadOnly = true;
-            this.lokacija2DataGridViewTextBoxColumn.Visible = false;
+            this.izlazButton.Location = new System.Drawing.Point(788, 438);
+            this.izlazButton.Name = "izlazButton";
+            this.izlazButton.Size = new System.Drawing.Size(96, 32);
+            this.izlazButton.TabIndex = 10;
+            this.izlazButton.Text = "Izlaz";
+            this.izlazButton.UseVisualStyleBackColor = true;
+            this.izlazButton.Click += new System.EventHandler(this.izlazButton_Click);
             // 
-            // podlokacijaBindingSource
+            // groupBox1
             // 
-            this.podlokacijaBindingSource.DataSource = typeof(SkladisteDb.Lokacija);
+            this.groupBox1.Controls.Add(this.obrisiOdabranuLokacijuButton);
+            this.groupBox1.Location = new System.Drawing.Point(211, 346);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(193, 63);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Brisanje odabrane lokacije";
+            // 
+            // obrisiOdabranuLokacijuButton
+            // 
+            this.obrisiOdabranuLokacijuButton.ForeColor = System.Drawing.Color.Red;
+            this.obrisiOdabranuLokacijuButton.Location = new System.Drawing.Point(6, 19);
+            this.obrisiOdabranuLokacijuButton.Name = "obrisiOdabranuLokacijuButton";
+            this.obrisiOdabranuLokacijuButton.Size = new System.Drawing.Size(181, 36);
+            this.obrisiOdabranuLokacijuButton.TabIndex = 11;
+            this.obrisiOdabranuLokacijuButton.Text = "Obrisi odabranu lokaciju";
+            this.obrisiOdabranuLokacijuButton.UseVisualStyleBackColor = true;
+            this.obrisiOdabranuLokacijuButton.Click += new System.EventHandler(this.obrisiOdabranuLokacijuButton_Click);
             // 
             // AdresiranjeRobe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 486);
-            this.Controls.Add(this.groupBox3);
+            this.ClientSize = new System.Drawing.Size(900, 481);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.izlazButton);
+            this.Controls.Add(this.odabranaLokacijaLabel);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Name = "AdresiranjeRobe";
             this.Text = "Adresiranje Robe";
             this.Load += new System.EventHandler(this.AdresiranjeRobe_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pregledLokacijaDgv)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.robaDgv)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pregledPodlokacijaDgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lokacijaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.robaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.podlokacijaBindingSource)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -398,39 +290,24 @@ namespace AdresiranjeRobe
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox nemaNadlokacijeCheckBox;
         private System.Windows.Forms.Button dodajLokacijuButton;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nazivNoveLokacijeTextBox;
-        private System.Windows.Forms.ComboBox nadlokacijaComboBox;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView pregledLokacijaDgv;
-        private System.Windows.Forms.BindingSource lokacijaBindingSource;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView robaDgv;
         private System.Windows.Forms.CheckBox robaNaOdredenojLokacijiCheckBox;
         private System.Windows.Forms.BindingSource robaBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lokacijasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dokumentsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn robasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nadlokacijaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lokacija1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lokacija2DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kolicina;
         private System.Windows.Forms.DataGridViewTextBoxColumn mjernaJedinicaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mjernaJedinica1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView pregledPodlokacijaDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.BindingSource podlokacijaBindingSource;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TreeView stableniPrikazTreeView;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label odabranaLokacijaLabel;
+        private System.Windows.Forms.Button izlazButton;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button obrisiOdabranuLokacijuButton;
     }
 }
 

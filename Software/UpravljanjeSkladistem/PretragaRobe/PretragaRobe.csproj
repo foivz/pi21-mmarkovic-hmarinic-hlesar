@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EF645E42-BC33-4659-8746-9F92C7CE8147}</ProjectGuid>
+    <ProjectGuid>{A1075B29-E674-4C8C-965B-781BB2ADD4E7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AdresiranjeRobe</RootNamespace>
-    <AssemblyName>AdresiranjeRobe</AssemblyName>
+    <RootNamespace>PretragaRobe</RootNamespace>
+    <AssemblyName>PretragaRobe</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,13 +34,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SkladisteDb\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\SkladisteDb\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,25 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdresiranjeRobe.cs">
+    <Compile Include="PretragaRobeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdresiranjeRobe.Designer.cs">
-      <DependentUpon>AdresiranjeRobe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OdabirLokacija.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OdabirLokacija.Designer.cs">
-      <DependentUpon>OdabirLokacija.cs</DependentUpon>
+    <Compile Include="PretragaRobeForm.Designer.cs">
+      <DependentUpon>PretragaRobeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AdresiranjeRobe.resx">
-      <DependentUpon>AdresiranjeRobe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OdabirLokacija.resx">
-      <DependentUpon>OdabirLokacija.cs</DependentUpon>
+    <EmbeddedResource Include="PretragaRobeForm.resx">
+      <DependentUpon>PretragaRobeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -82,9 +73,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\DataSources\SkladisteDb.Lokacija.datasource" />
     <None Include="Properties\DataSources\SkladisteDb.Roba.datasource" />
+    <None Include="Properties\DataSources\SkladisteDb.RobaKolicina.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -99,8 +90,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AdresiranjeRobe\AdresiranjeRobe.csproj">
+      <Project>{EF645E42-BC33-4659-8746-9F92C7CE8147}</Project>
+      <Name>AdresiranjeRobe</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SkladisteDb\SkladisteDb.csproj">
-      <Project>{857E0E54-BE57-4546-B465-A3DF4C869D57}</Project>
+      <Project>{857e0e54-be57-4546-b465-a3df4c869d57}</Project>
       <Name>SkladisteDb</Name>
     </ProjectReference>
   </ItemGroup>

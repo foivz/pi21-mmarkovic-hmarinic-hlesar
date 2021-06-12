@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EF645E42-BC33-4659-8746-9F92C7CE8147}</ProjectGuid>
+    <ProjectGuid>{7E1939F8-5658-4EC6-BDF8-2D45DFAB8801}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AdresiranjeRobe</RootNamespace>
-    <AssemblyName>AdresiranjeRobe</AssemblyName>
+    <RootNamespace>KreiranjePrimki</RootNamespace>
+    <AssemblyName>KreiranjePrimki</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,14 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>..\SkladisteDb\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\SkladisteDb\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,26 +52,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdresiranjeRobe.cs">
+    <Compile Include="KreiranjePrimkiForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdresiranjeRobe.Designer.cs">
-      <DependentUpon>AdresiranjeRobe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OdabirLokacija.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OdabirLokacija.Designer.cs">
-      <DependentUpon>OdabirLokacija.cs</DependentUpon>
+    <Compile Include="KreiranjePrimkiForm.Designer.cs">
+      <DependentUpon>KreiranjePrimkiForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AdresiranjeRobe.resx">
-      <DependentUpon>AdresiranjeRobe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OdabirLokacija.resx">
-      <DependentUpon>OdabirLokacija.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -82,9 +69,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
-    <None Include="Properties\DataSources\SkladisteDb.Lokacija.datasource" />
-    <None Include="Properties\DataSources\SkladisteDb.Roba.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,12 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SkladisteDb\SkladisteDb.csproj">
-      <Project>{857E0E54-BE57-4546-B465-A3DF4C869D57}</Project>
-      <Name>SkladisteDb</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

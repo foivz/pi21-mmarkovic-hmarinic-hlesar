@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdresiranjeRobe", "Adresira
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkladisteDb", "SkladisteDb\SkladisteDb.csproj", "{857E0E54-BE57-4546-B465-A3DF4C869D57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PretragaRobe", "PretragaRobe\PretragaRobe.csproj", "{A1075B29-E674-4C8C-965B-781BB2ADD4E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KreiranjePrimki", "KreiranjePrimki\KreiranjePrimki.csproj", "{7E1939F8-5658-4EC6-BDF8-2D45DFAB8801}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{857E0E54-BE57-4546-B465-A3DF4C869D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{857E0E54-BE57-4546-B465-A3DF4C869D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{857E0E54-BE57-4546-B465-A3DF4C869D57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1075B29-E674-4C8C-965B-781BB2ADD4E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1075B29-E674-4C8C-965B-781BB2ADD4E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1075B29-E674-4C8C-965B-781BB2ADD4E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1075B29-E674-4C8C-965B-781BB2ADD4E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E1939F8-5658-4EC6-BDF8-2D45DFAB8801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E1939F8-5658-4EC6-BDF8-2D45DFAB8801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E1939F8-5658-4EC6-BDF8-2D45DFAB8801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E1939F8-5658-4EC6-BDF8-2D45DFAB8801}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
