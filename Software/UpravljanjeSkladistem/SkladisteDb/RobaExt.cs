@@ -132,40 +132,35 @@ namespace SkladisteDb
             }
         }
 
-        public static Roba DohvatiRobuPoNazivu(string naziv)
+        public static List<Roba> DohvatiRobuPoNazivu(string naziv)
         {
             using (var context = new SkladisteDatabase())
             {
-                var query = from r in context.Robas
+                var query = from r in context.Robas.Include("MjernaJedinica1")
                             where r.Naziv.ToLower().Contains(naziv.ToLower())
                             select r;
 
-                try
+                List<Roba> svaDohvacenaRoba = query.ToList();
+                List<Roba> returnMe = new List<Roba>();
+                foreach (var dohvacenaRoba in svaDohvacenaRoba)
                 {
-                    Roba dohvacenaRoba = query.Single();
+                    dohvacenaRoba.Kolicina = 0;
+                    dohvacenaRoba.NazivMjerneJedinice = dohvacenaRoba.MjernaJedinica1.Naziv;
+                    returnMe.Add(dohvacenaRoba);
                     var robaLokacijaQuery = from rnl in context.RobaNaLokacijis
                                             where rnl.IdRoba == dohvacenaRoba.Id
                                             select rnl;
 
-                    Roba returnMe = null;
-
                     foreach (var zapis in robaLokacijaQuery.ToList())
                     {
-                        if (returnMe == null)
+                        Roba zapisanaRoba = returnMe.Find(x => x.Id == zapis.IdRoba);
+                        if (zapisanaRoba != null)
                         {
-                            returnMe = new Roba(zapis);
-                        }
-                        else
-                        {
-                            returnMe.Kolicina += zapis.Kolicina;
+                            zapisanaRoba.Kolicina += zapis.Kolicina;
                         }
                     }
-                    return returnMe;
                 }
-                catch (Exception)
-                {
-                    throw new NepronadenaVrijednostException($"Nije pronađena ni jedna roba s unesenim nazivom [{naziv}]!");
-                }
+                return returnMe;
             }
         }
 

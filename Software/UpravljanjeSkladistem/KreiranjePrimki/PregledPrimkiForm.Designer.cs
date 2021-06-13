@@ -31,15 +31,6 @@ namespace KreiranjePrimki
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.novaPrimkaButton = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stavkeDokumentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Klijent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrstaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +41,7 @@ namespace KreiranjePrimki
             this.vrstaDokumentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkeDokumentasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dokumentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.robaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OpisRobe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MjernaJedinica = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,13 +51,21 @@ namespace KreiranjePrimki
             this.idDokumentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idRobaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dokumentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stavkeDokumentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.novaPrimkaButton = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dokumentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stavkeDokumentaBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stavkeDokumentaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dokumentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -88,95 +88,8 @@ namespace KreiranjePrimki
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(699, 192);
+            this.dataGridView1.Size = new System.Drawing.Size(528, 192);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.robaDataGridViewTextBoxColumn,
-            this.OpisRobe,
-            this.MjernaJedinica,
-            this.kolicinaDataGridViewTextBoxColumn,
-            this.jedinicnaCijenaDataGridViewTextBoxColumn,
-            this.UkupnaCijena,
-            this.idDokumentDataGridViewTextBoxColumn,
-            this.idRobaDataGridViewTextBoxColumn,
-            this.dokumentDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.stavkeDokumentaBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(528, 150);
-            this.dataGridView2.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(711, 224);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pregled primki";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 242);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(540, 180);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Stavke odabrane primke";
-            // 
-            // novaPrimkaButton
-            // 
-            this.novaPrimkaButton.Location = new System.Drawing.Point(6, 19);
-            this.novaPrimkaButton.Name = "novaPrimkaButton";
-            this.novaPrimkaButton.Size = new System.Drawing.Size(159, 47);
-            this.novaPrimkaButton.TabIndex = 4;
-            this.novaPrimkaButton.Text = "Nova primka";
-            this.novaPrimkaButton.UseVisualStyleBackColor = true;
-            this.novaPrimkaButton.Click += new System.EventHandler(this.novaPrimkaButton_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.novaPrimkaButton);
-            this.groupBox3.Location = new System.Drawing.Point(558, 344);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(171, 78);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Kontrole";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Korisnik";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Klijent";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Roba";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Mjerna jedinica";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Roba";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Mjerna jedinica";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // stavkeDokumentaBindingSource
-            // 
-            this.stavkeDokumentaBindingSource.DataSource = typeof(SkladisteDb.StavkeDokumenta);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -251,6 +164,29 @@ namespace KreiranjePrimki
             this.dokumentBindingSource.DataSource = typeof(SkladisteDb.Dokument);
             this.dokumentBindingSource.CurrentChanged += new System.EventHandler(this.dokumentBindingSource_CurrentChanged);
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.robaDataGridViewTextBoxColumn,
+            this.OpisRobe,
+            this.MjernaJedinica,
+            this.kolicinaDataGridViewTextBoxColumn,
+            this.jedinicnaCijenaDataGridViewTextBoxColumn,
+            this.UkupnaCijena,
+            this.idDokumentDataGridViewTextBoxColumn,
+            this.idRobaDataGridViewTextBoxColumn,
+            this.dokumentDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.stavkeDokumentaBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(705, 150);
+            this.dataGridView2.TabIndex = 1;
+            // 
             // robaDataGridViewTextBoxColumn
             // 
             this.robaDataGridViewTextBoxColumn.DataPropertyName = "NazivRobe";
@@ -317,6 +253,70 @@ namespace KreiranjePrimki
             this.dokumentDataGridViewTextBoxColumn.ReadOnly = true;
             this.dokumentDataGridViewTextBoxColumn.Visible = false;
             // 
+            // stavkeDokumentaBindingSource
+            // 
+            this.stavkeDokumentaBindingSource.DataSource = typeof(SkladisteDb.StavkeDokumenta);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(540, 224);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Pregled primki";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Location = new System.Drawing.Point(12, 242);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(717, 180);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Stavke odabrane primke";
+            // 
+            // novaPrimkaButton
+            // 
+            this.novaPrimkaButton.Location = new System.Drawing.Point(6, 19);
+            this.novaPrimkaButton.Name = "novaPrimkaButton";
+            this.novaPrimkaButton.Size = new System.Drawing.Size(159, 47);
+            this.novaPrimkaButton.TabIndex = 4;
+            this.novaPrimkaButton.Text = "Nova primka";
+            this.novaPrimkaButton.UseVisualStyleBackColor = true;
+            this.novaPrimkaButton.Click += new System.EventHandler(this.novaPrimkaButton_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.novaPrimkaButton);
+            this.groupBox3.Location = new System.Drawing.Point(558, 158);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(171, 78);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Kontrole";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Korisnik";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Klijent";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Roba";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Mjerna jedinica";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Roba";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Mjerna jedinica";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
             // PregledPrimkiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,12 +329,12 @@ namespace KreiranjePrimki
             this.Text = "Pregled Primki";
             this.Load += new System.EventHandler(this.PregledPrimkiForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dokumentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stavkeDokumentaBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.stavkeDokumentaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dokumentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

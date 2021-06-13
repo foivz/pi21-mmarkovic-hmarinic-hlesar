@@ -1,5 +1,4 @@
-﻿using AdresiranjeRobe;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UnosRobe;
+using AdresiranjeRobe;
+using PretragaRobe;
+using KreiranjePrimki;
 
 namespace UpravljanjeSkladistem
 {
@@ -18,10 +21,33 @@ namespace UpravljanjeSkladistem
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void izlazButton_Click(object sender, EventArgs e)
         {
-            AdresiranjeRobeForm f = new AdresiranjeRobeForm();
-            f.ShowDialog();
+            Close();
+        }
+
+        private void unosRobeButton_Click(object sender, EventArgs e)
+        {
+            UnosRobeForm unosRobe = new UnosRobeForm();
+            unosRobe.ShowDialog();
+        }
+
+        private void adresiranjeRobeButton_Click(object sender, EventArgs e)
+        {
+            AdresiranjeRobeForm adresiranjeRobe = new AdresiranjeRobeForm();
+            adresiranjeRobe.ShowDialog();
+        }
+
+        private void pretragaRobeButton_Click(object sender, EventArgs e)
+        {
+            PretragaRobeForm pretragaRobe = new PretragaRobeForm();
+            pretragaRobe.ShowDialog();
+        }
+
+        private void kreiranjePrimkiButton_Click(object sender, EventArgs e)
+        {
+            PregledPrimkiForm pregledPrimki = new PregledPrimkiForm();
+            pregledPrimki.ShowDialog();
         }
     }
 }

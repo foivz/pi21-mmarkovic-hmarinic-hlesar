@@ -53,16 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="UpravljanjeSkladistemMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UpravljanjeSkladistemMainForm.Designer.cs">
+      <DependentUpon>UpravljanjeSkladistemMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="UpravljanjeSkladistemMainForm.resx">
+      <DependentUpon>UpravljanjeSkladistemMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,6 +90,18 @@
     <ProjectReference Include="..\AdresiranjeRobe\AdresiranjeRobe.csproj">
       <Project>{EF645E42-BC33-4659-8746-9F92C7CE8147}</Project>
       <Name>AdresiranjeRobe</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KreiranjePrimki\KreiranjePrimki.csproj">
+      <Project>{7e1939f8-5658-4ec6-bdf8-2d45dfab8801}</Project>
+      <Name>KreiranjePrimki</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PretragaRobe\PretragaRobe.csproj">
+      <Project>{a1075b29-e674-4c8c-965b-781bb2add4e7}</Project>
+      <Name>PretragaRobe</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnosRobe\UnosRobe.csproj">
+      <Project>{C888EE66-A76E-4B3E-9677-E3B27D7EF383}</Project>
+      <Name>UnosRobe</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
