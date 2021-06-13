@@ -17,6 +17,7 @@ namespace SkladisteDb
         public int IdDokument { get; set; }
         public int IdRoba { get; set; }
         public Nullable<int> Kolicina { get; set; }
+        public Nullable<double> JedinicnaCijena { get; set; }
     
         public virtual Dokument Dokument { get; set; }
         public virtual Roba Roba { get; set; }

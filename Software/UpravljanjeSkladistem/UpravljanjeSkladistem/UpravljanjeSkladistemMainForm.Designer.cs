@@ -1,7 +1,7 @@
 ﻿
 namespace UpravljanjeSkladistem
 {
-    partial class Form1
+    partial class UpravljanjeSkladistemMainForm
     {
         /// <summary>
         /// Required designer variable.

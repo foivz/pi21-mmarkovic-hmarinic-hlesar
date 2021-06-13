@@ -11,7 +11,6 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Vrsta" Type="int" />
-          <Property Name="Naziv" Type="varchar" MaxLength="45" />
           <Property Name="Datum" Type="date" />
           <Property Name="Klijent" Type="int" />
           <Property Name="Unio" Type="int" />
@@ -76,6 +75,7 @@
           <Property Name="IdDokument" Type="int" Nullable="false" />
           <Property Name="IdRoba" Type="int" Nullable="false" />
           <Property Name="Kolicina" Type="int" />
+          <Property Name="JedinicnaCijena" Type="float" />
         </EntityType>
         <EntityType Name="Uloga">
           <Key>
@@ -91,7 +91,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Naziv" Type="varchar" MaxLength="255" />
         </EntityType>
-        <Association Name="FK__Dokument__Klijen__7D0E9093">
+        <Association Name="FK__Dokument__Klijen__14E61A24">
           <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="0..1" />
           <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
           <ReferentialConstraint>
@@ -103,7 +103,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Dokument__Unio__7E02B4CC">
+        <Association Name="FK__Dokument__Unio__15DA3E5D">
           <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="0..1" />
           <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
           <ReferentialConstraint>
@@ -115,7 +115,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Dokument__Vrsta__7C1A6C5A">
+        <Association Name="FK__Dokument__Vrsta__13F1F5EB">
           <End Role="VrstaDokumenta" Type="Self.VrstaDokumenta" Multiplicity="0..1" />
           <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
           <ReferentialConstraint>
@@ -187,7 +187,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__StavkeDok__IdDok__05A3D694">
+        <Association Name="FK__StavkeDok__IdDok__18B6AB08">
           <End Role="Dokument" Type="Self.Dokument" Multiplicity="1" />
           <End Role="StavkeDokumenta" Type="Self.StavkeDokumenta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -199,7 +199,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__StavkeDok__IdRob__0697FACD">
+        <Association Name="FK__StavkeDok__IdRob__19AACF41">
           <End Role="Roba" Type="Self.Roba" Multiplicity="1" />
           <End Role="StavkeDokumenta" Type="Self.StavkeDokumenta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -221,15 +221,15 @@
           <EntitySet Name="StavkeDokumenta" EntityType="Self.StavkeDokumenta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Uloga" EntityType="Self.Uloga" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VrstaDokumenta" EntityType="Self.VrstaDokumenta" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Dokument__Klijen__7D0E9093" Association="Self.FK__Dokument__Klijen__7D0E9093">
+          <AssociationSet Name="FK__Dokument__Klijen__14E61A24" Association="Self.FK__Dokument__Klijen__14E61A24">
             <End Role="Korisnik" EntitySet="Korisnik" />
             <End Role="Dokument" EntitySet="Dokument" />
           </AssociationSet>
-          <AssociationSet Name="FK__Dokument__Unio__7E02B4CC" Association="Self.FK__Dokument__Unio__7E02B4CC">
+          <AssociationSet Name="FK__Dokument__Unio__15DA3E5D" Association="Self.FK__Dokument__Unio__15DA3E5D">
             <End Role="Korisnik" EntitySet="Korisnik" />
             <End Role="Dokument" EntitySet="Dokument" />
           </AssociationSet>
-          <AssociationSet Name="FK__Dokument__Vrsta__7C1A6C5A" Association="Self.FK__Dokument__Vrsta__7C1A6C5A">
+          <AssociationSet Name="FK__Dokument__Vrsta__13F1F5EB" Association="Self.FK__Dokument__Vrsta__13F1F5EB">
             <End Role="VrstaDokumenta" EntitySet="VrstaDokumenta" />
             <End Role="Dokument" EntitySet="Dokument" />
           </AssociationSet>
@@ -253,11 +253,11 @@
             <End Role="Roba" EntitySet="Roba" />
             <End Role="RobaNaLokaciji" EntitySet="RobaNaLokaciji" />
           </AssociationSet>
-          <AssociationSet Name="FK__StavkeDok__IdDok__05A3D694" Association="Self.FK__StavkeDok__IdDok__05A3D694">
+          <AssociationSet Name="FK__StavkeDok__IdDok__18B6AB08" Association="Self.FK__StavkeDok__IdDok__18B6AB08">
             <End Role="Dokument" EntitySet="Dokument" />
             <End Role="StavkeDokumenta" EntitySet="StavkeDokumenta" />
           </AssociationSet>
-          <AssociationSet Name="FK__StavkeDok__IdRob__0697FACD" Association="Self.FK__StavkeDok__IdRob__0697FACD">
+          <AssociationSet Name="FK__StavkeDok__IdRob__19AACF41" Association="Self.FK__StavkeDok__IdRob__19AACF41">
             <End Role="Roba" EntitySet="Roba" />
             <End Role="StavkeDokumenta" EntitySet="StavkeDokumenta" />
           </AssociationSet>
@@ -272,7 +272,6 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Vrsta" Type="Int32" />
-          <Property Name="Naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Datum" Type="DateTime" Precision="0" />
           <Property Name="Klijent" Type="Int32" />
           <Property Name="Unio" Type="Int32" />
@@ -355,6 +354,7 @@
           <Property Name="Kolicina" Type="Int32" />
           <NavigationProperty Name="Dokument" Relationship="Self.FK__StavkeDok__IdDok__3D2915A8" FromRole="StavkeDokumenta" ToRole="Dokument" />
           <NavigationProperty Name="Roba" Relationship="Self.FK__StavkeDok__IdRob__3E1D39E1" FromRole="StavkeDokumenta" ToRole="Roba" />
+          <Property Name="JedinicnaCijena" Type="Double" />
         </EntityType>
         <EntityType Name="Uloga">
           <Key>
@@ -554,7 +554,6 @@
               <MappingFragment StoreEntitySet="Dokument">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Vrsta" ColumnName="Vrsta" />
-                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
                 <ScalarProperty Name="Datum" ColumnName="Datum" />
                 <ScalarProperty Name="Klijent" ColumnName="Klijent" />
                 <ScalarProperty Name="Unio" ColumnName="Unio" />
@@ -620,6 +619,7 @@
           <EntitySetMapping Name="StavkeDokumentas">
             <EntityTypeMapping TypeName="SkladisteDatabaseEntities.StavkeDokumenta">
               <MappingFragment StoreEntitySet="StavkeDokumenta">
+                <ScalarProperty Name="JedinicnaCijena" ColumnName="JedinicnaCijena" />
                 <ScalarProperty Name="IdDokument" ColumnName="IdDokument" />
                 <ScalarProperty Name="IdRoba" ColumnName="IdRoba" />
                 <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />

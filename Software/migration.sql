@@ -37,7 +37,6 @@ CREATE TABLE VrstaDokumenta (
 CREATE TABLE Dokument (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Vrsta INT REFERENCES VrstaDokumenta(id),
-	Naziv VARCHAR(45),
 	Datum DATE,
 	Klijent INT REFERENCES Korisnik(id),
 	Unio INT REFERENCES Korisnik(id),
@@ -61,6 +60,7 @@ CREATE TABLE StavkeDokumenta (
 	IdRoba INT REFERENCES Roba(id),
 	PRIMARY KEY (IdDokument, IdRoba),
 	Kolicina INT,
+	JedinicnaCijena FLOAT,
 );
 
 CREATE TABLE Lokacija (

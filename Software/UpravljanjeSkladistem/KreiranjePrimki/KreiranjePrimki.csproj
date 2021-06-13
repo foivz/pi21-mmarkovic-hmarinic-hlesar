@@ -52,14 +52,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KreiranjePrimkiForm.cs">
+    <Compile Include="KreirajDokumentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KreiranjePrimkiForm.Designer.cs">
-      <DependentUpon>KreiranjePrimkiForm.cs</DependentUpon>
+    <Compile Include="KreirajDokumentForm.Designer.cs">
+      <DependentUpon>KreirajDokumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PregledPrimkiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PregledPrimkiForm.Designer.cs">
+      <DependentUpon>PregledPrimkiForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="KreirajDokumentForm.resx">
+      <DependentUpon>KreirajDokumentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PregledPrimkiForm.resx">
+      <DependentUpon>PregledPrimkiForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -69,6 +81,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\SkladisteDb.Dokument.datasource" />
+    <None Include="Properties\DataSources\SkladisteDb.Roba.datasource" />
+    <None Include="Properties\DataSources\SkladisteDb.StavkeDokumenta.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SkladisteDb\SkladisteDb.csproj">
+      <Project>{857e0e54-be57-4546-b465-a3df4c869d57}</Project>
+      <Name>SkladisteDb</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

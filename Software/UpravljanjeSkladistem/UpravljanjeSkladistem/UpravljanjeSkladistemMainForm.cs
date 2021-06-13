@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace UpravljanjeSkladistem
 {
-    public partial class Form1 : Form
+    public partial class UpravljanjeSkladistemMainForm : Form
     {
-        public Form1()
+        public UpravljanjeSkladistemMainForm()
         {
             InitializeComponent();
         }

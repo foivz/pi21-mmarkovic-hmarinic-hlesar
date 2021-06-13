@@ -32,5 +32,17 @@ namespace SkladisteDb
                 return query.ToList();
             }
         }
+
+        public static MjernaJedinica DohvatiMjernuJedinicuPoIdu(int id)
+        {
+            using (var context = new SkladisteDatabase())
+            {
+                var query = from mj in context.MjernaJedinicas
+                            where mj.Id == id
+                            select mj;
+
+                return query.Single();
+            }
+        }
     }
 }

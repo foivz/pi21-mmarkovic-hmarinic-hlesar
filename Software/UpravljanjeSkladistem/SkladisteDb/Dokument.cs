@@ -22,7 +22,6 @@ namespace SkladisteDb
     
         public int Id { get; set; }
         public Nullable<int> Vrsta { get; set; }
-        public string Naziv { get; set; }
         public Nullable<System.DateTime> Datum { get; set; }
         public Nullable<int> Klijent { get; set; }
         public Nullable<int> Unio { get; set; }

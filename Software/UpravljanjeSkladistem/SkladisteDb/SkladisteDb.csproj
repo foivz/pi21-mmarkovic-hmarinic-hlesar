@@ -53,9 +53,11 @@
     <Compile Include="Dokument.cs">
       <DependentUpon>SkladisteDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="DokumentExt.cs" />
     <Compile Include="Korisnik.cs">
       <DependentUpon>SkladisteDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="KorisnikExt.cs" />
     <Compile Include="Lokacija.cs">
       <DependentUpon>SkladisteDb.tt</DependentUpon>
     </Compile>
@@ -92,12 +94,15 @@
     <Compile Include="StavkeDokumenta.cs">
       <DependentUpon>SkladisteDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="StavkeDokumentaExt.cs" />
     <Compile Include="Uloga.cs">
       <DependentUpon>SkladisteDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="UlogaExt.cs" />
     <Compile Include="VrstaDokumenta.cs">
       <DependentUpon>SkladisteDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="VrstaDokumentaExt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

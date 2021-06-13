@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="358d4b8bf5564a80a2ee7991a0da73b1" Name="Diagram1">
-        <EntityTypeShape EntityType="SkladisteDatabaseEntities.Dokument" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkladisteDatabaseEntities.Dokument" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SkladisteDatabaseEntities.Korisnik" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="SkladisteDatabaseEntities.Lokacija" Width="1.5" PointX="6.5" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SkladisteDatabaseEntities.MjernaJedinica" Width="1.5" PointX="4.75" PointY="7.625" IsExpanded="true" />

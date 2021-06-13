@@ -16,7 +16,7 @@ namespace KreiranjePrimki
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new KreiranjePrimkiForm());
+            Application.Run(new PregledPrimkiForm());
         }
     }
 }

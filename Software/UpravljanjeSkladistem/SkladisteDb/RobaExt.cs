@@ -236,5 +236,17 @@ namespace SkladisteDb
                 return roba;
             }
         }
+
+        public static Roba DovhatiRobuPoIdu(int id)
+        {
+            using (var context = new SkladisteDatabase())
+            {
+                var query = from roba in context.Robas
+                            where roba.Id == id
+                            select roba;
+
+                return query.Single();
+            }
+        }
     }
 }
