@@ -76,3 +76,4 @@ CREATE TABLE RobaNaLokaciji (
 	Kolicina INT,
 );
 
+INSERT INTO VrstaDokumenta (Naziv) VALUES ('Primka'), ('Izdatnica');
