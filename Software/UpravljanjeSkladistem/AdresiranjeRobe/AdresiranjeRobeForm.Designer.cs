@@ -1,7 +1,7 @@
 ﻿
 namespace AdresiranjeRobe
 {
-    partial class AdresiranjeRobe
+    partial class AdresiranjeRobeForm
     {
         /// <summary>
         /// Required designer variable.

@@ -57,6 +57,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MjernaJedinica" Type="int" />
           <Property Name="Naziv" Type="varchar" MaxLength="255" />
+          <Property Name="Opis" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="RobaNaLokaciji">
           <Key>
@@ -90,7 +91,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Naziv" Type="varchar" MaxLength="255" />
         </EntityType>
-        <Association Name="FK__Dokument__Klijen__3493CFA7">
+        <Association Name="FK__Dokument__Klijen__7D0E9093">
           <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="0..1" />
           <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
           <ReferentialConstraint>
@@ -102,7 +103,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Dokument__Unio__3587F3E0">
+        <Association Name="FK__Dokument__Unio__7E02B4CC">
           <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="0..1" />
           <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
           <ReferentialConstraint>
@@ -114,7 +115,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Dokument__Vrsta__339FAB6E">
+        <Association Name="FK__Dokument__Vrsta__7C1A6C5A">
           <End Role="VrstaDokumenta" Type="Self.VrstaDokumenta" Multiplicity="0..1" />
           <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
           <ReferentialConstraint>
@@ -126,7 +127,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Korisnik__IdUlog__2EDAF651">
+        <Association Name="FK__Korisnik__IdUlog__7755B73D">
           <End Role="Uloga" Type="Self.Uloga" Multiplicity="0..1" />
           <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
           <ReferentialConstraint>
@@ -138,7 +139,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Lokacija__Nadlok__40F9A68C">
+        <Association Name="FK__Lokacija__Nadlok__09746778">
           <End Role="Lokacija" Type="Self.Lokacija" Multiplicity="0..1" />
           <End Role="Lokacija1" Type="Self.Lokacija" Multiplicity="*" />
           <ReferentialConstraint>
@@ -150,7 +151,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Roba__MjernaJedi__3A4CA8FD">
+        <Association Name="FK__Roba__MjernaJedi__02C769E9">
           <End Role="MjernaJedinica" Type="Self.MjernaJedinica" Multiplicity="0..1" />
           <End Role="Roba" Type="Self.Roba" Multiplicity="*" />
           <ReferentialConstraint>
@@ -162,7 +163,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__RobaNaLok__IdLok__44CA3770">
+        <Association Name="FK__RobaNaLok__IdLok__0D44F85C">
           <End Role="Lokacija" Type="Self.Lokacija" Multiplicity="1" />
           <End Role="RobaNaLokaciji" Type="Self.RobaNaLokaciji" Multiplicity="*" />
           <ReferentialConstraint>
@@ -174,7 +175,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__RobaNaLok__IdRob__43D61337">
+        <Association Name="FK__RobaNaLok__IdRob__0C50D423">
           <End Role="Roba" Type="Self.Roba" Multiplicity="1" />
           <End Role="RobaNaLokaciji" Type="Self.RobaNaLokaciji" Multiplicity="*" />
           <ReferentialConstraint>
@@ -186,7 +187,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__StavkeDok__IdDok__3D2915A8">
+        <Association Name="FK__StavkeDok__IdDok__05A3D694">
           <End Role="Dokument" Type="Self.Dokument" Multiplicity="1" />
           <End Role="StavkeDokumenta" Type="Self.StavkeDokumenta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -198,7 +199,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__StavkeDok__IdRob__3E1D39E1">
+        <Association Name="FK__StavkeDok__IdRob__0697FACD">
           <End Role="Roba" Type="Self.Roba" Multiplicity="1" />
           <End Role="StavkeDokumenta" Type="Self.StavkeDokumenta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -220,43 +221,43 @@
           <EntitySet Name="StavkeDokumenta" EntityType="Self.StavkeDokumenta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Uloga" EntityType="Self.Uloga" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VrstaDokumenta" EntityType="Self.VrstaDokumenta" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Dokument__Klijen__3493CFA7" Association="Self.FK__Dokument__Klijen__3493CFA7">
+          <AssociationSet Name="FK__Dokument__Klijen__7D0E9093" Association="Self.FK__Dokument__Klijen__7D0E9093">
             <End Role="Korisnik" EntitySet="Korisnik" />
             <End Role="Dokument" EntitySet="Dokument" />
           </AssociationSet>
-          <AssociationSet Name="FK__Dokument__Unio__3587F3E0" Association="Self.FK__Dokument__Unio__3587F3E0">
+          <AssociationSet Name="FK__Dokument__Unio__7E02B4CC" Association="Self.FK__Dokument__Unio__7E02B4CC">
             <End Role="Korisnik" EntitySet="Korisnik" />
             <End Role="Dokument" EntitySet="Dokument" />
           </AssociationSet>
-          <AssociationSet Name="FK__Dokument__Vrsta__339FAB6E" Association="Self.FK__Dokument__Vrsta__339FAB6E">
+          <AssociationSet Name="FK__Dokument__Vrsta__7C1A6C5A" Association="Self.FK__Dokument__Vrsta__7C1A6C5A">
             <End Role="VrstaDokumenta" EntitySet="VrstaDokumenta" />
             <End Role="Dokument" EntitySet="Dokument" />
           </AssociationSet>
-          <AssociationSet Name="FK__Korisnik__IdUlog__2EDAF651" Association="Self.FK__Korisnik__IdUlog__2EDAF651">
+          <AssociationSet Name="FK__Korisnik__IdUlog__7755B73D" Association="Self.FK__Korisnik__IdUlog__7755B73D">
             <End Role="Uloga" EntitySet="Uloga" />
             <End Role="Korisnik" EntitySet="Korisnik" />
           </AssociationSet>
-          <AssociationSet Name="FK__Lokacija__Nadlok__40F9A68C" Association="Self.FK__Lokacija__Nadlok__40F9A68C">
+          <AssociationSet Name="FK__Lokacija__Nadlok__09746778" Association="Self.FK__Lokacija__Nadlok__09746778">
             <End Role="Lokacija" EntitySet="Lokacija" />
             <End Role="Lokacija1" EntitySet="Lokacija" />
           </AssociationSet>
-          <AssociationSet Name="FK__Roba__MjernaJedi__3A4CA8FD" Association="Self.FK__Roba__MjernaJedi__3A4CA8FD">
+          <AssociationSet Name="FK__Roba__MjernaJedi__02C769E9" Association="Self.FK__Roba__MjernaJedi__02C769E9">
             <End Role="MjernaJedinica" EntitySet="MjernaJedinica" />
             <End Role="Roba" EntitySet="Roba" />
           </AssociationSet>
-          <AssociationSet Name="FK__RobaNaLok__IdLok__44CA3770" Association="Self.FK__RobaNaLok__IdLok__44CA3770">
+          <AssociationSet Name="FK__RobaNaLok__IdLok__0D44F85C" Association="Self.FK__RobaNaLok__IdLok__0D44F85C">
             <End Role="Lokacija" EntitySet="Lokacija" />
             <End Role="RobaNaLokaciji" EntitySet="RobaNaLokaciji" />
           </AssociationSet>
-          <AssociationSet Name="FK__RobaNaLok__IdRob__43D61337" Association="Self.FK__RobaNaLok__IdRob__43D61337">
+          <AssociationSet Name="FK__RobaNaLok__IdRob__0C50D423" Association="Self.FK__RobaNaLok__IdRob__0C50D423">
             <End Role="Roba" EntitySet="Roba" />
             <End Role="RobaNaLokaciji" EntitySet="RobaNaLokaciji" />
           </AssociationSet>
-          <AssociationSet Name="FK__StavkeDok__IdDok__3D2915A8" Association="Self.FK__StavkeDok__IdDok__3D2915A8">
+          <AssociationSet Name="FK__StavkeDok__IdDok__05A3D694" Association="Self.FK__StavkeDok__IdDok__05A3D694">
             <End Role="Dokument" EntitySet="Dokument" />
             <End Role="StavkeDokumenta" EntitySet="StavkeDokumenta" />
           </AssociationSet>
-          <AssociationSet Name="FK__StavkeDok__IdRob__3E1D39E1" Association="Self.FK__StavkeDok__IdRob__3E1D39E1">
+          <AssociationSet Name="FK__StavkeDok__IdRob__0697FACD" Association="Self.FK__StavkeDok__IdRob__0697FACD">
             <End Role="Roba" EntitySet="Roba" />
             <End Role="StavkeDokumenta" EntitySet="StavkeDokumenta" />
           </AssociationSet>
@@ -331,6 +332,7 @@
           <NavigationProperty Name="MjernaJedinica1" Relationship="Self.FK__Roba__MjernaJedi__3A4CA8FD" FromRole="Roba" ToRole="MjernaJedinica" />
           <NavigationProperty Name="RobaNaLokacijis" Relationship="Self.FK__RobaNaLok__IdRob__43D61337" FromRole="Roba" ToRole="RobaNaLokaciji" />
           <NavigationProperty Name="StavkeDokumentas" Relationship="Self.FK__StavkeDok__IdRob__3E1D39E1" FromRole="Roba" ToRole="StavkeDokumenta" />
+          <Property Name="Opis" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="RobaNaLokaciji">
           <Key>
@@ -599,6 +601,7 @@
           <EntitySetMapping Name="Robas">
             <EntityTypeMapping TypeName="SkladisteDatabaseEntities.Roba">
               <MappingFragment StoreEntitySet="Roba">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="MjernaJedinica" ColumnName="MjernaJedinica" />
                 <ScalarProperty Name="Naziv" ColumnName="Naziv" />

@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace AdresiranjeRobe
 {
-    public partial class AdresiranjeRobe : Form
+    public partial class AdresiranjeRobeForm : Form
     {
         private Lokacija zadnjeOdabranaLokacija;
         private TreeNode zadnjeOdabraniNode;
-        public AdresiranjeRobe()
+        public AdresiranjeRobeForm()
         {
             InitializeComponent();
         }

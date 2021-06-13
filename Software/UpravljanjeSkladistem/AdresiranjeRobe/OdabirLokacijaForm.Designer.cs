@@ -1,7 +1,7 @@
 ﻿
 namespace AdresiranjeRobe
 {
-    partial class OdabirLokacija
+    partial class OdabirLokacijaForm
     {
         /// <summary>
         /// Required designer variable.

@@ -114,7 +114,7 @@ namespace PretragaRobe
 
         private void izborLokacijeButton_Click(object sender, EventArgs e)
         {
-            OdabirLokacija odabirLokacijaForm = new OdabirLokacija();
+            OdabirLokacijaForm odabirLokacijaForm = new OdabirLokacijaForm();
             odabirLokacijaForm.ShowDialog();
             
             if (odabirLokacijaForm.OdabranaLokacija != null)

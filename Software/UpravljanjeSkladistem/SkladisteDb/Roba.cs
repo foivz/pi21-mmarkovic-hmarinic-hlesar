@@ -24,6 +24,7 @@ namespace SkladisteDb
         public int Id { get; set; }
         public Nullable<int> MjernaJedinica { get; set; }
         public string Naziv { get; set; }
+        public string Opis { get; set; }
     
         public virtual MjernaJedinica MjernaJedinica1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

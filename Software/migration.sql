@@ -53,6 +53,7 @@ CREATE TABLE Roba (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	MjernaJedinica INT REFERENCES MjernaJedinica(id),
 	Naziv VARCHAR(255),
+	Opis VARCHAR(255),
 );
 
 CREATE TABLE StavkeDokumenta (

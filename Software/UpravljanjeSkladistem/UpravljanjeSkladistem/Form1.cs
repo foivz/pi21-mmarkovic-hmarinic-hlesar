@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdresiranjeRobe;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace UpravljanjeSkladistem
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdresiranjeRobeForm f = new AdresiranjeRobeForm();
+            f.ShowDialog();
         }
     }
 }

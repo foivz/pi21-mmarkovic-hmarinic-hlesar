@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdresiranjeRobe
+namespace UnosRobe
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace AdresiranjeRobe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdresiranjeRobeForm());
+            Application.Run(new UnosRobeForm());
         }
     }
 }

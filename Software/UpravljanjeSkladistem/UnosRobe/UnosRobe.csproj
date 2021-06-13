@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A4F82255-CE57-433B-A018-733B34D7382F}</ProjectGuid>
+    <ProjectGuid>{C888EE66-A76E-4B3E-9677-E3B27D7EF383}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>UpravljanjeSkladistem</RootNamespace>
-    <AssemblyName>UpravljanjeSkladistem</AssemblyName>
+    <RootNamespace>UnosRobe</RootNamespace>
+    <AssemblyName>UnosRobe</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,8 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="EntityFramework">
       <HintPath>..\SkladisteDb\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
@@ -53,17 +52,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="UnosRobeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UnosRobeForm.Designer.cs">
+      <DependentUpon>UnosRobeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="UrediForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UrediForm.Designer.cs">
+      <DependentUpon>UrediForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -73,6 +75,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UnosRobeForm.resx">
+      <DependentUpon>UnosRobeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UrediForm.resx">
+      <DependentUpon>UrediForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\SkladisteDb.Roba.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,9 +96,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdresiranjeRobe\AdresiranjeRobe.csproj">
-      <Project>{EF645E42-BC33-4659-8746-9F92C7CE8147}</Project>
-      <Name>AdresiranjeRobe</Name>
+    <ProjectReference Include="..\SkladisteDb\SkladisteDb.csproj">
+      <Project>{857e0e54-be57-4546-b465-a3df4c869d57}</Project>
+      <Name>SkladisteDb</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

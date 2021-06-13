@@ -53,25 +53,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdresiranjeRobe.cs">
+    <Compile Include="AdresiranjeRobeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdresiranjeRobe.Designer.cs">
-      <DependentUpon>AdresiranjeRobe.cs</DependentUpon>
+    <Compile Include="AdresiranjeRobeForm.Designer.cs">
+      <DependentUpon>AdresiranjeRobeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OdabirLokacija.cs">
+    <Compile Include="OdabirLokacijaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OdabirLokacija.Designer.cs">
-      <DependentUpon>OdabirLokacija.cs</DependentUpon>
+    <Compile Include="OdabirLokacijaForm.Designer.cs">
+      <DependentUpon>OdabirLokacijaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AdresiranjeRobe.resx">
-      <DependentUpon>AdresiranjeRobe.cs</DependentUpon>
+    <EmbeddedResource Include="AdresiranjeRobeForm.resx">
+      <DependentUpon>AdresiranjeRobeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OdabirLokacija.resx">
-      <DependentUpon>OdabirLokacija.cs</DependentUpon>
+    <EmbeddedResource Include="OdabirLokacijaForm.resx">
+      <DependentUpon>OdabirLokacijaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
