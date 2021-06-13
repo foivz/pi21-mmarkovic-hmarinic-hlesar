@@ -41,6 +41,7 @@ namespace AdresiranjeRobe
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NazivMjerneJedinice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mjernaJedinicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mjernaJedinica1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.robaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -65,12 +66,12 @@ namespace AdresiranjeRobe
             this.groupBox2.Controls.Add(this.dodajLokacijuButton);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.nazivNoveLokacijeTextBox);
-            this.groupBox2.Location = new System.Drawing.Point(12, 346);
+            this.groupBox2.Location = new System.Drawing.Point(18, 346);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(193, 124);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Nova lokacija";
+            this.groupBox2.Text = "Dodavanje nove lokacije";
             // 
             // nemaNadlokacijeCheckBox
             // 
@@ -140,6 +141,7 @@ namespace AdresiranjeRobe
             this.idDataGridViewTextBoxColumn1,
             this.nazivDataGridViewTextBoxColumn1,
             this.Kolicina,
+            this.NazivMjerneJedinice,
             this.mjernaJedinicaDataGridViewTextBoxColumn,
             this.mjernaJedinica1DataGridViewTextBoxColumn});
             this.robaDgv.DataSource = this.robaBindingSource;
@@ -170,12 +172,20 @@ namespace AdresiranjeRobe
             this.Kolicina.Name = "Kolicina";
             this.Kolicina.ReadOnly = true;
             // 
+            // NazivMjerneJedinice
+            // 
+            this.NazivMjerneJedinice.DataPropertyName = "NazivMjerneJedinice";
+            this.NazivMjerneJedinice.HeaderText = "Mjerna jedinica";
+            this.NazivMjerneJedinice.Name = "NazivMjerneJedinice";
+            this.NazivMjerneJedinice.ReadOnly = true;
+            // 
             // mjernaJedinicaDataGridViewTextBoxColumn
             // 
             this.mjernaJedinicaDataGridViewTextBoxColumn.DataPropertyName = "MjernaJedinica";
             this.mjernaJedinicaDataGridViewTextBoxColumn.HeaderText = "MjernaJedinica";
             this.mjernaJedinicaDataGridViewTextBoxColumn.Name = "mjernaJedinicaDataGridViewTextBoxColumn";
             this.mjernaJedinicaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mjernaJedinicaDataGridViewTextBoxColumn.Visible = false;
             // 
             // mjernaJedinica1DataGridViewTextBoxColumn
             // 
@@ -239,9 +249,9 @@ namespace AdresiranjeRobe
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.obrisiOdabranuLokacijuButton);
-            this.groupBox1.Location = new System.Drawing.Point(211, 346);
+            this.groupBox1.Location = new System.Drawing.Point(217, 346);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(193, 63);
+            this.groupBox1.Size = new System.Drawing.Size(161, 63);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Brisanje odabrane lokacije";
@@ -251,13 +261,13 @@ namespace AdresiranjeRobe
             this.obrisiOdabranuLokacijuButton.ForeColor = System.Drawing.Color.Red;
             this.obrisiOdabranuLokacijuButton.Location = new System.Drawing.Point(6, 19);
             this.obrisiOdabranuLokacijuButton.Name = "obrisiOdabranuLokacijuButton";
-            this.obrisiOdabranuLokacijuButton.Size = new System.Drawing.Size(181, 36);
+            this.obrisiOdabranuLokacijuButton.Size = new System.Drawing.Size(149, 36);
             this.obrisiOdabranuLokacijuButton.TabIndex = 11;
-            this.obrisiOdabranuLokacijuButton.Text = "Obrisi odabranu lokaciju";
+            this.obrisiOdabranuLokacijuButton.Text = "Obriši odabranu lokaciju";
             this.obrisiOdabranuLokacijuButton.UseVisualStyleBackColor = true;
             this.obrisiOdabranuLokacijuButton.Click += new System.EventHandler(this.obrisiOdabranuLokacijuButton_Click);
             // 
-            // AdresiranjeRobe
+            // AdresiranjeRobeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -269,7 +279,7 @@ namespace AdresiranjeRobe
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
-            this.Name = "AdresiranjeRobe";
+            this.Name = "AdresiranjeRobeForm";
             this.Text = "Adresiranje Robe";
             this.Load += new System.EventHandler(this.AdresiranjeRobe_Load);
             this.groupBox2.ResumeLayout(false);
@@ -296,11 +306,6 @@ namespace AdresiranjeRobe
         private System.Windows.Forms.DataGridView robaDgv;
         private System.Windows.Forms.CheckBox robaNaOdredenojLokacijiCheckBox;
         private System.Windows.Forms.BindingSource robaBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Kolicina;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mjernaJedinicaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mjernaJedinica1DataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TreeView stableniPrikazTreeView;
         private System.Windows.Forms.Label label2;
@@ -308,6 +313,12 @@ namespace AdresiranjeRobe
         private System.Windows.Forms.Button izlazButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button obrisiOdabranuLokacijuButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Kolicina;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NazivMjerneJedinice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mjernaJedinicaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mjernaJedinica1DataGridViewTextBoxColumn;
     }
 }
 

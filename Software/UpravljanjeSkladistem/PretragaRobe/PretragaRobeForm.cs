@@ -15,20 +15,26 @@ namespace PretragaRobe
     public partial class PretragaRobeForm : Form
     {
         private Lokacija zadnjeOdabranaLokacija;
+        public Roba zadnjeOdabranaRoba;
         public PretragaRobeForm()
         {
             InitializeComponent();
+        }
+        public PretragaRobeForm(bool zaOdabir)
+        {
+            InitializeComponent();
+            odaberiRobuButton.Visible = true;
         }
 
         private void PretragaRobeForm_Load(object sender, EventArgs e)
         {
             odabranaLokacijaLabel.Text = "Lokacija nije odabrana";
-            robaKolicinaBindingSource.DataSource = RobaKolicina.DohvatiSvuRobu();
+            robaBindingSource.DataSource = Roba.DohvatiSvuRobu();
         }
 
         private void pretragaRobeButton_Click(object sender, EventArgs e)
         {
-            List<RobaKolicina> roba = new List<RobaKolicina>();
+            List<Roba> roba = new List<Roba>();
             string nazivRobe = nazivRobeTextBox.Text.Trim();
             string minimumKolicina = minimumTextBox.Text.Trim();
             string maksimumKolicina = maksimumTextBox.Text.Trim();
@@ -37,7 +43,7 @@ namespace PretragaRobe
             {
                 try
                 {
-                    RobaKolicina prodenaRoba = RobaKolicina.DohvatiRobuPoNazivu(nazivRobe);
+                    Roba prodenaRoba = Roba.DohvatiRobuPoNazivu(nazivRobe);
                     roba.Add(prodenaRoba);
                 }
                 catch (NepronadenaVrijednostException err)
@@ -48,7 +54,7 @@ namespace PretragaRobe
             }
             else
             {
-                roba = RobaKolicina.DohvatiSvuRobu();
+                roba = Roba.DohvatiSvuRobu();
             }
 
             try
@@ -58,11 +64,11 @@ namespace PretragaRobe
 
                 if (minimumBroj == 0 && maksimumBroj == 0)
                 {
-                    robaKolicinaBindingSource.DataSource = roba;
+                    robaBindingSource.DataSource = roba;
                 }
                 else
                 {
-                    robaKolicinaBindingSource.DataSource = FiltrirajRobu(minimumBroj, maksimumBroj, roba);
+                    robaBindingSource.DataSource = FiltrirajRobu(minimumBroj, maksimumBroj, roba);
                 }
             }
             catch (Exception)
@@ -71,9 +77,9 @@ namespace PretragaRobe
             }
         }
 
-        private List<RobaKolicina> FiltrirajRobu(int min, int max, List<RobaKolicina> roba)
+        private List<Roba> FiltrirajRobu(int min, int max, List<Roba> roba)
         {
-            List<RobaKolicina> filtriranaRoba = new List<RobaKolicina>();
+            List<Roba> filtriranaRoba = new List<Roba>();
 
             if (max == 0)
             {
@@ -121,13 +127,13 @@ namespace PretragaRobe
             {
                 zadnjeOdabranaLokacija = odabirLokacijaForm.OdabranaLokacija;
                 odabranaLokacijaLabel.Text = zadnjeOdabranaLokacija.Naziv;
-                robaKolicinaBindingSource.DataSource = zadnjeOdabranaLokacija.DohvatiSvuRobuNaLokaciji();
+                robaBindingSource.DataSource = Roba.DohvatiSvuRobuNaLokaciji(zadnjeOdabranaLokacija);
             }
         }
 
         private void pretraziRobuNaOdabranojLokacijiButton_Click(object sender, EventArgs e)
         {
-            List<RobaKolicina> roba = new List<RobaKolicina>();
+            List<Roba> roba = new List<Roba>();
             string nazivRobe = nazivRobeTextBox.Text.Trim();
             string minimumKolicina = minimumTextBox.Text.Trim();
             string maksimumKolicina = maksimumTextBox.Text.Trim();
@@ -140,7 +146,7 @@ namespace PretragaRobe
 
             if (nazivRobe != String.Empty)
             {
-                roba = RobaKolicina.DohvatiRobuPoNazivuILokaciji(nazivRobe, zadnjeOdabranaLokacija);
+                roba = Roba.DohvatiRobuPoNazivuILokaciji(nazivRobe, zadnjeOdabranaLokacija);
 
                 if (roba.Count == 0)
                 {
@@ -150,7 +156,7 @@ namespace PretragaRobe
             }
             else
             {
-                roba = zadnjeOdabranaLokacija.DohvatiSvuRobuNaLokaciji();
+                roba = Roba.DohvatiSvuRobuNaLokaciji(zadnjeOdabranaLokacija);
             }
 
             try
@@ -160,17 +166,41 @@ namespace PretragaRobe
 
                 if (minimumBroj == 0 && maksimumBroj == 0)
                 {
-                    robaKolicinaBindingSource.DataSource = roba;
+                    robaBindingSource.DataSource = roba;
                 }
                 else
                 {
-                    robaKolicinaBindingSource.DataSource = FiltrirajRobu(minimumBroj, maksimumBroj, roba);
+                    robaBindingSource.DataSource = FiltrirajRobu(minimumBroj, maksimumBroj, roba);
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("Uneseni minimum ili maksimum količine nije cijeli broj!");
             }
+        }
+
+        private void prikaziSvuRobuButton_Click(object sender, EventArgs e)
+        {
+            robaBindingSource.DataSource = Roba.DohvatiSvuRobu();
+        }
+
+        private void robaBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            if (robaBindingSource.Current as Roba != null)
+            {
+                zadnjeOdabranaRoba = robaBindingSource.Current as Roba;
+            }
+        }
+
+        private void odaberiRobu_Click(object sender, EventArgs e)
+        {
+            if (zadnjeOdabranaRoba == null)
+            {
+                MessageBox.Show("Niste odabrali robu!");
+                return;
+            }
+
+            Close();
         }
     }
 }

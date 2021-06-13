@@ -35,12 +35,11 @@ namespace PretragaRobe
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NazivMjerneJedinice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mjernaJedinicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.robaKolicinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.robaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pretraziRobuNaOdabranojLokacijiButton = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.mjernaJedinicaComboBox = new System.Windows.Forms.ComboBox();
             this.izborLokacijeButton = new System.Windows.Forms.Button();
             this.odabranaLokacijaLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,9 +50,11 @@ namespace PretragaRobe
             this.pretragaRobeButton = new System.Windows.Forms.Button();
             this.minimumTextBox = new System.Windows.Forms.TextBox();
             this.nazivRobeTextBox = new System.Windows.Forms.TextBox();
+            this.odaberiRobuButton = new System.Windows.Forms.Button();
+            this.prikaziSvuRobuButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.robaKolicinaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.robaBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,8 +78,9 @@ namespace PretragaRobe
             this.idDataGridViewTextBoxColumn,
             this.nazivDataGridViewTextBoxColumn,
             this.kolicinaDataGridViewTextBoxColumn,
+            this.NazivMjerneJedinice,
             this.mjernaJedinicaDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.robaKolicinaBindingSource;
+            this.dataGridView1.DataSource = this.robaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -106,6 +108,13 @@ namespace PretragaRobe
             this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
             this.kolicinaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // NazivMjerneJedinice
+            // 
+            this.NazivMjerneJedinice.DataPropertyName = "NazivMjerneJedinice";
+            this.NazivMjerneJedinice.HeaderText = "Mjerna Jedinica";
+            this.NazivMjerneJedinice.Name = "NazivMjerneJedinice";
+            this.NazivMjerneJedinice.ReadOnly = true;
+            // 
             // mjernaJedinicaDataGridViewTextBoxColumn
             // 
             this.mjernaJedinicaDataGridViewTextBoxColumn.DataPropertyName = "MjernaJedinica";
@@ -113,15 +122,14 @@ namespace PretragaRobe
             this.mjernaJedinicaDataGridViewTextBoxColumn.Name = "mjernaJedinicaDataGridViewTextBoxColumn";
             this.mjernaJedinicaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // robaKolicinaBindingSource
+            // robaBindingSource
             // 
-            this.robaKolicinaBindingSource.DataSource = typeof(SkladisteDb.RobaKolicina);
+            this.robaBindingSource.DataSource = typeof(SkladisteDb.Roba);
+            this.robaBindingSource.CurrentChanged += new System.EventHandler(this.robaBindingSource_CurrentChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.pretraziRobuNaOdabranojLokacijiButton);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.mjernaJedinicaComboBox);
             this.groupBox2.Controls.Add(this.izborLokacijeButton);
             this.groupBox2.Controls.Add(this.odabranaLokacijaLabel);
             this.groupBox2.Controls.Add(this.label4);
@@ -134,14 +142,14 @@ namespace PretragaRobe
             this.groupBox2.Controls.Add(this.nazivRobeTextBox);
             this.groupBox2.Location = new System.Drawing.Point(479, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(264, 357);
+            this.groupBox2.Size = new System.Drawing.Size(264, 302);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pretraga robe";
             // 
             // pretraziRobuNaOdabranojLokacijiButton
             // 
-            this.pretraziRobuNaOdabranojLokacijiButton.Location = new System.Drawing.Point(6, 306);
+            this.pretraziRobuNaOdabranojLokacijiButton.Location = new System.Drawing.Point(6, 183);
             this.pretraziRobuNaOdabranojLokacijiButton.Name = "pretraziRobuNaOdabranojLokacijiButton";
             this.pretraziRobuNaOdabranojLokacijiButton.Size = new System.Drawing.Size(250, 40);
             this.pretraziRobuNaOdabranojLokacijiButton.TabIndex = 11;
@@ -149,26 +157,9 @@ namespace PretragaRobe
             this.pretraziRobuNaOdabranojLokacijiButton.UseVisualStyleBackColor = true;
             this.pretraziRobuNaOdabranojLokacijiButton.Click += new System.EventHandler(this.pretraziRobuNaOdabranojLokacijiButton_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 134);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Mjerna jedinica:";
-            // 
-            // mjernaJedinicaComboBox
-            // 
-            this.mjernaJedinicaComboBox.FormattingEnabled = true;
-            this.mjernaJedinicaComboBox.Location = new System.Drawing.Point(6, 150);
-            this.mjernaJedinicaComboBox.Name = "mjernaJedinicaComboBox";
-            this.mjernaJedinicaComboBox.Size = new System.Drawing.Size(121, 21);
-            this.mjernaJedinicaComboBox.TabIndex = 9;
-            // 
             // izborLokacijeButton
             // 
-            this.izborLokacijeButton.Location = new System.Drawing.Point(6, 238);
+            this.izborLokacijeButton.Location = new System.Drawing.Point(6, 250);
             this.izborLokacijeButton.Name = "izborLokacijeButton";
             this.izborLokacijeButton.Size = new System.Drawing.Size(250, 40);
             this.izborLokacijeButton.TabIndex = 3;
@@ -180,7 +171,7 @@ namespace PretragaRobe
             // 
             this.odabranaLokacijaLabel.AutoSize = true;
             this.odabranaLokacijaLabel.ForeColor = System.Drawing.Color.Red;
-            this.odabranaLokacijaLabel.Location = new System.Drawing.Point(108, 288);
+            this.odabranaLokacijaLabel.Location = new System.Drawing.Point(108, 234);
             this.odabranaLokacijaLabel.Name = "odabranaLokacijaLabel";
             this.odabranaLokacijaLabel.Size = new System.Drawing.Size(63, 13);
             this.odabranaLokacijaLabel.TabIndex = 5;
@@ -207,7 +198,7 @@ namespace PretragaRobe
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 288);
+            this.label2.Location = new System.Drawing.Point(6, 234);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 4;
@@ -231,7 +222,7 @@ namespace PretragaRobe
             // 
             // pretragaRobeButton
             // 
-            this.pretragaRobeButton.Location = new System.Drawing.Point(6, 179);
+            this.pretragaRobeButton.Location = new System.Drawing.Point(6, 137);
             this.pretragaRobeButton.Name = "pretragaRobeButton";
             this.pretragaRobeButton.Size = new System.Drawing.Size(250, 40);
             this.pretragaRobeButton.TabIndex = 3;
@@ -253,11 +244,35 @@ namespace PretragaRobe
             this.nazivRobeTextBox.Size = new System.Drawing.Size(122, 20);
             this.nazivRobeTextBox.TabIndex = 0;
             // 
+            // odaberiRobuButton
+            // 
+            this.odaberiRobuButton.Location = new System.Drawing.Point(485, 477);
+            this.odaberiRobuButton.Name = "odaberiRobuButton";
+            this.odaberiRobuButton.Size = new System.Drawing.Size(250, 40);
+            this.odaberiRobuButton.TabIndex = 12;
+            this.odaberiRobuButton.Text = "Odaberi robu";
+            this.odaberiRobuButton.UseVisualStyleBackColor = true;
+            this.odaberiRobuButton.Visible = false;
+            this.odaberiRobuButton.Click += new System.EventHandler(this.odaberiRobu_Click);
+            // 
+            // prikaziSvuRobuButton
+            // 
+            this.prikaziSvuRobuButton.Location = new System.Drawing.Point(485, 320);
+            this.prikaziSvuRobuButton.Name = "prikaziSvuRobuButton";
+            this.prikaziSvuRobuButton.Size = new System.Drawing.Size(250, 40);
+            this.prikaziSvuRobuButton.TabIndex = 13;
+            this.prikaziSvuRobuButton.Text = "Prikaži svu robu";
+            this.prikaziSvuRobuButton.UseVisualStyleBackColor = true;
+            this.prikaziSvuRobuButton.Visible = false;
+            this.prikaziSvuRobuButton.Click += new System.EventHandler(this.prikaziSvuRobuButton_Click);
+            // 
             // PretragaRobeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(756, 529);
+            this.Controls.Add(this.prikaziSvuRobuButton);
+            this.Controls.Add(this.odaberiRobuButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "PretragaRobeForm";
@@ -265,7 +280,7 @@ namespace PretragaRobe
             this.Load += new System.EventHandler(this.PretragaRobeForm_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.robaKolicinaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.robaBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -281,20 +296,21 @@ namespace PretragaRobe
         private System.Windows.Forms.Button pretragaRobeButton;
         private System.Windows.Forms.TextBox minimumTextBox;
         private System.Windows.Forms.TextBox nazivRobeTextBox;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox mjernaJedinicaComboBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox maksimumTextBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mjernaJedinicaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource robaKolicinaBindingSource;
         private System.Windows.Forms.Button izborLokacijeButton;
         private System.Windows.Forms.Button pretraziRobuNaOdabranojLokacijiButton;
         private System.Windows.Forms.Label odabranaLokacijaLabel;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button odaberiRobuButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NazivMjerneJedinice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mjernaJedinicaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource robaBindingSource;
+        private System.Windows.Forms.Button prikaziSvuRobuButton;
     }
 }
 

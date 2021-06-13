@@ -8,23 +8,6 @@ namespace SkladisteDb
 {
     partial class Lokacija
     {
-        public List<RobaKolicina> DohvatiSvuRobuNaLokaciji()
-        {
-            using (var context = new SkladisteDatabase())
-            {
-                var query = from rnl in context.RobaNaLokacijis
-                            where rnl.IdLokacija == this.Id
-                            select new RobaKolicina
-                            {
-                                Id = rnl.Roba.Id,
-                                MjernaJedinica = rnl.Roba.MjernaJedinica,
-                                Naziv = rnl.Roba.Naziv,
-                                Kolicina = rnl.Kolicina,
-                            };
-
-                return query.ToList();
-            }
-        }
 
         public static void DodajLokaciju(Lokacija lokacija)
         {
@@ -82,11 +65,11 @@ namespace SkladisteDb
             }
         }
 
-        public void DohvatiRobuNaSvimPodlokacijama(ref List<RobaKolicina> roba)
+        public void DohvatiRobuNaSvimPodlokacijama(ref List<Roba> roba)
         {
-            foreach (var zapis in this.DohvatiSvuRobuNaLokaciji())
+            foreach (var zapis in Roba.DohvatiSvuRobuNaLokaciji(this))
             {
-                RobaKolicina pronadeniZapis = roba.Find(x => x.Id == zapis.Id);
+                Roba pronadeniZapis = roba.Find(x => x.Id == zapis.Id);
                 if (pronadeniZapis == null)
                 {
                     roba.Add(zapis);
@@ -126,7 +109,7 @@ namespace SkladisteDb
                     context.SaveChanges();
                     return true;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     return false;
                 }

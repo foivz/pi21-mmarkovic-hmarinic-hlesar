@@ -96,6 +96,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AdresiranjeRobe\AdresiranjeRobe.csproj">
+      <Project>{EF645E42-BC33-4659-8746-9F92C7CE8147}</Project>
+      <Name>AdresiranjeRobe</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PretragaRobe\PretragaRobe.csproj">
+      <Project>{A1075B29-E674-4C8C-965B-781BB2ADD4E7}</Project>
+      <Name>PretragaRobe</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SkladisteDb\SkladisteDb.csproj">
       <Project>{857e0e54-be57-4546-b465-a3df4c869d57}</Project>
       <Name>SkladisteDb</Name>

@@ -81,21 +81,21 @@ namespace AdresiranjeRobe
 
             if (!robaNaOdredenojLokacijiCheckBox.Checked)
             {
-                robaBindingSource.DataSource = zadnjeOdabranaLokacija.DohvatiSvuRobuNaLokaciji();
+                robaBindingSource.DataSource = Roba.DohvatiSvuRobuNaLokaciji(zadnjeOdabranaLokacija);
             }
             else
             {
                 robaBindingSource.DataSource = UkljuciRobuPodlokacija(zadnjeOdabranaLokacija);
             }
         }
-        private void DohvatiSvuRobu(Lokacija odabranaLokacija, ref List<RobaKolicina> roba)
+        private void DohvatiSvuRobu(Lokacija odabranaLokacija, ref List<Roba> roba)
         {
            if (odabranaLokacija.RobaNaLokacijis.Count > 0)
            {
-                List<RobaKolicina> dohvacenaRoba = odabranaLokacija.DohvatiSvuRobuNaLokaciji();
+                List<Roba> dohvacenaRoba = Roba.DohvatiSvuRobuNaLokaciji(zadnjeOdabranaLokacija);
                 foreach(var zapis in dohvacenaRoba)
                 {
-                    RobaKolicina pronadeniZapis = roba.Find(x => x.Id == zapis.Id);
+                    Roba pronadeniZapis = roba.Find(x => x.Id == zapis.Id);
                     if (pronadeniZapis == null)
                     {
                         roba.Add(zapis);
@@ -161,9 +161,9 @@ namespace AdresiranjeRobe
             DohvatiRobu();
         }
 
-        private List<RobaKolicina> UkljuciRobuPodlokacija(Lokacija lokacija)
+        private List<Roba> UkljuciRobuPodlokacija(Lokacija lokacija)
         {
-            List<RobaKolicina> roba = new List<RobaKolicina>();
+            List<Roba> roba = new List<Roba>();
             lokacija.DohvatiRobuNaSvimPodlokacijama(ref roba);
             return roba;
         }

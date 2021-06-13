@@ -23,7 +23,7 @@ namespace SkladisteDb
 
         public RobaKolicina() { }
 
-        public static List<RobaKolicina> DohvatiSvuRobu()
+        public static List<RobaKolicina> DohvatiSvuRobuRK()
         {
             List<RobaKolicina> roba = new List<RobaKolicina>();
 
@@ -51,7 +51,7 @@ namespace SkladisteDb
             return roba;
         }
 
-        public static RobaKolicina DohvatiRobuPoNazivu(string naziv)
+        public static RobaKolicina DohvatiRobuPoNazivuRK(string naziv)
         {
             using (var context = new SkladisteDatabase())
             {
@@ -88,7 +88,7 @@ namespace SkladisteDb
             }
         }
 
-        public static List<RobaKolicina> DohvatiRobuPoNazivuILokaciji(string naziv, Lokacija lokacija)
+        public static List<RobaKolicina> DohvatiRobuPoNazivuILokacijiRK(string naziv, Lokacija lokacija)
         {
             using (var context = new SkladisteDatabase())
             {
