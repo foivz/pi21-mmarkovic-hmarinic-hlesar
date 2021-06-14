@@ -56,8 +56,8 @@ CREATE TABLE Roba (
 );
 
 CREATE TABLE StavkeDokumenta (
-	IdDokument INT REFERENCES Dokument(id),
-	IdRoba INT REFERENCES Roba(id),
+	IdDokument INT REFERENCES Dokument(id) ON DELETE CASCADE,
+	IdRoba INT REFERENCES Roba(id) ON DELETE CASCADE,
 	PRIMARY KEY (IdDokument, IdRoba),
 	Kolicina INT,
 	JedinicnaCijena FLOAT,
@@ -77,3 +77,16 @@ CREATE TABLE RobaNaLokaciji (
 );
 
 INSERT INTO VrstaDokumenta (Naziv) VALUES ('Primka'), ('Izdatnica');
+
+INSERT INTO Uloga (Naziv) VALUES ('Klijent'), ('Administrator');
+
+INSERT INTO Korisnik (Prezime, Ime, IdUloga) VALUES ('Klijent 1', 'Test', 1), ('Klijent 2', 'Test', 1), ('Klijent 3', 'Test', 1);
+
+INSERT INTO MjernaJedinica (Naziv, Kratica) VALUES ('Komad', 'kom'), ('Kilogram', 'kg'), ('Litra', 'l');
+
+INSERT INTO Roba (Naziv, Opis, MjernaJedinica) VALUES ('Metalna sipka', '', 1), ('Gradevinski materijal', '', 1), ('Staro zeljezo', '', 2), ('Kutija', 'kartonska', 1);
+
+INSERT INTO Lokacija (Naziv) VALUES ('Skladište 1'), ('Skladište 2'), ('Skladište 3');
+INSERT INTO Lokacija (Naziv, Nadlokacija) VALUES ('Soba 1', 1), ('Soba 2', 1), ('Soba 3', 1), ('Soba 1', 2);
+INSERT INTO Lokacija (Naziv, Nadlokacija) VALUES ('Polica 1', 4), ('Polica 1', 5), ('Polica 2', 5);
+INSERT INTO Lokacija (Naziv, Nadlokacija) VALUES ('Kutija', 8), ('Kutija 1', 9), ('Kutija 2', 9);
