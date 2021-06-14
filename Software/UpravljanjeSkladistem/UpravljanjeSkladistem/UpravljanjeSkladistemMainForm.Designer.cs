@@ -182,6 +182,7 @@ namespace UpravljanjeSkladistem
             this.Controls.Add(this.label1);
             this.Name = "UpravljanjeSkladistemMainForm";
             this.Text = "Upravljanje skladištem";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.UpravljanjeSkladistemMainForm_HelpRequested);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);

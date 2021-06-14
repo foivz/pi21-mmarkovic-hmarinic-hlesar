@@ -40,6 +40,16 @@ namespace KreiranjePrimki
             this.vrstaDokumentaComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mjernaJedinicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mjernaJedinica1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.robaNaLokacijisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stavkeDokumentasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivMjerneJediniceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.robaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jedinicnaCijenaTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.kolicinaTextBox = new System.Windows.Forms.TextBox();
@@ -53,33 +63,23 @@ namespace KreiranjePrimki
             this.label7 = new System.Windows.Forms.Label();
             this.izmjeniStavkuButton = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stavkeDokumentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mjernaJedinicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mjernaJedinica1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.robaNaLokacijisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stavkeDokumentasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivMjerneJediniceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.robaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dokumentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idRobaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDokumentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UkupnaCijena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jedinicnaCijenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolicinaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OpisRobe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.robaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OpisRobe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolicinaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jedinicnaCijenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UkupnaCijena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDokumentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idRobaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dokumentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stavkeDokumentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.robaBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stavkeDokumentaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.robaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -195,6 +195,78 @@ namespace KreiranjePrimki
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(530, 174);
             this.dataGridView1.TabIndex = 10;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mjernaJedinicaDataGridViewTextBoxColumn
+            // 
+            this.mjernaJedinicaDataGridViewTextBoxColumn.DataPropertyName = "MjernaJedinica";
+            this.mjernaJedinicaDataGridViewTextBoxColumn.HeaderText = "MjernaJedinica";
+            this.mjernaJedinicaDataGridViewTextBoxColumn.Name = "mjernaJedinicaDataGridViewTextBoxColumn";
+            this.mjernaJedinicaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mjernaJedinicaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // opisDataGridViewTextBoxColumn
+            // 
+            this.opisDataGridViewTextBoxColumn.DataPropertyName = "Opis";
+            this.opisDataGridViewTextBoxColumn.HeaderText = "Opis";
+            this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
+            this.opisDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mjernaJedinica1DataGridViewTextBoxColumn
+            // 
+            this.mjernaJedinica1DataGridViewTextBoxColumn.DataPropertyName = "MjernaJedinica1";
+            this.mjernaJedinica1DataGridViewTextBoxColumn.HeaderText = "MjernaJedinica1";
+            this.mjernaJedinica1DataGridViewTextBoxColumn.Name = "mjernaJedinica1DataGridViewTextBoxColumn";
+            this.mjernaJedinica1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.mjernaJedinica1DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // robaNaLokacijisDataGridViewTextBoxColumn
+            // 
+            this.robaNaLokacijisDataGridViewTextBoxColumn.DataPropertyName = "RobaNaLokacijis";
+            this.robaNaLokacijisDataGridViewTextBoxColumn.HeaderText = "RobaNaLokacijis";
+            this.robaNaLokacijisDataGridViewTextBoxColumn.Name = "robaNaLokacijisDataGridViewTextBoxColumn";
+            this.robaNaLokacijisDataGridViewTextBoxColumn.ReadOnly = true;
+            this.robaNaLokacijisDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // stavkeDokumentasDataGridViewTextBoxColumn
+            // 
+            this.stavkeDokumentasDataGridViewTextBoxColumn.DataPropertyName = "StavkeDokumentas";
+            this.stavkeDokumentasDataGridViewTextBoxColumn.HeaderText = "StavkeDokumentas";
+            this.stavkeDokumentasDataGridViewTextBoxColumn.Name = "stavkeDokumentasDataGridViewTextBoxColumn";
+            this.stavkeDokumentasDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stavkeDokumentasDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nazivMjerneJediniceDataGridViewTextBoxColumn
+            // 
+            this.nazivMjerneJediniceDataGridViewTextBoxColumn.DataPropertyName = "NazivMjerneJedinice";
+            this.nazivMjerneJediniceDataGridViewTextBoxColumn.HeaderText = "Mjerna jedinica";
+            this.nazivMjerneJediniceDataGridViewTextBoxColumn.Name = "nazivMjerneJediniceDataGridViewTextBoxColumn";
+            this.nazivMjerneJediniceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kolicinaDataGridViewTextBoxColumn
+            // 
+            this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "Kolicina";
+            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "Kolicina";
+            this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
+            this.kolicinaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.kolicinaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // robaBindingSource
+            // 
+            this.robaBindingSource.DataSource = typeof(SkladisteDb.Roba);
             // 
             // jedinicnaCijenaTextBox
             // 
@@ -328,104 +400,40 @@ namespace KreiranjePrimki
             this.dataGridView2.Size = new System.Drawing.Size(533, 174);
             this.dataGridView2.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn1
+            // robaDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Roba";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Opis";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.robaDataGridViewTextBoxColumn.DataPropertyName = "NazivRobe";
+            this.robaDataGridViewTextBoxColumn.HeaderText = "Naziv robe";
+            this.robaDataGridViewTextBoxColumn.Name = "robaDataGridViewTextBoxColumn";
+            this.robaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // stavkeDokumentaBindingSource
+            // OpisRobe
             // 
-            this.stavkeDokumentaBindingSource.DataSource = typeof(SkladisteDb.StavkeDokumenta);
-            this.stavkeDokumentaBindingSource.CurrentChanged += new System.EventHandler(this.stavkeDokumentaBindingSource_CurrentChanged);
+            this.OpisRobe.DataPropertyName = "OpisRobe";
+            this.OpisRobe.HeaderText = "Opis";
+            this.OpisRobe.Name = "OpisRobe";
+            this.OpisRobe.ReadOnly = true;
             // 
-            // idDataGridViewTextBoxColumn
+            // kolicinaDataGridViewTextBoxColumn1
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.kolicinaDataGridViewTextBoxColumn1.DataPropertyName = "Kolicina";
+            this.kolicinaDataGridViewTextBoxColumn1.HeaderText = "Količina";
+            this.kolicinaDataGridViewTextBoxColumn1.Name = "kolicinaDataGridViewTextBoxColumn1";
+            this.kolicinaDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // mjernaJedinicaDataGridViewTextBoxColumn
+            // jedinicnaCijenaDataGridViewTextBoxColumn
             // 
-            this.mjernaJedinicaDataGridViewTextBoxColumn.DataPropertyName = "MjernaJedinica";
-            this.mjernaJedinicaDataGridViewTextBoxColumn.HeaderText = "MjernaJedinica";
-            this.mjernaJedinicaDataGridViewTextBoxColumn.Name = "mjernaJedinicaDataGridViewTextBoxColumn";
-            this.mjernaJedinicaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mjernaJedinicaDataGridViewTextBoxColumn.Visible = false;
+            this.jedinicnaCijenaDataGridViewTextBoxColumn.DataPropertyName = "JedinicnaCijena";
+            this.jedinicnaCijenaDataGridViewTextBoxColumn.HeaderText = "Jedinična cijena";
+            this.jedinicnaCijenaDataGridViewTextBoxColumn.Name = "jedinicnaCijenaDataGridViewTextBoxColumn";
+            this.jedinicnaCijenaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // nazivDataGridViewTextBoxColumn
+            // UkupnaCijena
             // 
-            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
-            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
-            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
-            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // opisDataGridViewTextBoxColumn
-            // 
-            this.opisDataGridViewTextBoxColumn.DataPropertyName = "Opis";
-            this.opisDataGridViewTextBoxColumn.HeaderText = "Opis";
-            this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
-            this.opisDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mjernaJedinica1DataGridViewTextBoxColumn
-            // 
-            this.mjernaJedinica1DataGridViewTextBoxColumn.DataPropertyName = "MjernaJedinica1";
-            this.mjernaJedinica1DataGridViewTextBoxColumn.HeaderText = "MjernaJedinica1";
-            this.mjernaJedinica1DataGridViewTextBoxColumn.Name = "mjernaJedinica1DataGridViewTextBoxColumn";
-            this.mjernaJedinica1DataGridViewTextBoxColumn.ReadOnly = true;
-            this.mjernaJedinica1DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // robaNaLokacijisDataGridViewTextBoxColumn
-            // 
-            this.robaNaLokacijisDataGridViewTextBoxColumn.DataPropertyName = "RobaNaLokacijis";
-            this.robaNaLokacijisDataGridViewTextBoxColumn.HeaderText = "RobaNaLokacijis";
-            this.robaNaLokacijisDataGridViewTextBoxColumn.Name = "robaNaLokacijisDataGridViewTextBoxColumn";
-            this.robaNaLokacijisDataGridViewTextBoxColumn.ReadOnly = true;
-            this.robaNaLokacijisDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // stavkeDokumentasDataGridViewTextBoxColumn
-            // 
-            this.stavkeDokumentasDataGridViewTextBoxColumn.DataPropertyName = "StavkeDokumentas";
-            this.stavkeDokumentasDataGridViewTextBoxColumn.HeaderText = "StavkeDokumentas";
-            this.stavkeDokumentasDataGridViewTextBoxColumn.Name = "stavkeDokumentasDataGridViewTextBoxColumn";
-            this.stavkeDokumentasDataGridViewTextBoxColumn.ReadOnly = true;
-            this.stavkeDokumentasDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nazivMjerneJediniceDataGridViewTextBoxColumn
-            // 
-            this.nazivMjerneJediniceDataGridViewTextBoxColumn.DataPropertyName = "NazivMjerneJedinice";
-            this.nazivMjerneJediniceDataGridViewTextBoxColumn.HeaderText = "Mjerna jedinica";
-            this.nazivMjerneJediniceDataGridViewTextBoxColumn.Name = "nazivMjerneJediniceDataGridViewTextBoxColumn";
-            this.nazivMjerneJediniceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // kolicinaDataGridViewTextBoxColumn
-            // 
-            this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "Kolicina";
-            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "Kolicina";
-            this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
-            this.kolicinaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.kolicinaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // robaBindingSource
-            // 
-            this.robaBindingSource.DataSource = typeof(SkladisteDb.Roba);
-            // 
-            // dokumentDataGridViewTextBoxColumn
-            // 
-            this.dokumentDataGridViewTextBoxColumn.DataPropertyName = "Dokument";
-            this.dokumentDataGridViewTextBoxColumn.HeaderText = "Dokument";
-            this.dokumentDataGridViewTextBoxColumn.Name = "dokumentDataGridViewTextBoxColumn";
-            this.dokumentDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dokumentDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idRobaDataGridViewTextBoxColumn
-            // 
-            this.idRobaDataGridViewTextBoxColumn.DataPropertyName = "IdRoba";
-            this.idRobaDataGridViewTextBoxColumn.HeaderText = "IdRoba";
-            this.idRobaDataGridViewTextBoxColumn.Name = "idRobaDataGridViewTextBoxColumn";
-            this.idRobaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idRobaDataGridViewTextBoxColumn.Visible = false;
+            this.UkupnaCijena.DataPropertyName = "UkupnaCijena";
+            this.UkupnaCijena.HeaderText = "Ukupna cijena";
+            this.UkupnaCijena.Name = "UkupnaCijena";
+            this.UkupnaCijena.ReadOnly = true;
             // 
             // idDokumentDataGridViewTextBoxColumn
             // 
@@ -435,40 +443,32 @@ namespace KreiranjePrimki
             this.idDokumentDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDokumentDataGridViewTextBoxColumn.Visible = false;
             // 
-            // UkupnaCijena
+            // idRobaDataGridViewTextBoxColumn
             // 
-            this.UkupnaCijena.DataPropertyName = "UkupnaCijena";
-            this.UkupnaCijena.HeaderText = "Ukupna cijena";
-            this.UkupnaCijena.Name = "UkupnaCijena";
-            this.UkupnaCijena.ReadOnly = true;
+            this.idRobaDataGridViewTextBoxColumn.DataPropertyName = "IdRoba";
+            this.idRobaDataGridViewTextBoxColumn.HeaderText = "IdRoba";
+            this.idRobaDataGridViewTextBoxColumn.Name = "idRobaDataGridViewTextBoxColumn";
+            this.idRobaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idRobaDataGridViewTextBoxColumn.Visible = false;
             // 
-            // jedinicnaCijenaDataGridViewTextBoxColumn
+            // dokumentDataGridViewTextBoxColumn
             // 
-            this.jedinicnaCijenaDataGridViewTextBoxColumn.DataPropertyName = "JedinicnaCijena";
-            this.jedinicnaCijenaDataGridViewTextBoxColumn.HeaderText = "Jedinična cijena";
-            this.jedinicnaCijenaDataGridViewTextBoxColumn.Name = "jedinicnaCijenaDataGridViewTextBoxColumn";
-            this.jedinicnaCijenaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dokumentDataGridViewTextBoxColumn.DataPropertyName = "Dokument";
+            this.dokumentDataGridViewTextBoxColumn.HeaderText = "Dokument";
+            this.dokumentDataGridViewTextBoxColumn.Name = "dokumentDataGridViewTextBoxColumn";
+            this.dokumentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dokumentDataGridViewTextBoxColumn.Visible = false;
             // 
-            // kolicinaDataGridViewTextBoxColumn1
+            // stavkeDokumentaBindingSource
             // 
-            this.kolicinaDataGridViewTextBoxColumn1.DataPropertyName = "Kolicina";
-            this.kolicinaDataGridViewTextBoxColumn1.HeaderText = "Količina";
-            this.kolicinaDataGridViewTextBoxColumn1.Name = "kolicinaDataGridViewTextBoxColumn1";
-            this.kolicinaDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.stavkeDokumentaBindingSource.DataSource = typeof(SkladisteDb.StavkeDokumenta);
+            this.stavkeDokumentaBindingSource.CurrentChanged += new System.EventHandler(this.stavkeDokumentaBindingSource_CurrentChanged);
             // 
-            // OpisRobe
+            // dataGridViewTextBoxColumn1
             // 
-            this.OpisRobe.DataPropertyName = "OpisRobe";
-            this.OpisRobe.HeaderText = "Opis";
-            this.OpisRobe.Name = "OpisRobe";
-            this.OpisRobe.ReadOnly = true;
-            // 
-            // robaDataGridViewTextBoxColumn
-            // 
-            this.robaDataGridViewTextBoxColumn.DataPropertyName = "NazivRobe";
-            this.robaDataGridViewTextBoxColumn.HeaderText = "Naziv robe";
-            this.robaDataGridViewTextBoxColumn.Name = "robaDataGridViewTextBoxColumn";
-            this.robaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Roba";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Opis";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // KreirajDokumentForm
             // 
@@ -481,16 +481,17 @@ namespace KreiranjePrimki
             this.Name = "KreirajDokumentForm";
             this.Text = "Kreiraj dokument";
             this.Load += new System.EventHandler(this.KreirajDokumentForm_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.KreirajDokumentForm_HelpRequested);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.robaBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stavkeDokumentaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.robaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

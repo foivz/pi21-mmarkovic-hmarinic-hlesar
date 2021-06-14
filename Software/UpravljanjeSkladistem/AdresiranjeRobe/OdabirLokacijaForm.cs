@@ -72,5 +72,10 @@ namespace AdresiranjeRobe
             zadnjeOdabraniNode = e.Node;
             odabranaLokacijaLabel.Text = zadnjeOdabranaLokacija.Naziv;
         }
+
+        private void OdabirLokacijaForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../../Pomoc/f1-pomoc.chm", HelpNavigator.TopicId, "1011");
+        }
     }
 }

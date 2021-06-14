@@ -195,5 +195,10 @@ namespace UnosRobe
             pregledOpisTextBox.Text = unosRobeLokacije.Opis;
             pregledMjernaJedinicaTextBox.Text = unosRobeLokacije.NazivMjerneJedinice;
         }
+
+        private void UnosRobeForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../../Pomoc/f1-pomoc.chm", HelpNavigator.TopicId, "1010");
+        }
     }
 }

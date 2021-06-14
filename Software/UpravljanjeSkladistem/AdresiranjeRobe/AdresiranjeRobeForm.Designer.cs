@@ -282,6 +282,7 @@ namespace AdresiranjeRobe
             this.Name = "AdresiranjeRobeForm";
             this.Text = "Adresiranje Robe";
             this.Load += new System.EventHandler(this.AdresiranjeRobe_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.AdresiranjeRobeForm_HelpRequested);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);

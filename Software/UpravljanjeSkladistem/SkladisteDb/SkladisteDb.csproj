@@ -66,12 +66,10 @@
       <DependentUpon>SkladisteDb.tt</DependentUpon>
     </Compile>
     <Compile Include="MjernaJedinicaExt.cs" />
-    <Compile Include="NepronadenaVrijednostException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roba.cs">
       <DependentUpon>SkladisteDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="RobaKolicina.cs" />
     <Compile Include="RobaExt.cs" />
     <Compile Include="RobaNaLokaciji.cs">
       <DependentUpon>SkladisteDb.tt</DependentUpon>

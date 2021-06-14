@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,7 @@ namespace PretragaRobe
         {
             odabranaLokacijaLabel.Text = "Lokacija nije odabrana";
             robaBindingSource.DataSource = Roba.DohvatiSvuRobu();
+            lokacijaOznaceneRobeLabel.Text = "Nema označene robe";
         }
 
         private void pretragaRobeButton_Click(object sender, EventArgs e)
@@ -123,7 +125,6 @@ namespace PretragaRobe
             {
                 zadnjeOdabranaLokacija = odabirLokacijaForm.OdabranaLokacija;
                 odabranaLokacijaLabel.Text = zadnjeOdabranaLokacija.Naziv;
-                // robaBindingSource.DataSource = Roba.DohvatiSvuRobuNaLokaciji(zadnjeOdabranaLokacija);
                 robaBindingSource.DataSource = UkljuciRobuPodlokacija(zadnjeOdabranaLokacija);
             }
         }
@@ -134,56 +135,6 @@ namespace PretragaRobe
             lokacija.DohvatiRobuNaSvimPodlokacijama(ref roba);
             return roba;
         }
-
-        /*
-        private void pretraziRobuNaOdabranojLokacijiButton_Click(object sender, EventArgs e)
-        {
-            List<Roba> roba = new List<Roba>();
-            string nazivRobe = nazivRobeTextBox.Text.Trim();
-            string minimumKolicina = minimumTextBox.Text.Trim();
-            string maksimumKolicina = maksimumTextBox.Text.Trim();
-
-            if (zadnjeOdabranaLokacija == null)
-            {
-                MessageBox.Show(("Lokacija nije odabrana!"));
-                return;
-            }
-
-            if (nazivRobe != String.Empty)
-            {
-                roba = Roba.DohvatiRobuPoNazivuILokaciji(nazivRobe, zadnjeOdabranaLokacija);
-
-                if (roba.Count == 0)
-                {
-                    MessageBox.Show(($"Nije pronađena ni jedna roba s unesenim nazivom [{nazivRobe}]!"));
-                    return;
-                }
-            }
-            else
-            {
-                roba = Roba.DohvatiSvuRobuNaLokaciji(zadnjeOdabranaLokacija);
-            }
-
-            try
-            {
-                int minimumBroj = ParsirajUnosBroja(minimumKolicina);
-                int maksimumBroj = ParsirajUnosBroja(maksimumKolicina);
-
-                if (minimumBroj == 0 && maksimumBroj == 0)
-                {
-                    robaBindingSource.DataSource = roba;
-                }
-                else
-                {
-                    robaBindingSource.DataSource = FiltrirajRobu(minimumBroj, maksimumBroj, roba);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Uneseni minimum ili maksimum količine nije cijeli broj!");
-            }
-        } */
-
         private void pretraziRobuNaOdabranojLokacijiButton_Click(object sender, EventArgs e)
         {
             string nazivRobe = nazivRobeTextBox.Text.Trim();
@@ -249,6 +200,18 @@ namespace PretragaRobe
             if (robaBindingSource.Current as Roba != null)
             {
                 zadnjeOdabranaRoba = robaBindingSource.Current as Roba;
+
+                List<Roba> oznacenaRobaZapisi = new List<Roba>();
+                foreach (var zapis in zadnjeOdabranaRoba.DohvaceneLokacije)
+                {
+                    oznacenaRobaZapisi.Add(zapis.DohvatiRobuNaLokaciji(zadnjeOdabranaRoba));
+                }
+
+                oznacenaRobaBindingSource.DataSource = oznacenaRobaZapisi;
+            }
+            else
+            {
+                oznacenaRobaBindingSource.DataSource = null;
             }
         }
 
@@ -261,6 +224,34 @@ namespace PretragaRobe
             }
 
             Close();
+        }
+
+        private void oznacenaRobaBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            Roba oznacenaRoba = oznacenaRobaBindingSource.Current as Roba;
+            if (oznacenaRoba != null)
+            {
+                Lokacija pocetnaLokacija = oznacenaRoba.NalaziSeNa;
+                List<Lokacija> lok = new List<Lokacija>();
+                pocetnaLokacija.DohvatiPutDoBazicneLokacije(ref lok);
+
+                string lokacijaString = "";
+                for (int i = lok.Count - 1; i >= 0; i--)
+                {
+                    lokacijaString += $"{lok[i].Naziv} -> ";
+                }
+                lokacijaString += $"{oznacenaRoba.NalaziSeNa.Naziv}";
+                lokacijaOznaceneRobeLabel.Text = lokacijaString;
+            }
+            else
+            {
+                lokacijaOznaceneRobeLabel.Text = "Nema označene robe";
+            }
+        }
+
+        private void PretragaRobeForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../../Pomoc/f1-pomoc.chm", HelpNavigator.TopicId, "1030");
         }
     }
 }

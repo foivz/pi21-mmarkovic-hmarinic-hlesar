@@ -49,5 +49,10 @@ namespace UpravljanjeSkladistem
             PregledPrimkiForm pregledPrimki = new PregledPrimkiForm();
             pregledPrimki.ShowDialog();
         }
+
+        private void UpravljanjeSkladistemMainForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../../Pomoc/f1-pomoc.chm", HelpNavigator.TopicId, "1000");
+        }
     }
 }

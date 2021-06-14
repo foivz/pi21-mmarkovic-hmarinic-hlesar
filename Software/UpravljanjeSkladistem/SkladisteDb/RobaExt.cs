@@ -10,6 +10,8 @@ namespace SkladisteDb
     {
         public string NazivMjerneJedinice { get; set; }
         public int? Kolicina { get; set; }
+        public List<Lokacija> DohvaceneLokacije = new List<Lokacija>();
+        public Lokacija NalaziSeNa;
 
         public Roba(RobaNaLokaciji zapis)
         {
@@ -58,12 +60,14 @@ namespace SkladisteDb
                         Kolicina = 0,
                     };
 
-                    var kolicinaQuery = from rnl in context.RobaNaLokacijis
+                    var kolicinaQuery = from rnl in context.RobaNaLokacijis.Include("Lokacija")
                                         where rnl.IdRoba == novaRoba.Id
                                         select rnl;
 
                     foreach(var z in kolicinaQuery)
                     {
+                        novaRoba.DohvaceneLokacije.Add(z.Lokacija);
+                        novaRoba.NalaziSeNa = z.Lokacija;
                         novaRoba.Kolicina += z.Kolicina;
                     }
 
@@ -147,12 +151,13 @@ namespace SkladisteDb
                     dohvacenaRoba.Kolicina = 0;
                     dohvacenaRoba.NazivMjerneJedinice = dohvacenaRoba.MjernaJedinica1.Naziv;
                     returnMe.Add(dohvacenaRoba);
-                    var robaLokacijaQuery = from rnl in context.RobaNaLokacijis
+                    var robaLokacijaQuery = from rnl in context.RobaNaLokacijis.Include("Lokacija")
                                             where rnl.IdRoba == dohvacenaRoba.Id
                                             select rnl;
 
                     foreach (var zapis in robaLokacijaQuery.ToList())
                     {
+                        dohvacenaRoba.DohvaceneLokacije.Add(zapis.Lokacija);
                         Roba zapisanaRoba = returnMe.Find(x => x.Id == zapis.IdRoba);
                         if (zapisanaRoba != null)
                         {
@@ -168,7 +173,7 @@ namespace SkladisteDb
         {
             using (var context = new SkladisteDatabase())
             {
-                var query = from rnl in context.RobaNaLokacijis
+                var query = from rnl in context.RobaNaLokacijis.Include("Lokacija")
                             where rnl.IdLokacija == lokacija.Id && rnl.Roba.Naziv.ToLower().Contains(naziv.ToLower())
                             select new
                             {
@@ -217,7 +222,7 @@ namespace SkladisteDb
                 List<Roba> roba = new List<Roba>();
                 foreach (var zapis in query.ToList())
                 {
-                    roba.Add(new Roba
+                    Roba novaRoba = new Roba
                     {
                         Id = zapis.Id,
                         MjernaJedinica = zapis.MjernaJedinica,
@@ -225,7 +230,9 @@ namespace SkladisteDb
                         Naziv = zapis.Naziv,
                         Kolicina = zapis.Kolicina,
                         Opis = zapis.Opis,
-                    });
+                    };
+                    novaRoba.DohvaceneLokacije.Add(lokacija);
+                    roba.Add(novaRoba);
                 }
 
                 return roba;

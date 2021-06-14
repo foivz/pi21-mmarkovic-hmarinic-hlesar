@@ -217,5 +217,10 @@ namespace AdresiranjeRobe
                 MessageBox.Show("Lokaciju nije moguće obrisati, nalazi se roba na lokaciji ili lokacija sadržava druge lokacije!");
             }
         }
+
+        private void AdresiranjeRobeForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../../Pomoc/f1-pomoc.chm", HelpNavigator.TopicId, "1020");
+        }
     }
 }

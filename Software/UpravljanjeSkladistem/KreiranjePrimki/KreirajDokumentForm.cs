@@ -193,5 +193,10 @@ namespace KreiranjePrimki
             }
             Close();
         }
+
+        private void KreirajDokumentForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../../Pomoc/f1-pomoc.chm", HelpNavigator.TopicId, "1041");
+        }
     }
 }

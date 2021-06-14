@@ -77,6 +77,7 @@ namespace SkladisteDb
                 else
                 {
                     pronadeniZapis.Kolicina += zapis.Kolicina;
+                    pronadeniZapis.DohvaceneLokacije.AddRange(zapis.DohvaceneLokacije);
                 }
             }
 
@@ -112,6 +113,57 @@ namespace SkladisteDb
                 catch (Exception)
                 {
                     return false;
+                }
+            }
+        }
+
+        public Roba DohvatiRobuNaLokaciji(Roba roba)
+        {
+            using (var context = new SkladisteDatabase())
+            {
+                var query = from rnl in context.RobaNaLokacijis.Include("Lokacija")
+                            where rnl.IdRoba == roba.Id && rnl.IdLokacija == this.Id
+                            select new
+                            {
+                                Id = rnl.Roba.Id,
+                                MjernaJedinica = rnl.Roba.MjernaJedinica,
+                                NazivMjerneJedinice = rnl.Roba.MjernaJedinica1.Naziv,
+                                Naziv = rnl.Roba.Naziv,
+                                Kolicina = rnl.Kolicina,
+                                Opis = rnl.Roba.Opis,
+                                NalaziSeNa = rnl.Lokacija,
+                            };
+
+                var zapis = query.Single();
+
+                Roba returnMe = new Roba
+                {
+                    Id = zapis.Id,
+                    MjernaJedinica = zapis.MjernaJedinica,
+                    NazivMjerneJedinice = zapis.NazivMjerneJedinice,
+                    Naziv = zapis.Naziv,
+                    Kolicina = zapis.Kolicina,
+                    Opis = zapis.Opis,
+                    NalaziSeNa = zapis.NalaziSeNa,
+                };
+
+                return returnMe;
+            }
+        }
+
+        public void DohvatiPutDoBazicneLokacije(ref List<Lokacija> putDoBazicneLokacije)
+        {
+            using (var context = new SkladisteDatabase())
+            {
+                var query = from lok in context.Lokacijas
+                            where lok.Id == this.Nadlokacija
+                            select lok;
+
+                List<Lokacija> nadlokacija = query.ToList();
+                if (nadlokacija.Count > 0)
+                {
+                    putDoBazicneLokacije.Add(nadlokacija[0]);
+                    nadlokacija[0].DohvatiPutDoBazicneLokacije(ref putDoBazicneLokacije);
                 }
             }
         }

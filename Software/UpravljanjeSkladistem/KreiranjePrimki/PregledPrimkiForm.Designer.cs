@@ -56,6 +56,7 @@ namespace KreiranjePrimki
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.novaPrimkaButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.obrisiPrimkuButton = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -289,13 +290,25 @@ namespace KreiranjePrimki
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.obrisiPrimkuButton);
             this.groupBox3.Controls.Add(this.novaPrimkaButton);
-            this.groupBox3.Location = new System.Drawing.Point(558, 158);
+            this.groupBox3.Location = new System.Drawing.Point(558, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(171, 78);
+            this.groupBox3.Size = new System.Drawing.Size(171, 224);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Kontrole";
+            // 
+            // obrisiPrimkuButton
+            // 
+            this.obrisiPrimkuButton.ForeColor = System.Drawing.Color.Red;
+            this.obrisiPrimkuButton.Location = new System.Drawing.Point(6, 164);
+            this.obrisiPrimkuButton.Name = "obrisiPrimkuButton";
+            this.obrisiPrimkuButton.Size = new System.Drawing.Size(159, 47);
+            this.obrisiPrimkuButton.TabIndex = 5;
+            this.obrisiPrimkuButton.Text = "Obriši primku";
+            this.obrisiPrimkuButton.UseVisualStyleBackColor = true;
+            this.obrisiPrimkuButton.Click += new System.EventHandler(this.obrisiPrimkuButton_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -328,6 +341,7 @@ namespace KreiranjePrimki
             this.Name = "PregledPrimkiForm";
             this.Text = "Pregled Primki";
             this.Load += new System.EventHandler(this.PregledPrimkiForm_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.PregledPrimkiForm_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dokumentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -370,6 +384,7 @@ namespace KreiranjePrimki
         private System.Windows.Forms.DataGridViewTextBoxColumn idDokumentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idRobaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dokumentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button obrisiPrimkuButton;
     }
 }
 

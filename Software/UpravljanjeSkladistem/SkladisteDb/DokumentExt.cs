@@ -50,5 +50,15 @@ namespace SkladisteDb
                 context.SaveChanges();
             }
         }
+
+        public void ObrisiDokument()
+        {
+            using (var context = new SkladisteDatabase())
+            {
+                context.Dokuments.Attach(this);
+                context.Dokuments.Remove(this);
+                context.SaveChanges();
+            }
+        }
     }
 }

@@ -85,7 +85,7 @@ namespace AdresiranjeRobe
             this.label2.TabIndex = 10;
             this.label2.Text = "Odabrana lokacija:";
             // 
-            // OdabirLokacija
+            // OdabirLokacijaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,9 +93,10 @@ namespace AdresiranjeRobe
             this.Controls.Add(this.odabranaLokacijaLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox4);
-            this.Name = "OdabirLokacija";
+            this.Name = "OdabirLokacijaForm";
             this.Text = "Odabir lokacije";
             this.Load += new System.EventHandler(this.OdabirLokacija_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.OdabirLokacijaForm_HelpRequested);
             this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

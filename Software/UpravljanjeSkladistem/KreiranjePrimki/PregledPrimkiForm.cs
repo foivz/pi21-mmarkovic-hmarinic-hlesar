@@ -39,6 +39,10 @@ namespace KreiranjePrimki
                  }
                  stavkeDokumentaBindingSource.DataSource = stavkeDokumenta;
             }
+            else
+            {
+                stavkeDokumentaBindingSource.DataSource = null;
+            }
         }
 
         private void novaPrimkaButton_Click(object sender, EventArgs e)
@@ -51,6 +55,19 @@ namespace KreiranjePrimki
         private void OsvjeziPrikazPrimki()
         {
             dokumentBindingSource.DataSource = Dokument.DohvatiDokumentePremaNazivu("primka");
+        }
+
+        private void obrisiPrimkuButton_Click(object sender, EventArgs e)
+        {
+            Dokument doc = dokumentBindingSource.Current as Dokument;
+            doc.ObrisiDokument();
+            OsvjeziPrikazPrimki();
+            MessageBox.Show("Primka je obrisana!");
+        }
+
+        private void PregledPrimkiForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../../Pomoc/f1-pomoc.chm", HelpNavigator.TopicId, "1040");
         }
     }
 }

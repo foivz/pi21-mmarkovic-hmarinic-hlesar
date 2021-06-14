@@ -16,6 +16,5 @@ namespace SkladisteDb
             get { return (double)JedinicnaCijena * (double)Kolicina; }
             set { }
         }
-        
     }
 }
