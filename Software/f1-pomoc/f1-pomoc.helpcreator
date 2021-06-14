@@ -1,0 +1,183 @@
+<xml>
+  <info>
+    <version>DA-HelpCreator;1</version>
+  </info>
+  <content>
+    <generalsettings>
+      <projecturl>
+      </projecturl>
+      <autoexport>False</autoexport>
+      <OptimizeFileNames>True</OptimizeFileNames>
+      <sitemap>False</sitemap>
+      <imagesitemap>False</imagesitemap>
+      <StandardEditorType>Html</StandardEditorType>
+      <AutoSave>False</AutoSave>
+    </generalsettings>
+    <design>
+      <TemplateName>1</TemplateName>
+      <Breadcrump>True</Breadcrump>
+      <Menubar>False</Menubar>
+      <placeholders>
+        <placeholder id="title">
+          <name>Title</name>
+          <description>Title of the web site - used for the title tag and top bar.</description>
+          <content>Your Title</content>
+        </placeholder>
+        <placeholder id="author">
+          <name>Author meta tag</name>
+          <description>Will be outputted in the meta tag "author" of the website.</description>
+          <content>Author</content>
+        </placeholder>
+        <placeholder id="description">
+          <name>Description meta tag</name>
+          <description>Will be outputted in the meta tag "author" of the website.</description>
+          <content>
+          </content>
+        </placeholder>
+        <placeholder id="footer">
+          <name>Footer</name>
+          <description>Footer is shown at the end of the web page. Not available for all templates.</description>
+          <content>
+          </content>
+        </placeholder>
+      </placeholders>
+    </design>
+    <ftpsettings Id="c9cd6767-6e15-4fab-b315-b9a847862376">
+      <profilname>
+      </profilname>
+      <servername>
+      </servername>
+      <username>
+      </username>
+      <password>
+      </password>
+      <hidePasswort>False</hidePasswort>
+      <autoDelete>False</autoDelete>
+      <synchronize>False</synchronize>
+      <openWebsite>False</openWebsite>
+      <ssltlsencryption>False</ssltlsencryption>
+      <sFTP>False</sFTP>
+      <directories>
+      </directories>
+      <numthreads>1</numthreads>
+    </ftpsettings>
+    <metatagsettings>
+      <title>
+      </title>
+      <author>
+      </author>
+      <description>
+      </description>
+      <keywords>
+      </keywords>
+      <robotsnoindex>False</robotsnoindex>
+      <robotsnofollow>False</robotsnofollow>
+      <isdate>False</isdate>
+      <istime>False</istime>
+      <date>1/1/0001 12:00:00 AM</date>
+      <time>1/1/0001 12:00:00 AM</time>
+      <istelephone>False</istelephone>
+      <recognizetelephone>False</recognizetelephone>
+      <isdateexpires>False</isdateexpires>
+      <istimeexpires>False</istimeexpires>
+      <dateexpires>1/1/0001 12:00:00 AM</dateexpires>
+      <timeexpires>1/1/0001 12:00:00 AM</timeexpires>
+      <secondsexpires>-1</secondsexpires>
+      <cachecontrol>0</cachecontrol>
+      <ispragmacachecontrol>False</ispragmacachecontrol>
+    </metatagsettings>
+    <DADocument>
+      <borderleft>25</borderleft>
+      <borderright>20</borderright>
+      <bordertop>20</bordertop>
+      <borderbottom>20</borderbottom>
+      <pagesize>5</pagesize>
+      <pageorientation>0</pageorientation>
+      <DocInfo>
+        <title>
+        </title>
+        <author>
+        </author>
+        <creator>
+        </creator>
+        <subject>
+        </subject>
+        <keywords>
+        </keywords>
+      </DocInfo>
+      <header>
+        <textleft>
+        </textleft>
+        <textmiddle>
+        </textmiddle>
+        <textright>
+        </textright>
+      </header>
+      <footer>
+        <textleft>
+        </textleft>
+        <textmiddle>
+        </textmiddle>
+        <textright>
+        </textright>
+      </footer>
+      <LeftBoderOptions>
+        <text>
+        </text>
+        <printpunchermark>False</printpunchermark>
+        <foldmarks>0</foldmarks>
+      </LeftBoderOptions>
+    </DADocument>
+    <helpExplorerData>
+      <Title>Help Explorer</Title>
+      <ShowToolbar>True</ShowToolbar>
+      <StartMaximized>False</StartMaximized>
+      <WindowCenter>True</WindowCenter>
+      <WindowLeft>200</WindowLeft>
+      <WindowHeight>800</WindowHeight>
+      <WindowTop>300</WindowTop>
+      <WindowWidth>1024</WindowWidth>
+      <ExportDir>
+      </ExportDir>
+      <title>Help Explorer</title>
+    </helpExplorerData>
+    <CHMExport>
+      <Title>Help</Title>
+      <Language>91</Language>
+      <ExportFileName>C:\Users\Hrvoje\Desktop\F1-Pomoc\tttt.chm</ExportFileName>
+      <ThemeName>
+      </ThemeName>
+      <WindowWidth>1024</WindowWidth>
+      <WindowHeight>800</WindowHeight>
+      <WindowLeft>200</WindowLeft>
+      <WindowTop>300</WindowTop>
+      <AddFullTextSearch>False</AddFullTextSearch>
+      <ButtonHideShow>False</ButtonHideShow>
+      <ButtonBack>True</ButtonBack>
+      <ButtonForward>True</ButtonForward>
+      <ButtonStop>False</ButtonStop>
+      <ButtonRefresh>False</ButtonRefresh>
+      <ButtonHome>True</ButtonHome>
+      <ButtonOptions>False</ButtonOptions>
+      <ButtonPrint>False</ButtonPrint>
+      <AddRoot>True</AddRoot>
+      <ThemeName>
+      </ThemeName>
+    </CHMExport>
+    <treeContent>
+      <DirectoryNode Path="" Expanded="True" Id="9a923e62-4d9c-40e9-bae0-611e05e36b82">
+        <DirectoryNode Path="Glavni meni" Expanded="False" Id="85d17faa-fa5c-4ab1-a5fc-b8bb96fc0983" />
+        <DirectoryNode Path="Unos robe" Expanded="True" Id="a9811aa9-0a6c-442b-84e1-4918c33ce6f4">
+          <DirectoryNode Path="Unos robe\Odabir lokacije" Expanded="False" Id="9c8daeaa-e9ac-497b-9640-0afd50cc59b5" />
+        </DirectoryNode>
+        <DirectoryNode Path="Adresiranje robe" Expanded="False" Id="129c6122-ea8f-4f30-9fe4-6ed202016131" />
+        <DirectoryNode Path="Pretraga robe" Expanded="False" Id="402610f5-a414-4185-b4cc-9979a20ec355" />
+        <DirectoryNode Path="Pregled primki" Expanded="True" Id="d589d9c7-c2de-47cc-9ac9-ed7bda498eb0">
+          <DirectoryNode Path="Pregled primki\Nova primka" Expanded="False" Id="94c3dc5b-009f-4dc0-b5ef-abfb23c3384f" />
+        </DirectoryNode>
+      </DirectoryNode>
+    </treeContent>
+    <exportPath>
+    </exportPath>
+  </content>
+</xml>
