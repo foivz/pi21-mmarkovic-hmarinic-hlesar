@@ -11,6 +11,8 @@ using UnosRobe;
 using AdresiranjeRobe;
 using PretragaRobe;
 using KreiranjePrimki;
+using Login;
+using Registracija_zaposlenika;
 
 namespace UpravljanjeSkladistem
 {
@@ -53,6 +55,64 @@ namespace UpravljanjeSkladistem
         private void UpravljanjeSkladistemMainForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             Help.ShowHelp(this, "../../../Pomoc/f1-pomoc.chm", HelpNavigator.TopicId, "1000");
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.ShowDialog();
+            if (PrijavljeniKorisnik.Prijavljen())
+            {
+                nazivLabel.Text = PrijavljeniKorisnik.GetNaziv();
+                ulogaLabel.Text = PrijavljeniKorisnik.GetUloga();
+                prijavljeniKorisnikGroupBox.Visible = true;
+                OsvjeziGumbe();
+            }
+
+
+        }
+
+        private void odjavaButton_Click(object sender, EventArgs e)
+        {
+            PrijavljeniKorisnik.OdjaviKorisnika();
+            prijavljeniKorisnikGroupBox.Visible = false;
+            OsvjeziGumbe();
+        }
+
+        private void OsvjeziGumbe()
+        {
+            if (PrijavljeniKorisnik.Prijavljen())
+            {
+                foreach (Button item in korisnickeKontroleGroupBox.Controls)
+                {
+                    item.Enabled = true;
+                }
+                odjavaButton.Enabled = true;
+                loginButton.Enabled = false;
+            }
+            else
+            {
+                foreach (Button item in korisnickeKontroleGroupBox.Controls)
+                {
+                    item.Enabled = false;
+                }
+                odjavaButton.Enabled = false;
+                loginButton.Enabled = true;
+            }
+            if (PrijavljeniKorisnik.GetUloga() == "Administrator")
+            {
+                registracijaButton.Enabled = true;
+            }
+            else
+            {
+                registracijaButton.Enabled = false;
+            }
+        }
+
+        private void registracijaButton_Click(object sender, EventArgs e)
+        {
+            ZaposleniciForm registracija = new ZaposleniciForm();
+            registracija.ShowDialog();
         }
     }
 }

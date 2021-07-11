@@ -1,4 +1,5 @@
-﻿using SkladisteDb;
+﻿using Login;
+using SkladisteDb;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -179,10 +180,8 @@ namespace KreiranjePrimki
             {
                 Datum = datumIzradeDatePicker.Value,
                 Klijent = klijent.Id,
-                // Trebalo bi biti automatski
-                // Logirani korisnik je unio
-                Unio = null,
-                Vrsta = vrsta.Id,
+                Unio = PrijavljeniKorisnik.GetId(),
+                Vrsta = vrsta.Id
             };
 
             Dokument.DodajDokument(noviDokument);

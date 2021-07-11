@@ -12,7 +12,7 @@ namespace SkladisteDb
         {
             using (var context = new SkladisteDatabase())
             {
-                var query = from dok in context.Dokuments.Include("Korisnik")
+                var query = from dok in context.Dokuments.Include("Korisnik").Include("Korisnik1")
                             where dok.VrstaDokumenta.Naziv.ToLower().Contains(naziv.ToLower())
                             select dok;
 

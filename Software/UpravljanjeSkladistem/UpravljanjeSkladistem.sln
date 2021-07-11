@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KreiranjePrimki", "Kreiranj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnosRobe", "UnosRobe\UnosRobe.csproj", "{C888EE66-A76E-4B3E-9677-E3B27D7EF383}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Login\Login.csproj", "{F55804E9-EF78-4B9A-BEC0-9A77714BA126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registracija zaposlenika", "Registracija zaposlenika\Registracija zaposlenika.csproj", "{E2881612-C854-49F6-81F6-C131AABF4DD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{C888EE66-A76E-4B3E-9677-E3B27D7EF383}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C888EE66-A76E-4B3E-9677-E3B27D7EF383}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C888EE66-A76E-4B3E-9677-E3B27D7EF383}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F55804E9-EF78-4B9A-BEC0-9A77714BA126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F55804E9-EF78-4B9A-BEC0-9A77714BA126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F55804E9-EF78-4B9A-BEC0-9A77714BA126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F55804E9-EF78-4B9A-BEC0-9A77714BA126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2881612-C854-49F6-81F6-C131AABF4DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2881612-C854-49F6-81F6-C131AABF4DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2881612-C854-49F6-81F6-C131AABF4DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2881612-C854-49F6-81F6-C131AABF4DD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

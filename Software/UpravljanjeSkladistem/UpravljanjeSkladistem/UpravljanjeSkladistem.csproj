@@ -95,9 +95,17 @@
       <Project>{7e1939f8-5658-4ec6-bdf8-2d45dfab8801}</Project>
       <Name>KreiranjePrimki</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Login\Login.csproj">
+      <Project>{F55804E9-EF78-4B9A-BEC0-9A77714BA126}</Project>
+      <Name>Login</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PretragaRobe\PretragaRobe.csproj">
       <Project>{a1075b29-e674-4c8c-965b-781bb2add4e7}</Project>
       <Name>PretragaRobe</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Registracija zaposlenika\Registracija zaposlenika.csproj">
+      <Project>{E2881612-C854-49F6-81F6-C131AABF4DD7}</Project>
+      <Name>Registracija zaposlenika</Name>
     </ProjectReference>
     <ProjectReference Include="..\UnosRobe\UnosRobe.csproj">
       <Project>{C888EE66-A76E-4B3E-9677-E3B27D7EF383}</Project>

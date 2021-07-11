@@ -30,5 +30,22 @@ namespace SkladisteDb
                 return query.ToList();
             }
         }
+
+        public static List<Uloga> DohvatiUlogeZaposlenika()
+        {
+            using (var context = new SkladisteDatabase())
+            {
+                var query = from uloga in context.Ulogas
+                            where uloga.Id > 1
+                            select uloga;
+
+                return query.ToList();
+            }
+        }
+
+        public override string ToString()
+        {
+            return Naziv;
+        }
     }
 }

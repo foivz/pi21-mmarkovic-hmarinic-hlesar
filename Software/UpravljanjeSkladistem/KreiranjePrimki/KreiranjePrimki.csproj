@@ -98,6 +98,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Login\Login.csproj">
+      <Project>{F55804E9-EF78-4B9A-BEC0-9A77714BA126}</Project>
+      <Name>Login</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SkladisteDb\SkladisteDb.csproj">
       <Project>{857e0e54-be57-4546-b465-a3df4c869d57}</Project>
       <Name>SkladisteDb</Name>
