@@ -91,9 +91,9 @@
       <Project>{EF645E42-BC33-4659-8746-9F92C7CE8147}</Project>
       <Name>AdresiranjeRobe</Name>
     </ProjectReference>
-    <ProjectReference Include="..\KreiranjePrimki\KreiranjePrimki.csproj">
+    <ProjectReference Include="..\KreiranjePrimki\KreiranjeDokumenata.csproj">
       <Project>{7e1939f8-5658-4ec6-bdf8-2d45dfab8801}</Project>
-      <Name>KreiranjePrimki</Name>
+      <Name>KreiranjeDokumenata</Name>
     </ProjectReference>
     <ProjectReference Include="..\Login\Login.csproj">
       <Project>{F55804E9-EF78-4B9A-BEC0-9A77714BA126}</Project>

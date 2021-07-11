@@ -39,9 +39,10 @@ namespace AdresiranjeRobe
             // 
             // odaberiLokacijuButton
             // 
-            this.odaberiLokacijuButton.Location = new System.Drawing.Point(6, 215);
+            this.odaberiLokacijuButton.Location = new System.Drawing.Point(8, 265);
+            this.odaberiLokacijuButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.odaberiLokacijuButton.Name = "odaberiLokacijuButton";
-            this.odaberiLokacijuButton.Size = new System.Drawing.Size(304, 44);
+            this.odaberiLokacijuButton.Size = new System.Drawing.Size(405, 54);
             this.odaberiLokacijuButton.TabIndex = 6;
             this.odaberiLokacijuButton.Text = "Odaberi označenu lokaciju";
             this.odaberiLokacijuButton.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@ namespace AdresiranjeRobe
             // 
             // stableniPrikazTreeView
             // 
-            this.stableniPrikazTreeView.Location = new System.Drawing.Point(6, 19);
+            this.stableniPrikazTreeView.Location = new System.Drawing.Point(8, 23);
+            this.stableniPrikazTreeView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stableniPrikazTreeView.Name = "stableniPrikazTreeView";
-            this.stableniPrikazTreeView.Size = new System.Drawing.Size(304, 192);
+            this.stableniPrikazTreeView.Size = new System.Drawing.Size(404, 235);
             this.stableniPrikazTreeView.TabIndex = 7;
             this.stableniPrikazTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.stableniPrikazTreeView_NodeMouseClick);
             // 
@@ -59,9 +61,11 @@ namespace AdresiranjeRobe
             // 
             this.groupBox4.Controls.Add(this.stableniPrikazTreeView);
             this.groupBox4.Controls.Add(this.odaberiLokacijuButton);
-            this.groupBox4.Location = new System.Drawing.Point(13, 35);
+            this.groupBox4.Location = new System.Drawing.Point(17, 43);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(319, 267);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Size = new System.Drawing.Size(425, 329);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Odabir lokacija";
@@ -70,30 +74,34 @@ namespace AdresiranjeRobe
             // 
             this.odabranaLokacijaLabel.AutoSize = true;
             this.odabranaLokacijaLabel.ForeColor = System.Drawing.Color.Red;
-            this.odabranaLokacijaLabel.Location = new System.Drawing.Point(118, 9);
+            this.odabranaLokacijaLabel.Location = new System.Drawing.Point(157, 11);
+            this.odabranaLokacijaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.odabranaLokacijaLabel.Name = "odabranaLokacijaLabel";
-            this.odabranaLokacijaLabel.Size = new System.Drawing.Size(63, 13);
+            this.odabranaLokacijaLabel.Size = new System.Drawing.Size(83, 17);
             this.odabranaLokacijaLabel.TabIndex = 11;
             this.odabranaLokacijaLabel.Text = "Placeholder";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 9);
+            this.label2.Location = new System.Drawing.Point(21, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.Size = new System.Drawing.Size(127, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "Odabrana lokacija:";
             // 
             // OdabirLokacijaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 306);
+            this.ClientSize = new System.Drawing.Size(459, 377);
             this.Controls.Add(this.odabranaLokacijaLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "OdabirLokacijaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Odabir lokacije";
             this.Load += new System.EventHandler(this.OdabirLokacija_Load);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.OdabirLokacijaForm_HelpRequested);

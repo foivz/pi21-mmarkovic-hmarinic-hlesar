@@ -325,6 +325,7 @@ namespace Registracija_zaposlenika
             this.Controls.Add(this.imeTextBox);
             this.Controls.Add(this.label1);
             this.Name = "RegistracijaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registracija";
             this.Load += new System.EventHandler(this.RegistracijaForm_Load);
             this.ulogaGroupBox.ResumeLayout(false);

@@ -66,9 +66,11 @@ namespace AdresiranjeRobe
             this.groupBox2.Controls.Add(this.dodajLokacijuButton);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.nazivNoveLokacijeTextBox);
-            this.groupBox2.Location = new System.Drawing.Point(18, 346);
+            this.groupBox2.Location = new System.Drawing.Point(24, 426);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(193, 124);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(257, 153);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dodavanje nove lokacije";
@@ -76,18 +78,20 @@ namespace AdresiranjeRobe
             // nemaNadlokacijeCheckBox
             // 
             this.nemaNadlokacijeCheckBox.AutoSize = true;
-            this.nemaNadlokacijeCheckBox.Location = new System.Drawing.Point(6, 69);
+            this.nemaNadlokacijeCheckBox.Location = new System.Drawing.Point(8, 85);
+            this.nemaNadlokacijeCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nemaNadlokacijeCheckBox.Name = "nemaNadlokacijeCheckBox";
-            this.nemaNadlokacijeCheckBox.Size = new System.Drawing.Size(111, 17);
+            this.nemaNadlokacijeCheckBox.Size = new System.Drawing.Size(142, 21);
             this.nemaNadlokacijeCheckBox.TabIndex = 7;
             this.nemaNadlokacijeCheckBox.Text = "Nema nadlokacije";
             this.nemaNadlokacijeCheckBox.UseVisualStyleBackColor = true;
             // 
             // dodajLokacijuButton
             // 
-            this.dodajLokacijuButton.Location = new System.Drawing.Point(6, 92);
+            this.dodajLokacijuButton.Location = new System.Drawing.Point(8, 113);
+            this.dodajLokacijuButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dodajLokacijuButton.Name = "dodajLokacijuButton";
-            this.dodajLokacijuButton.Size = new System.Drawing.Size(181, 23);
+            this.dodajLokacijuButton.Size = new System.Drawing.Size(241, 28);
             this.dodajLokacijuButton.TabIndex = 6;
             this.dodajLokacijuButton.Text = "Dodaj lokaciju";
             this.dodajLokacijuButton.UseVisualStyleBackColor = true;
@@ -96,26 +100,30 @@ namespace AdresiranjeRobe
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 27);
+            this.label1.Location = new System.Drawing.Point(8, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.Size = new System.Drawing.Size(133, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Naziv nove lokacije:";
             // 
             // nazivNoveLokacijeTextBox
             // 
-            this.nazivNoveLokacijeTextBox.Location = new System.Drawing.Point(6, 43);
+            this.nazivNoveLokacijeTextBox.Location = new System.Drawing.Point(8, 53);
+            this.nazivNoveLokacijeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nazivNoveLokacijeTextBox.Name = "nazivNoveLokacijeTextBox";
-            this.nazivNoveLokacijeTextBox.Size = new System.Drawing.Size(181, 20);
+            this.nazivNoveLokacijeTextBox.Size = new System.Drawing.Size(240, 22);
             this.nazivNoveLokacijeTextBox.TabIndex = 3;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.robaNaOdredenojLokacijiCheckBox);
             this.groupBox4.Controls.Add(this.robaDgv);
-            this.groupBox4.Location = new System.Drawing.Point(384, 31);
+            this.groupBox4.Location = new System.Drawing.Point(512, 38);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(506, 309);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Size = new System.Drawing.Size(675, 380);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Roba na odabranoj lokaciji";
@@ -123,9 +131,10 @@ namespace AdresiranjeRobe
             // robaNaOdredenojLokacijiCheckBox
             // 
             this.robaNaOdredenojLokacijiCheckBox.AutoSize = true;
-            this.robaNaOdredenojLokacijiCheckBox.Location = new System.Drawing.Point(6, 286);
+            this.robaNaOdredenojLokacijiCheckBox.Location = new System.Drawing.Point(8, 352);
+            this.robaNaOdredenojLokacijiCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.robaNaOdredenojLokacijiCheckBox.Name = "robaNaOdredenojLokacijiCheckBox";
-            this.robaNaOdredenojLokacijiCheckBox.Size = new System.Drawing.Size(206, 17);
+            this.robaNaOdredenojLokacijiCheckBox.Size = new System.Drawing.Size(269, 21);
             this.robaNaOdredenojLokacijiCheckBox.TabIndex = 8;
             this.robaNaOdredenojLokacijiCheckBox.Text = "Uključi prikaz robe sa svih podlokacija";
             this.robaNaOdredenojLokacijiCheckBox.UseVisualStyleBackColor = true;
@@ -145,55 +154,69 @@ namespace AdresiranjeRobe
             this.mjernaJedinicaDataGridViewTextBoxColumn,
             this.mjernaJedinica1DataGridViewTextBoxColumn});
             this.robaDgv.DataSource = this.robaBindingSource;
-            this.robaDgv.Location = new System.Drawing.Point(6, 19);
+            this.robaDgv.Location = new System.Drawing.Point(8, 23);
+            this.robaDgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.robaDgv.Name = "robaDgv";
             this.robaDgv.ReadOnly = true;
-            this.robaDgv.Size = new System.Drawing.Size(494, 261);
+            this.robaDgv.RowHeadersWidth = 51;
+            this.robaDgv.Size = new System.Drawing.Size(659, 321);
             this.robaDgv.TabIndex = 1;
             // 
             // idDataGridViewTextBoxColumn1
             // 
             this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
             this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
             this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Width = 125;
             // 
             // nazivDataGridViewTextBoxColumn1
             // 
             this.nazivDataGridViewTextBoxColumn1.DataPropertyName = "Naziv";
             this.nazivDataGridViewTextBoxColumn1.HeaderText = "Naziv";
+            this.nazivDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.nazivDataGridViewTextBoxColumn1.Name = "nazivDataGridViewTextBoxColumn1";
             this.nazivDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nazivDataGridViewTextBoxColumn1.Width = 125;
             // 
             // Kolicina
             // 
             this.Kolicina.DataPropertyName = "Kolicina";
             this.Kolicina.HeaderText = "Količina";
+            this.Kolicina.MinimumWidth = 6;
             this.Kolicina.Name = "Kolicina";
             this.Kolicina.ReadOnly = true;
+            this.Kolicina.Width = 125;
             // 
             // NazivMjerneJedinice
             // 
             this.NazivMjerneJedinice.DataPropertyName = "NazivMjerneJedinice";
             this.NazivMjerneJedinice.HeaderText = "Mjerna jedinica";
+            this.NazivMjerneJedinice.MinimumWidth = 6;
             this.NazivMjerneJedinice.Name = "NazivMjerneJedinice";
             this.NazivMjerneJedinice.ReadOnly = true;
+            this.NazivMjerneJedinice.Width = 125;
             // 
             // mjernaJedinicaDataGridViewTextBoxColumn
             // 
             this.mjernaJedinicaDataGridViewTextBoxColumn.DataPropertyName = "MjernaJedinica";
             this.mjernaJedinicaDataGridViewTextBoxColumn.HeaderText = "MjernaJedinica";
+            this.mjernaJedinicaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.mjernaJedinicaDataGridViewTextBoxColumn.Name = "mjernaJedinicaDataGridViewTextBoxColumn";
             this.mjernaJedinicaDataGridViewTextBoxColumn.ReadOnly = true;
             this.mjernaJedinicaDataGridViewTextBoxColumn.Visible = false;
+            this.mjernaJedinicaDataGridViewTextBoxColumn.Width = 125;
             // 
             // mjernaJedinica1DataGridViewTextBoxColumn
             // 
             this.mjernaJedinica1DataGridViewTextBoxColumn.DataPropertyName = "MjernaJedinica1";
             this.mjernaJedinica1DataGridViewTextBoxColumn.HeaderText = "MjernaJedinica1";
+            this.mjernaJedinica1DataGridViewTextBoxColumn.MinimumWidth = 6;
             this.mjernaJedinica1DataGridViewTextBoxColumn.Name = "mjernaJedinica1DataGridViewTextBoxColumn";
             this.mjernaJedinica1DataGridViewTextBoxColumn.ReadOnly = true;
             this.mjernaJedinica1DataGridViewTextBoxColumn.Visible = false;
+            this.mjernaJedinica1DataGridViewTextBoxColumn.Width = 125;
             // 
             // robaBindingSource
             // 
@@ -202,27 +225,31 @@ namespace AdresiranjeRobe
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.stableniPrikazTreeView);
-            this.groupBox5.Location = new System.Drawing.Point(18, 31);
+            this.groupBox5.Location = new System.Drawing.Point(24, 38);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(360, 309);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Size = new System.Drawing.Size(480, 380);
             this.groupBox5.TabIndex = 7;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Pregled lokacija";
             // 
             // stableniPrikazTreeView
             // 
-            this.stableniPrikazTreeView.Location = new System.Drawing.Point(6, 19);
+            this.stableniPrikazTreeView.Location = new System.Drawing.Point(8, 23);
+            this.stableniPrikazTreeView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stableniPrikazTreeView.Name = "stableniPrikazTreeView";
-            this.stableniPrikazTreeView.Size = new System.Drawing.Size(348, 284);
+            this.stableniPrikazTreeView.Size = new System.Drawing.Size(463, 349);
             this.stableniPrikazTreeView.TabIndex = 7;
             this.stableniPrikazTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.stableniPrikazTreeView_NodeMouseClick);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 9);
+            this.label2.Location = new System.Drawing.Point(28, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.Size = new System.Drawing.Size(127, 17);
             this.label2.TabIndex = 8;
             this.label2.Text = "Odabrana lokacija:";
             // 
@@ -230,17 +257,19 @@ namespace AdresiranjeRobe
             // 
             this.odabranaLokacijaLabel.AutoSize = true;
             this.odabranaLokacijaLabel.ForeColor = System.Drawing.Color.Red;
-            this.odabranaLokacijaLabel.Location = new System.Drawing.Point(123, 9);
+            this.odabranaLokacijaLabel.Location = new System.Drawing.Point(164, 11);
+            this.odabranaLokacijaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.odabranaLokacijaLabel.Name = "odabranaLokacijaLabel";
-            this.odabranaLokacijaLabel.Size = new System.Drawing.Size(63, 13);
+            this.odabranaLokacijaLabel.Size = new System.Drawing.Size(83, 17);
             this.odabranaLokacijaLabel.TabIndex = 9;
             this.odabranaLokacijaLabel.Text = "Placeholder";
             // 
             // izlazButton
             // 
-            this.izlazButton.Location = new System.Drawing.Point(788, 438);
+            this.izlazButton.Location = new System.Drawing.Point(1051, 539);
+            this.izlazButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.izlazButton.Name = "izlazButton";
-            this.izlazButton.Size = new System.Drawing.Size(96, 32);
+            this.izlazButton.Size = new System.Drawing.Size(128, 39);
             this.izlazButton.TabIndex = 10;
             this.izlazButton.Text = "Izlaz";
             this.izlazButton.UseVisualStyleBackColor = true;
@@ -249,9 +278,11 @@ namespace AdresiranjeRobe
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.obrisiOdabranuLokacijuButton);
-            this.groupBox1.Location = new System.Drawing.Point(217, 346);
+            this.groupBox1.Location = new System.Drawing.Point(289, 426);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(161, 63);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(215, 78);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Brisanje odabrane lokacije";
@@ -259,9 +290,10 @@ namespace AdresiranjeRobe
             // obrisiOdabranuLokacijuButton
             // 
             this.obrisiOdabranuLokacijuButton.ForeColor = System.Drawing.Color.Red;
-            this.obrisiOdabranuLokacijuButton.Location = new System.Drawing.Point(6, 19);
+            this.obrisiOdabranuLokacijuButton.Location = new System.Drawing.Point(8, 23);
+            this.obrisiOdabranuLokacijuButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.obrisiOdabranuLokacijuButton.Name = "obrisiOdabranuLokacijuButton";
-            this.obrisiOdabranuLokacijuButton.Size = new System.Drawing.Size(149, 36);
+            this.obrisiOdabranuLokacijuButton.Size = new System.Drawing.Size(199, 44);
             this.obrisiOdabranuLokacijuButton.TabIndex = 11;
             this.obrisiOdabranuLokacijuButton.Text = "Obriši odabranu lokaciju";
             this.obrisiOdabranuLokacijuButton.UseVisualStyleBackColor = true;
@@ -269,9 +301,9 @@ namespace AdresiranjeRobe
             // 
             // AdresiranjeRobeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 481);
+            this.ClientSize = new System.Drawing.Size(1200, 592);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.izlazButton);
             this.Controls.Add(this.odabranaLokacijaLabel);
@@ -279,7 +311,9 @@ namespace AdresiranjeRobe
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdresiranjeRobeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adresiranje Robe";
             this.Load += new System.EventHandler(this.AdresiranjeRobe_Load);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.AdresiranjeRobeForm_HelpRequested);

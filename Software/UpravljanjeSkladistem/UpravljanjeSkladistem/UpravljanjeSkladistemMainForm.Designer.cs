@@ -89,7 +89,7 @@ namespace UpravljanjeSkladistem
             // adresiranjeRobeButton
             // 
             this.adresiranjeRobeButton.Enabled = false;
-            this.adresiranjeRobeButton.Location = new System.Drawing.Point(161, 23);
+            this.adresiranjeRobeButton.Location = new System.Drawing.Point(8, 196);
             this.adresiranjeRobeButton.Margin = new System.Windows.Forms.Padding(4);
             this.adresiranjeRobeButton.Name = "adresiranjeRobeButton";
             this.adresiranjeRobeButton.Size = new System.Drawing.Size(145, 79);
@@ -101,7 +101,7 @@ namespace UpravljanjeSkladistem
             // kreiranjePrimkiButton
             // 
             this.kreiranjePrimkiButton.Enabled = false;
-            this.kreiranjePrimkiButton.Location = new System.Drawing.Point(161, 110);
+            this.kreiranjePrimkiButton.Location = new System.Drawing.Point(8, 109);
             this.kreiranjePrimkiButton.Margin = new System.Windows.Forms.Padding(4);
             this.kreiranjePrimkiButton.Name = "kreiranjePrimkiButton";
             this.kreiranjePrimkiButton.Size = new System.Drawing.Size(145, 79);
@@ -113,7 +113,7 @@ namespace UpravljanjeSkladistem
             // pretragaRobeButton
             // 
             this.pretragaRobeButton.Enabled = false;
-            this.pretragaRobeButton.Location = new System.Drawing.Point(8, 110);
+            this.pretragaRobeButton.Location = new System.Drawing.Point(161, 23);
             this.pretragaRobeButton.Margin = new System.Windows.Forms.Padding(4);
             this.pretragaRobeButton.Name = "pretragaRobeButton";
             this.pretragaRobeButton.Size = new System.Drawing.Size(145, 79);
@@ -167,18 +167,19 @@ namespace UpravljanjeSkladistem
             // kreiranjeIzdatnicaButton
             // 
             this.kreiranjeIzdatnicaButton.Enabled = false;
-            this.kreiranjeIzdatnicaButton.Location = new System.Drawing.Point(161, 196);
+            this.kreiranjeIzdatnicaButton.Location = new System.Drawing.Point(161, 110);
             this.kreiranjeIzdatnicaButton.Margin = new System.Windows.Forms.Padding(4);
             this.kreiranjeIzdatnicaButton.Name = "kreiranjeIzdatnicaButton";
             this.kreiranjeIzdatnicaButton.Size = new System.Drawing.Size(145, 79);
             this.kreiranjeIzdatnicaButton.TabIndex = 9;
-            this.kreiranjeIzdatnicaButton.Text = "Kreiranje izdatnica";
+            this.kreiranjeIzdatnicaButton.Text = "Pregled izdatnica";
             this.kreiranjeIzdatnicaButton.UseVisualStyleBackColor = true;
+            this.kreiranjeIzdatnicaButton.Click += new System.EventHandler(this.kreiranjeIzdatnicaButton_Click);
             // 
             // azuriranjeStanjaButton
             // 
             this.azuriranjeStanjaButton.Enabled = false;
-            this.azuriranjeStanjaButton.Location = new System.Drawing.Point(8, 196);
+            this.azuriranjeStanjaButton.Location = new System.Drawing.Point(161, 197);
             this.azuriranjeStanjaButton.Margin = new System.Windows.Forms.Padding(4);
             this.azuriranjeStanjaButton.Name = "azuriranjeStanjaButton";
             this.azuriranjeStanjaButton.Size = new System.Drawing.Size(145, 79);
@@ -276,6 +277,7 @@ namespace UpravljanjeSkladistem
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UpravljanjeSkladistemMainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Upravljanje skladištem";
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.UpravljanjeSkladistemMainForm_HelpRequested);
             this.groupBox1.ResumeLayout(false);

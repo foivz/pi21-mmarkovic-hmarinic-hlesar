@@ -29,7 +29,6 @@ namespace KreiranjePrimki
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.spremiDokumentButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,7 +48,7 @@ namespace KreiranjePrimki
             this.stavkeDokumentasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivMjerneJediniceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.robaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.robaBindingSource = new System.Windows.Forms.BindingSource();
             this.jedinicnaCijenaTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.kolicinaTextBox = new System.Windows.Forms.TextBox();
@@ -71,7 +70,7 @@ namespace KreiranjePrimki
             this.idDokumentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idRobaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dokumentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stavkeDokumentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stavkeDokumentaBindingSource = new System.Windows.Forms.BindingSource();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -91,18 +90,21 @@ namespace KreiranjePrimki
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.datumIzradeDatePicker);
             this.groupBox1.Controls.Add(this.vrstaDokumentaComboBox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(16, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(225, 574);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(300, 706);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalji dokumenta";
             // 
             // spremiDokumentButton
             // 
-            this.spremiDokumentButton.Location = new System.Drawing.Point(6, 535);
+            this.spremiDokumentButton.Location = new System.Drawing.Point(8, 658);
+            this.spremiDokumentButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.spremiDokumentButton.Name = "spremiDokumentButton";
-            this.spremiDokumentButton.Size = new System.Drawing.Size(213, 33);
+            this.spremiDokumentButton.Size = new System.Drawing.Size(284, 41);
             this.spremiDokumentButton.TabIndex = 11;
             this.spremiDokumentButton.Text = "Spremi dokument";
             this.spremiDokumentButton.UseVisualStyleBackColor = true;
@@ -111,51 +113,57 @@ namespace KreiranjePrimki
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 114);
+            this.label3.Location = new System.Drawing.Point(16, 140);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 13);
+            this.label3.Size = new System.Drawing.Size(170, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Datum izrade dokumenta:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 63);
+            this.label2.Location = new System.Drawing.Point(16, 78);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 13);
+            this.label2.Size = new System.Drawing.Size(119, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Vrsta dokumenta:";
             // 
             // odabirKlijentaComboBox
             // 
             this.odabirKlijentaComboBox.FormattingEnabled = true;
-            this.odabirKlijentaComboBox.Location = new System.Drawing.Point(15, 39);
+            this.odabirKlijentaComboBox.Location = new System.Drawing.Point(20, 48);
+            this.odabirKlijentaComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.odabirKlijentaComboBox.Name = "odabirKlijentaComboBox";
-            this.odabirKlijentaComboBox.Size = new System.Drawing.Size(121, 21);
+            this.odabirKlijentaComboBox.Size = new System.Drawing.Size(160, 24);
             this.odabirKlijentaComboBox.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 23);
+            this.label1.Location = new System.Drawing.Point(16, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Klijent:";
             // 
             // datumIzradeDatePicker
             // 
-            this.datumIzradeDatePicker.Location = new System.Drawing.Point(15, 130);
+            this.datumIzradeDatePicker.Location = new System.Drawing.Point(20, 160);
+            this.datumIzradeDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.datumIzradeDatePicker.Name = "datumIzradeDatePicker";
-            this.datumIzradeDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.datumIzradeDatePicker.Size = new System.Drawing.Size(265, 22);
             this.datumIzradeDatePicker.TabIndex = 1;
             // 
             // vrstaDokumentaComboBox
             // 
             this.vrstaDokumentaComboBox.FormattingEnabled = true;
-            this.vrstaDokumentaComboBox.Location = new System.Drawing.Point(15, 79);
+            this.vrstaDokumentaComboBox.Location = new System.Drawing.Point(20, 97);
+            this.vrstaDokumentaComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.vrstaDokumentaComboBox.Name = "vrstaDokumentaComboBox";
-            this.vrstaDokumentaComboBox.Size = new System.Drawing.Size(121, 21);
+            this.vrstaDokumentaComboBox.Size = new System.Drawing.Size(160, 24);
             this.vrstaDokumentaComboBox.TabIndex = 1;
             // 
             // groupBox2
@@ -166,9 +174,11 @@ namespace KreiranjePrimki
             this.groupBox2.Controls.Add(this.kolicinaTextBox);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.dodajStavkuButton);
-            this.groupBox2.Location = new System.Drawing.Point(243, 12);
+            this.groupBox2.Location = new System.Drawing.Point(324, 15);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(545, 284);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(727, 350);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Odabir stavka";
@@ -190,79 +200,99 @@ namespace KreiranjePrimki
             this.nazivMjerneJediniceDataGridViewTextBoxColumn,
             this.kolicinaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.robaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 23);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(530, 174);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(707, 214);
             this.dataGridView1.TabIndex = 10;
             // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
             // 
             // mjernaJedinicaDataGridViewTextBoxColumn
             // 
             this.mjernaJedinicaDataGridViewTextBoxColumn.DataPropertyName = "MjernaJedinica";
             this.mjernaJedinicaDataGridViewTextBoxColumn.HeaderText = "MjernaJedinica";
+            this.mjernaJedinicaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.mjernaJedinicaDataGridViewTextBoxColumn.Name = "mjernaJedinicaDataGridViewTextBoxColumn";
             this.mjernaJedinicaDataGridViewTextBoxColumn.ReadOnly = true;
             this.mjernaJedinicaDataGridViewTextBoxColumn.Visible = false;
+            this.mjernaJedinicaDataGridViewTextBoxColumn.Width = 125;
             // 
             // nazivDataGridViewTextBoxColumn
             // 
             this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
             this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
             this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nazivDataGridViewTextBoxColumn.Width = 125;
             // 
             // opisDataGridViewTextBoxColumn
             // 
             this.opisDataGridViewTextBoxColumn.DataPropertyName = "Opis";
             this.opisDataGridViewTextBoxColumn.HeaderText = "Opis";
+            this.opisDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
             this.opisDataGridViewTextBoxColumn.ReadOnly = true;
+            this.opisDataGridViewTextBoxColumn.Width = 125;
             // 
             // mjernaJedinica1DataGridViewTextBoxColumn
             // 
             this.mjernaJedinica1DataGridViewTextBoxColumn.DataPropertyName = "MjernaJedinica1";
             this.mjernaJedinica1DataGridViewTextBoxColumn.HeaderText = "MjernaJedinica1";
+            this.mjernaJedinica1DataGridViewTextBoxColumn.MinimumWidth = 6;
             this.mjernaJedinica1DataGridViewTextBoxColumn.Name = "mjernaJedinica1DataGridViewTextBoxColumn";
             this.mjernaJedinica1DataGridViewTextBoxColumn.ReadOnly = true;
             this.mjernaJedinica1DataGridViewTextBoxColumn.Visible = false;
+            this.mjernaJedinica1DataGridViewTextBoxColumn.Width = 125;
             // 
             // robaNaLokacijisDataGridViewTextBoxColumn
             // 
             this.robaNaLokacijisDataGridViewTextBoxColumn.DataPropertyName = "RobaNaLokacijis";
             this.robaNaLokacijisDataGridViewTextBoxColumn.HeaderText = "RobaNaLokacijis";
+            this.robaNaLokacijisDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.robaNaLokacijisDataGridViewTextBoxColumn.Name = "robaNaLokacijisDataGridViewTextBoxColumn";
             this.robaNaLokacijisDataGridViewTextBoxColumn.ReadOnly = true;
             this.robaNaLokacijisDataGridViewTextBoxColumn.Visible = false;
+            this.robaNaLokacijisDataGridViewTextBoxColumn.Width = 125;
             // 
             // stavkeDokumentasDataGridViewTextBoxColumn
             // 
             this.stavkeDokumentasDataGridViewTextBoxColumn.DataPropertyName = "StavkeDokumentas";
             this.stavkeDokumentasDataGridViewTextBoxColumn.HeaderText = "StavkeDokumentas";
+            this.stavkeDokumentasDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.stavkeDokumentasDataGridViewTextBoxColumn.Name = "stavkeDokumentasDataGridViewTextBoxColumn";
             this.stavkeDokumentasDataGridViewTextBoxColumn.ReadOnly = true;
             this.stavkeDokumentasDataGridViewTextBoxColumn.Visible = false;
+            this.stavkeDokumentasDataGridViewTextBoxColumn.Width = 125;
             // 
             // nazivMjerneJediniceDataGridViewTextBoxColumn
             // 
             this.nazivMjerneJediniceDataGridViewTextBoxColumn.DataPropertyName = "NazivMjerneJedinice";
             this.nazivMjerneJediniceDataGridViewTextBoxColumn.HeaderText = "Mjerna jedinica";
+            this.nazivMjerneJediniceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nazivMjerneJediniceDataGridViewTextBoxColumn.Name = "nazivMjerneJediniceDataGridViewTextBoxColumn";
             this.nazivMjerneJediniceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nazivMjerneJediniceDataGridViewTextBoxColumn.Width = 125;
             // 
             // kolicinaDataGridViewTextBoxColumn
             // 
             this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "Kolicina";
             this.kolicinaDataGridViewTextBoxColumn.HeaderText = "Kolicina";
+            this.kolicinaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
             this.kolicinaDataGridViewTextBoxColumn.ReadOnly = true;
             this.kolicinaDataGridViewTextBoxColumn.Visible = false;
+            this.kolicinaDataGridViewTextBoxColumn.Width = 125;
             // 
             // robaBindingSource
             // 
@@ -270,41 +300,46 @@ namespace KreiranjePrimki
             // 
             // jedinicnaCijenaTextBox
             // 
-            this.jedinicnaCijenaTextBox.Location = new System.Drawing.Point(112, 219);
+            this.jedinicnaCijenaTextBox.Location = new System.Drawing.Point(149, 270);
+            this.jedinicnaCijenaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.jedinicnaCijenaTextBox.Name = "jedinicnaCijenaTextBox";
-            this.jedinicnaCijenaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.jedinicnaCijenaTextBox.Size = new System.Drawing.Size(132, 22);
             this.jedinicnaCijenaTextBox.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(112, 203);
+            this.label5.Location = new System.Drawing.Point(149, 250);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 13);
+            this.label5.Size = new System.Drawing.Size(113, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "Jedinična cijena:";
             // 
             // kolicinaTextBox
             // 
-            this.kolicinaTextBox.Location = new System.Drawing.Point(6, 219);
+            this.kolicinaTextBox.Location = new System.Drawing.Point(8, 270);
+            this.kolicinaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.kolicinaTextBox.Name = "kolicinaTextBox";
-            this.kolicinaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.kolicinaTextBox.Size = new System.Drawing.Size(132, 22);
             this.kolicinaTextBox.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 203);
+            this.label4.Location = new System.Drawing.Point(8, 250);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.Size = new System.Drawing.Size(61, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Količina:";
             // 
             // dodajStavkuButton
             // 
-            this.dodajStavkuButton.Location = new System.Drawing.Point(6, 245);
+            this.dodajStavkuButton.Location = new System.Drawing.Point(8, 302);
+            this.dodajStavkuButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dodajStavkuButton.Name = "dodajStavkuButton";
-            this.dodajStavkuButton.Size = new System.Drawing.Size(206, 33);
+            this.dodajStavkuButton.Size = new System.Drawing.Size(275, 41);
             this.dodajStavkuButton.TabIndex = 2;
             this.dodajStavkuButton.Text = "Dodaj stavku";
             this.dodajStavkuButton.UseVisualStyleBackColor = true;
@@ -319,18 +354,21 @@ namespace KreiranjePrimki
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.izmjeniStavkuButton);
             this.groupBox3.Controls.Add(this.dataGridView2);
-            this.groupBox3.Location = new System.Drawing.Point(249, 302);
+            this.groupBox3.Location = new System.Drawing.Point(332, 372);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(545, 284);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(727, 350);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Pregled dodanih stavki";
             // 
             // obrisiStavkuButton
             // 
-            this.obrisiStavkuButton.Location = new System.Drawing.Point(333, 245);
+            this.obrisiStavkuButton.Location = new System.Drawing.Point(444, 302);
+            this.obrisiStavkuButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.obrisiStavkuButton.Name = "obrisiStavkuButton";
-            this.obrisiStavkuButton.Size = new System.Drawing.Size(206, 33);
+            this.obrisiStavkuButton.Size = new System.Drawing.Size(275, 41);
             this.obrisiStavkuButton.TabIndex = 10;
             this.obrisiStavkuButton.Text = "Obrisi stavku";
             this.obrisiStavkuButton.UseVisualStyleBackColor = true;
@@ -338,41 +376,46 @@ namespace KreiranjePrimki
             // 
             // izmjeniJedinicnaCijenaTextBox
             // 
-            this.izmjeniJedinicnaCijenaTextBox.Location = new System.Drawing.Point(112, 219);
+            this.izmjeniJedinicnaCijenaTextBox.Location = new System.Drawing.Point(149, 270);
+            this.izmjeniJedinicnaCijenaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.izmjeniJedinicnaCijenaTextBox.Name = "izmjeniJedinicnaCijenaTextBox";
-            this.izmjeniJedinicnaCijenaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.izmjeniJedinicnaCijenaTextBox.Size = new System.Drawing.Size(132, 22);
             this.izmjeniJedinicnaCijenaTextBox.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(112, 203);
+            this.label6.Location = new System.Drawing.Point(149, 250);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.Size = new System.Drawing.Size(113, 17);
             this.label6.TabIndex = 8;
             this.label6.Text = "Jedinična cijena:";
             // 
             // izmjeniKolicinaTextBox
             // 
-            this.izmjeniKolicinaTextBox.Location = new System.Drawing.Point(6, 219);
+            this.izmjeniKolicinaTextBox.Location = new System.Drawing.Point(8, 270);
+            this.izmjeniKolicinaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.izmjeniKolicinaTextBox.Name = "izmjeniKolicinaTextBox";
-            this.izmjeniKolicinaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.izmjeniKolicinaTextBox.Size = new System.Drawing.Size(132, 22);
             this.izmjeniKolicinaTextBox.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 203);
+            this.label7.Location = new System.Drawing.Point(8, 250);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.Size = new System.Drawing.Size(61, 17);
             this.label7.TabIndex = 6;
             this.label7.Text = "Količina:";
             // 
             // izmjeniStavkuButton
             // 
-            this.izmjeniStavkuButton.Location = new System.Drawing.Point(6, 245);
+            this.izmjeniStavkuButton.Location = new System.Drawing.Point(8, 302);
+            this.izmjeniStavkuButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.izmjeniStavkuButton.Name = "izmjeniStavkuButton";
-            this.izmjeniStavkuButton.Size = new System.Drawing.Size(206, 33);
+            this.izmjeniStavkuButton.Size = new System.Drawing.Size(275, 41);
             this.izmjeniStavkuButton.TabIndex = 2;
             this.izmjeniStavkuButton.Text = "Izmjeni stavku";
             this.izmjeniStavkuButton.UseVisualStyleBackColor = true;
@@ -394,70 +437,88 @@ namespace KreiranjePrimki
             this.idRobaDataGridViewTextBoxColumn,
             this.dokumentDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.stavkeDokumentaBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 15);
+            this.dataGridView2.Location = new System.Drawing.Point(8, 18);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(533, 174);
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.Size = new System.Drawing.Size(711, 214);
             this.dataGridView2.TabIndex = 1;
             // 
             // robaDataGridViewTextBoxColumn
             // 
             this.robaDataGridViewTextBoxColumn.DataPropertyName = "NazivRobe";
             this.robaDataGridViewTextBoxColumn.HeaderText = "Naziv robe";
+            this.robaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.robaDataGridViewTextBoxColumn.Name = "robaDataGridViewTextBoxColumn";
             this.robaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.robaDataGridViewTextBoxColumn.Width = 125;
             // 
             // OpisRobe
             // 
             this.OpisRobe.DataPropertyName = "OpisRobe";
             this.OpisRobe.HeaderText = "Opis";
+            this.OpisRobe.MinimumWidth = 6;
             this.OpisRobe.Name = "OpisRobe";
             this.OpisRobe.ReadOnly = true;
+            this.OpisRobe.Width = 125;
             // 
             // kolicinaDataGridViewTextBoxColumn1
             // 
             this.kolicinaDataGridViewTextBoxColumn1.DataPropertyName = "Kolicina";
             this.kolicinaDataGridViewTextBoxColumn1.HeaderText = "Količina";
+            this.kolicinaDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.kolicinaDataGridViewTextBoxColumn1.Name = "kolicinaDataGridViewTextBoxColumn1";
             this.kolicinaDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.kolicinaDataGridViewTextBoxColumn1.Width = 125;
             // 
             // jedinicnaCijenaDataGridViewTextBoxColumn
             // 
             this.jedinicnaCijenaDataGridViewTextBoxColumn.DataPropertyName = "JedinicnaCijena";
             this.jedinicnaCijenaDataGridViewTextBoxColumn.HeaderText = "Jedinična cijena";
+            this.jedinicnaCijenaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.jedinicnaCijenaDataGridViewTextBoxColumn.Name = "jedinicnaCijenaDataGridViewTextBoxColumn";
             this.jedinicnaCijenaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.jedinicnaCijenaDataGridViewTextBoxColumn.Width = 125;
             // 
             // UkupnaCijena
             // 
             this.UkupnaCijena.DataPropertyName = "UkupnaCijena";
             this.UkupnaCijena.HeaderText = "Ukupna cijena";
+            this.UkupnaCijena.MinimumWidth = 6;
             this.UkupnaCijena.Name = "UkupnaCijena";
             this.UkupnaCijena.ReadOnly = true;
+            this.UkupnaCijena.Width = 125;
             // 
             // idDokumentDataGridViewTextBoxColumn
             // 
             this.idDokumentDataGridViewTextBoxColumn.DataPropertyName = "IdDokument";
             this.idDokumentDataGridViewTextBoxColumn.HeaderText = "IdDokument";
+            this.idDokumentDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDokumentDataGridViewTextBoxColumn.Name = "idDokumentDataGridViewTextBoxColumn";
             this.idDokumentDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDokumentDataGridViewTextBoxColumn.Visible = false;
+            this.idDokumentDataGridViewTextBoxColumn.Width = 125;
             // 
             // idRobaDataGridViewTextBoxColumn
             // 
             this.idRobaDataGridViewTextBoxColumn.DataPropertyName = "IdRoba";
             this.idRobaDataGridViewTextBoxColumn.HeaderText = "IdRoba";
+            this.idRobaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idRobaDataGridViewTextBoxColumn.Name = "idRobaDataGridViewTextBoxColumn";
             this.idRobaDataGridViewTextBoxColumn.ReadOnly = true;
             this.idRobaDataGridViewTextBoxColumn.Visible = false;
+            this.idRobaDataGridViewTextBoxColumn.Width = 125;
             // 
             // dokumentDataGridViewTextBoxColumn
             // 
             this.dokumentDataGridViewTextBoxColumn.DataPropertyName = "Dokument";
             this.dokumentDataGridViewTextBoxColumn.HeaderText = "Dokument";
+            this.dokumentDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dokumentDataGridViewTextBoxColumn.Name = "dokumentDataGridViewTextBoxColumn";
             this.dokumentDataGridViewTextBoxColumn.ReadOnly = true;
             this.dokumentDataGridViewTextBoxColumn.Visible = false;
+            this.dokumentDataGridViewTextBoxColumn.Width = 125;
             // 
             // stavkeDokumentaBindingSource
             // 
@@ -468,17 +529,21 @@ namespace KreiranjePrimki
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Roba";
             this.dataGridViewTextBoxColumn1.HeaderText = "Opis";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // KreirajDokumentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 593);
+            this.ClientSize = new System.Drawing.Size(1067, 730);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "KreirajDokumentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kreiraj dokument";
             this.Load += new System.EventHandler(this.KreirajDokumentForm_Load);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.KreirajDokumentForm_HelpRequested);

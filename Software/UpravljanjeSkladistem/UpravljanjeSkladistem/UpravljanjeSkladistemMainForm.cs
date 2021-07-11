@@ -114,5 +114,11 @@ namespace UpravljanjeSkladistem
             ZaposleniciForm registracija = new ZaposleniciForm();
             registracija.ShowDialog();
         }
+
+        private void kreiranjeIzdatnicaButton_Click(object sender, EventArgs e)
+        {
+            PregledIzdatnicaForm pregledIzdatnica = new PregledIzdatnicaForm();
+            pregledIzdatnica.ShowDialog();
+        }
     }
 }

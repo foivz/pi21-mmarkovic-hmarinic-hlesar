@@ -298,6 +298,7 @@ namespace Registracija_zaposlenika
             this.Controls.Add(this.noviZaposlenikButton);
             this.Controls.Add(this.zaposleniciDataGridView);
             this.Name = "ZaposleniciForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registracija zaposlenika";
             this.Load += new System.EventHandler(this.ZaposleniciForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.korisnikBindingSource)).EndInit();

@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkladisteDb", "SkladisteDb\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PretragaRobe", "PretragaRobe\PretragaRobe.csproj", "{A1075B29-E674-4C8C-965B-781BB2ADD4E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KreiranjePrimki", "KreiranjePrimki\KreiranjePrimki.csproj", "{7E1939F8-5658-4EC6-BDF8-2D45DFAB8801}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KreiranjeDokumenata", "KreiranjePrimki\KreiranjeDokumenata.csproj", "{7E1939F8-5658-4EC6-BDF8-2D45DFAB8801}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnosRobe", "UnosRobe\UnosRobe.csproj", "{C888EE66-A76E-4B3E-9677-E3B27D7EF383}"
 EndProject
