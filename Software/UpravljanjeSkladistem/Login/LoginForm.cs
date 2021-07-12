@@ -28,5 +28,10 @@ namespace Login
                 MessageBox.Show("Prijava neuspješna!");
             }
         }
+
+        private void LoginForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../../Pomoc/f1-pomoc.chm", HelpNavigator.TopicId, "1060");
+        }
     }
 }

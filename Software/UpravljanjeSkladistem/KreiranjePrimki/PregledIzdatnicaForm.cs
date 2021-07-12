@@ -64,5 +64,9 @@ namespace KreiranjePrimki
             dokumentBindingSource.DataSource = Dokument.DohvatiDokumentePremaNazivu("izdatnica");
         }
 
+        private void PregledIzdatnicaForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../../Pomoc/f1-pomoc.chm", HelpNavigator.TopicId, "1050");
+        }
     }
 }

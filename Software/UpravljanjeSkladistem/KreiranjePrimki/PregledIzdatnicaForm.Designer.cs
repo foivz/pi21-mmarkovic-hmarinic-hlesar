@@ -29,6 +29,7 @@ namespace KreiranjePrimki
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.obrisiIzdatnicuButton = new System.Windows.Forms.Button();
             this.novaIzdatnicaButton = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@ namespace KreiranjePrimki
             this.opisRobeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivMjerneJedinicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ukupnaCijenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stavkeDokumentaBindingSource = new System.Windows.Forms.BindingSource();
+            this.stavkeDokumentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pregledIzdatnicaDataGridView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +61,7 @@ namespace KreiranjePrimki
             this.korisnik1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrstaDokumentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkeDokumentasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dokumentBindingSource = new System.Windows.Forms.BindingSource();
+            this.dokumentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stavkeIzdatniceDataGridVIew)).BeginInit();
@@ -426,6 +427,7 @@ namespace KreiranjePrimki
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pregled izdatnica";
             this.Load += new System.EventHandler(this.PregledIzdatnicaForm_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.PregledIzdatnicaForm_HelpRequested);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.stavkeIzdatniceDataGridVIew)).EndInit();

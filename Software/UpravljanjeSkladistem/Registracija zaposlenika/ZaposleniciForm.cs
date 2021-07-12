@@ -56,5 +56,10 @@ namespace Registracija_zaposlenika
             korisnikBindingSource.Clear();
             korisnikBindingSource.DataSource = Korisnik.DohvatiZaposlenike();
         }
+
+        private void ZaposleniciForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../../Pomoc/f1-pomoc.chm", HelpNavigator.TopicId, "1070");
+        }
     }
 }

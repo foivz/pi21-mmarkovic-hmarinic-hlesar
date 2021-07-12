@@ -104,6 +104,7 @@ namespace Login
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.LoginForm_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();
 

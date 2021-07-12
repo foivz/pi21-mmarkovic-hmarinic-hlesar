@@ -156,5 +156,10 @@ namespace Registracija_zaposlenika
         {
             lozinkaTextBox.Text = Generator.GenerirajLozinku();
         }
+
+        private void RegistracijaForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../../Pomoc/f1-pomoc.chm", HelpNavigator.TopicId, "1071");
+        }
     }
 }

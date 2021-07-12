@@ -144,7 +144,7 @@
     <CHMExport>
       <Title>Help</Title>
       <Language>91</Language>
-      <ExportFileName>C:\Users\Hrvoje\Desktop\F1-Pomoc\tttt.chm</ExportFileName>
+      <ExportFileName>D:\PI\pi21-mmarkovic-hmarinic-hlesar\Software\UpravljanjeSkladistem\Pomoc\f1-pomoc.chm</ExportFileName>
       <ThemeName>
       </ThemeName>
       <WindowWidth>1024</WindowWidth>
@@ -175,9 +175,15 @@
         <DirectoryNode Path="Pregled primki" Expanded="True" Id="d589d9c7-c2de-47cc-9ac9-ed7bda498eb0">
           <DirectoryNode Path="Pregled primki\Nova primka" Expanded="False" Id="94c3dc5b-009f-4dc0-b5ef-abfb23c3384f" />
         </DirectoryNode>
+        <DirectoryNode Path="Pregled izdatnica" Expanded="True" Id="0a05ad1d-0b46-4783-96a2-df30114732ac">
+          <DirectoryNode Path="Pregled izdatnica\Nova izdatnica" Expanded="False" Id="128068cb-04b9-45b2-aec1-e0917e5d7f0a" />
+        </DirectoryNode>
+        <DirectoryNode Path="Login" Expanded="False" Id="2a31e844-d8b1-46a0-be3e-867671b26d15" />
+        <DirectoryNode Path="Registracija zaposlenika" Expanded="True" Id="905387d5-5297-4434-857a-508542135109">
+          <DirectoryNode Path="Registracija zaposlenika\Registracija" Expanded="False" Id="4981c111-8622-462c-a0e7-09f5eb0ff68d" />
+        </DirectoryNode>
       </DirectoryNode>
     </treeContent>
-    <exportPath>
-    </exportPath>
+    <exportPath>C:\Users\Marko\Desktop</exportPath>
   </content>
 </xml>
