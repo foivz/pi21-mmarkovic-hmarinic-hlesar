@@ -81,11 +81,54 @@ namespace SkladisteDb
                 }
             }
 
-            foreach(var podlokacija in this.DohvatiPodlokacije())
+            foreach (var podlokacija in this.DohvatiPodlokacije())
             {
                 podlokacija.DohvatiRobuNaSvimPodlokacijama(ref roba);
             }
-        } 
+        }
+
+        public static void PremjestiRobu(RobaNaLokaciji robaNaLokaciji, Lokacija lokacija, int kolicina)
+        {
+            using (var context = new SkladisteDatabase())
+            {
+                 var query = from rnl in context.RobaNaLokacijis
+                                where robaNaLokaciji.IdRoba == rnl.IdRoba && lokacija.Id == rnl.IdLokacija
+                                select rnl;
+                RobaNaLokaciji postojecaRobaNaLokaciji = query.ToList()[0];
+
+                if (postojecaRobaNaLokaciji != null)
+                {
+                    context.RobaNaLokacijis.Attach(postojecaRobaNaLokaciji);
+                    postojecaRobaNaLokaciji.Kolicina += kolicina;
+                }
+                else
+                {
+                    RobaNaLokaciji novaRobaNaLokaciji = new RobaNaLokaciji();
+                    novaRobaNaLokaciji.IdLokacija = lokacija.Id;
+                    novaRobaNaLokaciji.IdRoba = robaNaLokaciji.IdRoba;
+                    novaRobaNaLokaciji.Kolicina = kolicina;
+                    context.RobaNaLokacijis.Add(novaRobaNaLokaciji);
+                }
+                context.SaveChanges();
+
+                if (robaNaLokaciji.Kolicina - kolicina == 0)
+                {
+                    context.RobaNaLokacijis.Attach(robaNaLokaciji);
+                    context.RobaNaLokacijis.Remove(robaNaLokaciji);
+                }
+                else
+                {
+                    context.RobaNaLokacijis.Attach(robaNaLokaciji);
+                    robaNaLokaciji.Kolicina -= kolicina;
+                }
+                context.SaveChanges();
+            }
+        }
+
+        private static bool ProvjeriPostojanjeRobeNaLokaciji(int idRoba, int id)
+        {
+            throw new NotImplementedException();
+        }
 
         public List<Lokacija> DohvatiPodlokacije()
         {
@@ -166,6 +209,22 @@ namespace SkladisteDb
                     nadlokacija[0].DohvatiPutDoBazicneLokacije(ref putDoBazicneLokacije);
                 }
             }
+        }
+
+        public static List<Lokacija> DohvatiSvePodlokacije(Lokacija lokacija)
+        {
+            List<Lokacija> podlokacije = new List<Lokacija>();
+            using (var context = new SkladisteDatabase())
+            {
+                podlokacije.AddRange(context.Lokacijas.ToList().FindAll(x => x.Nadlokacija == lokacija.Id));
+                int l = podlokacije.Count();
+                for (int i = 0; i < l; i++)
+                {
+                    podlokacije.AddRange(DohvatiSvePodlokacije(podlokacije[i]));
+                }
+            }
+            return podlokacije;
+            
         }
 
         public override string ToString()

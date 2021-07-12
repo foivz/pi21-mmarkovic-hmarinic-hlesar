@@ -74,6 +74,7 @@
     <Compile Include="RobaNaLokaciji.cs">
       <DependentUpon>SkladisteDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="RobaNaLokacijiExt.cs" />
     <Compile Include="SkladisteDb.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -90,9 +90,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdresiranjeRobe\AdresiranjeRobe.csproj">
+    <ProjectReference Include="..\AdresiranjeRobe\AdresiranjeRobeAzuriranjeStanjaSkladista.csproj">
       <Project>{EF645E42-BC33-4659-8746-9F92C7CE8147}</Project>
-      <Name>AdresiranjeRobe</Name>
+      <Name>AdresiranjeRobeAzuriranjeStanjaSkladista</Name>
     </ProjectReference>
     <ProjectReference Include="..\SkladisteDb\SkladisteDb.csproj">
       <Project>{857e0e54-be57-4546-b465-a3df4c869d57}</Project>

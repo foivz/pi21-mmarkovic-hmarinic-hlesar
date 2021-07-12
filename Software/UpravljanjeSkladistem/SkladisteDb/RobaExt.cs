@@ -250,5 +250,10 @@ namespace SkladisteDb
                 return query.Single();
             }
         }
+
+        public override string ToString()
+        {
+            return Naziv;
+        }
     }
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpravljanjeSkladistem", "UpravljanjeSkladistem\UpravljanjeSkladistem.csproj", "{A4F82255-CE57-433B-A018-733B34D7382F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdresiranjeRobe", "AdresiranjeRobe\AdresiranjeRobe.csproj", "{EF645E42-BC33-4659-8746-9F92C7CE8147}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdresiranjeRobeAzuriranjeStanjaSkladista", "AdresiranjeRobe\AdresiranjeRobeAzuriranjeStanjaSkladista.csproj", "{EF645E42-BC33-4659-8746-9F92C7CE8147}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkladisteDb", "SkladisteDb\SkladisteDb.csproj", "{857E0E54-BE57-4546-B465-A3DF4C869D57}"
 EndProject

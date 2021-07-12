@@ -39,7 +39,6 @@ namespace UpravljanjeSkladistem
             this.unosRobeButton = new System.Windows.Forms.Button();
             this.korisnickeKontroleGroupBox = new System.Windows.Forms.GroupBox();
             this.kreiranjeIzdatnicaButton = new System.Windows.Forms.Button();
-            this.azuriranjeStanjaButton = new System.Windows.Forms.Button();
             this.izlazButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.prijavljeniKorisnikGroupBox = new System.Windows.Forms.GroupBox();
@@ -92,9 +91,9 @@ namespace UpravljanjeSkladistem
             this.adresiranjeRobeButton.Location = new System.Drawing.Point(8, 196);
             this.adresiranjeRobeButton.Margin = new System.Windows.Forms.Padding(4);
             this.adresiranjeRobeButton.Name = "adresiranjeRobeButton";
-            this.adresiranjeRobeButton.Size = new System.Drawing.Size(145, 79);
+            this.adresiranjeRobeButton.Size = new System.Drawing.Size(298, 79);
             this.adresiranjeRobeButton.TabIndex = 3;
-            this.adresiranjeRobeButton.Text = "Adresiranje robe";
+            this.adresiranjeRobeButton.Text = "Adresiranje robe / ažuriranje stanja skladišta";
             this.adresiranjeRobeButton.UseVisualStyleBackColor = true;
             this.adresiranjeRobeButton.Click += new System.EventHandler(this.adresiranjeRobeButton_Click);
             // 
@@ -150,7 +149,6 @@ namespace UpravljanjeSkladistem
             // korisnickeKontroleGroupBox
             // 
             this.korisnickeKontroleGroupBox.Controls.Add(this.kreiranjeIzdatnicaButton);
-            this.korisnickeKontroleGroupBox.Controls.Add(this.azuriranjeStanjaButton);
             this.korisnickeKontroleGroupBox.Controls.Add(this.unosRobeButton);
             this.korisnickeKontroleGroupBox.Controls.Add(this.pretragaRobeButton);
             this.korisnickeKontroleGroupBox.Controls.Add(this.kreiranjePrimkiButton);
@@ -175,17 +173,6 @@ namespace UpravljanjeSkladistem
             this.kreiranjeIzdatnicaButton.Text = "Pregled izdatnica";
             this.kreiranjeIzdatnicaButton.UseVisualStyleBackColor = true;
             this.kreiranjeIzdatnicaButton.Click += new System.EventHandler(this.kreiranjeIzdatnicaButton_Click);
-            // 
-            // azuriranjeStanjaButton
-            // 
-            this.azuriranjeStanjaButton.Enabled = false;
-            this.azuriranjeStanjaButton.Location = new System.Drawing.Point(161, 197);
-            this.azuriranjeStanjaButton.Margin = new System.Windows.Forms.Padding(4);
-            this.azuriranjeStanjaButton.Name = "azuriranjeStanjaButton";
-            this.azuriranjeStanjaButton.Size = new System.Drawing.Size(145, 79);
-            this.azuriranjeStanjaButton.TabIndex = 8;
-            this.azuriranjeStanjaButton.Text = "Ažuriranje stanja skladišta";
-            this.azuriranjeStanjaButton.UseVisualStyleBackColor = true;
             // 
             // izlazButton
             // 
@@ -301,7 +288,6 @@ namespace UpravljanjeSkladistem
         private System.Windows.Forms.Button unosRobeButton;
         private System.Windows.Forms.GroupBox korisnickeKontroleGroupBox;
         private System.Windows.Forms.Button kreiranjeIzdatnicaButton;
-        private System.Windows.Forms.Button azuriranjeStanjaButton;
         private System.Windows.Forms.Button izlazButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox prijavljeniKorisnikGroupBox;

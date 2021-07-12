@@ -29,7 +29,7 @@ namespace AdresiranjeRobe
         private void dodajLokacijuButton_Click(object sender, EventArgs e)
         {
             string naziv = nazivNoveLokacijeTextBox.Text.Trim();
-            
+
             if (naziv == String.Empty)
             {
                 MessageBox.Show("Lokacija mora imati naziv!");
@@ -81,19 +81,19 @@ namespace AdresiranjeRobe
 
             if (!robaNaOdredenojLokacijiCheckBox.Checked)
             {
-                robaBindingSource.DataSource = Roba.DohvatiSvuRobuNaLokaciji(zadnjeOdabranaLokacija);
+                robaNaLokacijiBindingSource.DataSource = RobaNaLokaciji.DohvatiRobuNaLokaciji(zadnjeOdabranaLokacija);
             }
             else
             {
-                robaBindingSource.DataSource = UkljuciRobuPodlokacija(zadnjeOdabranaLokacija);
+                robaNaLokacijiBindingSource.DataSource = UkljuciRobuPodlokacija(zadnjeOdabranaLokacija);
             }
         }
         private void DohvatiSvuRobu(Lokacija odabranaLokacija, ref List<Roba> roba)
         {
-           if (odabranaLokacija.RobaNaLokacijis.Count > 0)
-           {
+            if (odabranaLokacija.RobaNaLokacijis.Count > 0)
+            {
                 List<Roba> dohvacenaRoba = Roba.DohvatiSvuRobuNaLokaciji(zadnjeOdabranaLokacija);
-                foreach(var zapis in dohvacenaRoba)
+                foreach (var zapis in dohvacenaRoba)
                 {
                     Roba pronadeniZapis = roba.Find(x => x.Id == zapis.Id);
                     if (pronadeniZapis == null)
@@ -105,7 +105,7 @@ namespace AdresiranjeRobe
                         pronadeniZapis.Kolicina += zapis.Kolicina;
                     }
                 }
-           }
+            }
 
             using (var context = new SkladisteDatabase())
             {
@@ -161,11 +161,19 @@ namespace AdresiranjeRobe
             DohvatiRobu();
         }
 
-        private List<Roba> UkljuciRobuPodlokacija(Lokacija lokacija)
+        private List<RobaNaLokaciji> UkljuciRobuPodlokacija(Lokacija lokacija)
         {
-            List<Roba> roba = new List<Roba>();
-            lokacija.DohvatiRobuNaSvimPodlokacijama(ref roba);
-            return roba;
+            List<RobaNaLokaciji> svaRobaNaLokaciji = new List<RobaNaLokaciji>();
+            List<Lokacija> sveLokacije = new List<Lokacija>();
+            sveLokacije.Add(lokacija);
+            sveLokacije.AddRange(Lokacija.DohvatiSvePodlokacije(lokacija));
+
+            foreach (Lokacija item in sveLokacije)
+            {
+                svaRobaNaLokaciji.AddRange(RobaNaLokaciji.DohvatiRobuNaLokaciji(item));
+            }
+
+            return svaRobaNaLokaciji;
         }
         private void DodajNodeUStablo(Lokacija lokacija, bool bazicnaLokacija = false)
         {
@@ -218,9 +226,93 @@ namespace AdresiranjeRobe
             }
         }
 
+        private void uvecajButton_Click(object sender, EventArgs e)
+        {
+            int broj;
+
+            if (int.TryParse(kolicinaTextBox.Text, out broj))
+            {
+                RobaNaLokaciji rnl = robaNaLokacijiBindingSource.Current as RobaNaLokaciji;
+                RobaNaLokaciji.AzurirajRobu(rnl, broj);
+                DohvatiRobu();
+            }
+            else
+            {
+                MessageBox.Show("Upisana količina nije broj!");
+            }
+        }
+
+        private void umanjiButton_Click(object sender, EventArgs e)
+        {
+            int broj;
+
+            if (int.TryParse(kolicinaTextBox.Text, out broj))
+            {
+                RobaNaLokaciji rnl = robaNaLokacijiBindingSource.Current as RobaNaLokaciji;
+                if (rnl.Kolicina < broj)
+                {
+                    MessageBox.Show("Nema toliko robe u skladištu!");
+                }
+                else
+                {
+                    RobaNaLokaciji.AzurirajRobu(rnl, -broj);
+                    DohvatiRobu();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Upisana količina nije broj!");
+            }
+        }
+
+
+
+        private void premjestiButton_Click(object sender, EventArgs e)
+        {
+            int broj;
+            if (int.TryParse(kolicinaTextBox.Text, out broj))
+            {
+                RobaNaLokaciji rnl = robaNaLokacijiBindingSource.Current as RobaNaLokaciji;
+                if (rnl.Kolicina < broj)
+                {
+                    MessageBox.Show("Nema toliko robe u skladištu!");
+                }
+                else
+                {
+                    OdabirLokacijaForm odabirLokacija = new OdabirLokacijaForm(robaNaLokacijiBindingSource.Current as RobaNaLokaciji, broj);
+                    odabirLokacija.ShowDialog();
+                    DohvatiRobu();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Upisana količina nije broj!");
+            }
+            
+        }
+
+        private void kolicinaTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (kolicinaTextBox.Text == "" || robaNaLokacijiBindingSource.Current == null)
+            {
+                uvecajButton.Enabled = false;
+                umanjiButton.Enabled = false;
+                premjestiButton.Enabled = false;
+            }
+            else
+            {
+                uvecajButton.Enabled = true;
+                umanjiButton.Enabled = true;
+                premjestiButton.Enabled = true;
+            }
+        }
+
         private void AdresiranjeRobeForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             Help.ShowHelp(this, "../../../Pomoc/f1-pomoc.chm", HelpNavigator.TopicId, "1020");
         }
+
+
+
     }
 }

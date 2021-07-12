@@ -16,9 +16,18 @@ namespace AdresiranjeRobe
         public Lokacija OdabranaLokacija;
         private Lokacija zadnjeOdabranaLokacija;
         private TreeNode zadnjeOdabraniNode;
+        private RobaNaLokaciji robaNaLokaciji = null;
+        int kolicina;
         public OdabirLokacijaForm()
         {
             InitializeComponent();
+        }
+
+        public OdabirLokacijaForm(RobaNaLokaciji rnl, int kol)
+        {
+            InitializeComponent();
+            robaNaLokaciji = rnl;
+            kolicina = kol;
         }
 
         private void OdabirLokacija_Load(object sender, EventArgs e)
@@ -57,13 +66,27 @@ namespace AdresiranjeRobe
 
         private void odaberiLokacijuButton_Click(object sender, EventArgs e)
         {
-            OdabranaLokacija = zadnjeOdabranaLokacija;
-            if (OdabranaLokacija == null)
+            if (robaNaLokaciji == null)
             {
-                MessageBox.Show("Niste odabrali lokaciju!");
-                return;
+                OdabranaLokacija = zadnjeOdabranaLokacija;
+                if (OdabranaLokacija == null)
+                {
+                    MessageBox.Show("Niste odabrali lokaciju!");
+                    return;
+                }
+                Close();
             }
-            Close();
+            else
+            {
+                if (zadnjeOdabranaLokacija == null)
+                {
+                    MessageBox.Show("Niste odabrali lokaciju!");
+                    return;
+                }
+                Lokacija.PremjestiRobu(robaNaLokaciji, zadnjeOdabranaLokacija, kolicina);
+                Close();
+
+            }
         }
 
         private void stableniPrikazTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
