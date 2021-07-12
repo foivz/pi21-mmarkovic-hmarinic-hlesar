@@ -91,10 +91,10 @@ namespace SkladisteDb
         {
             using (var context = new SkladisteDatabase())
             {
-                 var query = from rnl in context.RobaNaLokacijis
-                                where robaNaLokaciji.IdRoba == rnl.IdRoba && lokacija.Id == rnl.IdLokacija
-                                select rnl;
-                RobaNaLokaciji postojecaRobaNaLokaciji = query.ToList()[0];
+                var query = from rnl in context.RobaNaLokacijis
+                            where robaNaLokaciji.IdRoba == rnl.IdRoba && lokacija.Id == rnl.IdLokacija
+                            select rnl;
+                RobaNaLokaciji postojecaRobaNaLokaciji = query as RobaNaLokaciji;
 
                 if (postojecaRobaNaLokaciji != null)
                 {
